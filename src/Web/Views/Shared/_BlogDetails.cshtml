@@ -1,0 +1,95 @@
+﻿@model Web.Pages.BlogDetailsModel
+
+@{
+}
+<section id="blog-details" class="padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-7">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="single-blog blog-details two-column">
+                            <div class="post-thumb">
+                                <a href="#"><img src="~/images/blog/@(Model.Blog.Image)" class="img-responsive" alt=""></a>
+                                <div class="post-overlay">
+                                    <span class="uppercase"><a href="#">@Model.Blog.CreateDateTime.Day <br><small>@MonthsDictionary.GetMonths(Model.Blog.CreateDateTime.Month)</small></a></span>
+                                </div>
+                            </div>
+                            <div class="post-content overflow">
+                                <h2 class="post-title bold"><a href="#">@Model.Blog.Title</a></h2>
+                                <h3 class="post-author"><a href="#">Запостил @Model.Blog.CreateWebUser</a></h3>
+                                <p>@Model.Blog.Text</p>
+                                <div class="post-bottom overflow">
+                                    <ul class="nav navbar-nav post-nav">
+                                        <li><a href="#"><i class="fa fa-heart"></i>0 Лайков</a></li>
+                                        <li><a href="#"><i class="fa fa-comments"></i>@Model.Blog.BlogMessages.Count() Комментариев</a></li>
+                                    </ul>
+                                </div>
+                                <div class="blog-share">
+                                    <span class='st_facebook_hcount'></span>
+                                    <span class='st_twitter_hcount'></span>
+                                    <span class='st_linkedin_hcount'></span>
+                                    <span class='st_pinterest_hcount'></span>
+                                    <span class='st_email_hcount'></span>
+                                </div>
+                                <div class="response-area">
+                                    <h2 class="bold">Комментарии</h2>
+                                    <button type="button" class="btn btn-lg btn-primary" onclick="OnCloseBlogAnswer(@(String.Concat("'#btnBlog",Model.Blog.Id,"_", 0,'\'')))">
+                                        <i class="fa fa-heart"></i>
+                                        Добавить комментарий
+                                    </button>
+                                    @await Html.PartialAsync("_BlogComment", new BlogAnswerViewModel{BlogId = @Model.Blog.Id, CommentId = 0})
+                                    <br/> <br/>
+                                    <ul class="media-list">
+                                        @foreach(var message in Model.MessagesSorted)
+                                        {
+                                            <li class="media">
+                                                <div class="post-comment">
+                                                    <a class="pull-left" href="#">
+                                                        <img class="media-object" src="/images/avatars/@message.CreateWebUserAvatar" alt="">
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <span><i class="fa fa-user"></i>Запостил <a href="#">@message.CreateWebUser</a></span>
+                                                        <p>@message.Text</p>
+                                                        <ul class="nav navbar-nav post-nav">
+                                                            <li><a href="#"><i class="fa fa-clock-o"></i>@message.CreateDateTime.Day @MonthsDictionary.GetMonths(message.CreateDateTime.Month) @message.CreateDateTime.Year</a></li>
+                                                            <li><a onclick="OnCloseBlogAnswer (@(String.Concat("'#btnBlog",Model.Blog.Id,"_", message.Id, '\'')))" ><i class="fa fa-reply"></i>Ответить</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                @await Html.PartialAsync("_BlogComment", new BlogAnswerViewModel{BlogId = @Model.Blog.Id, CommentId = message.Id})
+                                                @foreach(var messageAnswer in @message.AnswerMessage!)
+                                                {
+                                                    <div class="parrent">
+                                                        <ul class="media-list">
+                                                            <li class="post-comment reply">
+                                                                <a class="pull-left" href="#">
+                                                                    <img class="media-object" src="/images/avatars/@message.CreateWebUserAvatar" alt="">
+                                                                </a>
+                                                                <div class="media-body">
+                                                                    <span><i class="fa fa-user"></i>Запостил <a href="#">@messageAnswer.CreateWebUser</a></span>
+                                                                    <p>@messageAnswer.Text</p>
+                                                                    <ul class="nav navbar-nav post-nav">
+                                                                        <li><a href="#"><i class="fa fa-clock-o"></i>>@messageAnswer.CreateDateTime.Day @MonthsDictionary.GetMonths(messageAnswer.CreateDateTime.Month) @messageAnswer.CreateDateTime.Year</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                }
+                                            </li>
+                                        }                                        
+                                    </ul>                   
+                                </div><!--/Response-area-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                @await Component.InvokeAsync("SideBar", new {category = @Model.CategoryName})
+
+        </div>
+    </div>
+</section>
+<!--/#blog-->

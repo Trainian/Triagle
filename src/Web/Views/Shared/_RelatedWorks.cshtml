@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ProjectViewModel>
+
+
+<section id="related-work" class="padding-top padding-bottom">
+    <div class="container">
+        <div class="row">
+            <h1 class="title text-center">Похожие проекты</h1>
+            @foreach (var project in Model)
+            {
+            <div class="col-sm-3">
+                <div class="portfolio-wrapper">
+                    <div class="portfolio-single">
+                        <div class="portfolio-thumb">
+                            <img src="~/images/portfolio/@project.Image" class="img-responsive" alt="">
+                        </div>
+                        <div class="portfolio-view">
+                            <ul class="nav nav-pills">
+                                <li><a href="~/images/portfolio/@project.Image" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="portfolio-info ">
+                        <a asp-area="" asp-page="PortfolioDetails" asp-route-id="@project.Id"><h2>@project.ProjectName</h2></a>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+<!--/#related-work-->

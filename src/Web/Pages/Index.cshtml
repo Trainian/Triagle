@@ -1,0 +1,12 @@
+﻿@page
+@using Web.Pages
+@model IndexModel
+@{
+    ViewData["Title"] = "Домашняя";
+}
+
+@await Html.PartialAsync("_HomeSlider")
+@await Html.PartialAsync("_Services")
+@await Html.PartialAsync("_Action")
+@await Html.PartialAsync("_Features")
+@await Html.PartialAsync("_Clients")

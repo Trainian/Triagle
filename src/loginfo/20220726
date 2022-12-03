@@ -1,0 +1,58 @@
+2022-07-26 00:38:53.961 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-26 00:38:57.224 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-26 00:39:00.837 +03:00 [INF] Executed DbCommand (298ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-26 00:39:01.127 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-26 00:39:01.369 +03:00 [INF] Executed DbCommand (212ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-26 00:39:02.624 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-26 00:39:02.628 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-26 00:39:02.639 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-26 00:39:02.642 +03:00 [INF] Hosting environment: Development
+2022-07-26 00:39:02.644 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-26 00:39:04.431 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-26 00:39:04.823 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-26 00:39:05.570 +03:00 [INF] Executed DbCommand (291ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-07-26 00:39:06.125 +03:00 [INF] Executed DbCommand (158ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2022-07-26 00:39:06.525 +03:00 [INF] Executed DbCommand (310ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2022-07-26 00:39:06.787 +03:00 [INF] Executed DbCommand (213ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2022-07-26 00:39:07.099 +03:00 [INF] Executed DbCommand (263ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2022-07-26 00:39:07.158 +03:00 [INF] Executing endpoint '/Index'
+2022-07-26 00:39:07.224 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-26 00:39:07.252 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-26 00:39:07.256 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-26 00:39:07.267 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-26 00:39:07.270 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-26 00:39:08.018 +03:00 [INF] Executed page /Index in 778.8678ms
+2022-07-26 00:39:08.025 +03:00 [INF] Executed endpoint '/Index'
+2022-07-26 00:39:08.201 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 3780.0982ms
+2022-07-26 00:39:08.530 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-26 00:39:08.773 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-26 00:39:09.340 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 810.4213ms
+2022-07-26 00:39:09.554 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 780.5908ms

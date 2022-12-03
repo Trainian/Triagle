@@ -1,0 +1,1835 @@
+2022-07-24 11:45:41.420 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 11:45:43.586 +03:00 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-07-24 11:45:43.890 +03:00 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-07-24 11:45:44.077 +03:00 [INF] Executed DbCommand (179ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-07-24 11:45:44.442 +03:00 [INF] Executed DbCommand (164ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2022-07-24 11:45:44.693 +03:00 [INF] Executed DbCommand (241ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-07-24 11:45:44.852 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-07-24 11:45:45.103 +03:00 [INF] Executed DbCommand (244ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-07-24 11:45:45.131 +03:00 [INF] Applying migration '20220713014725_Initialize'.
+2022-07-24 11:45:45.617 +03:00 [INF] Executed DbCommand (200ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+2022-07-24 11:45:45.817 +03:00 [INF] Executed DbCommand (193ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);
+2022-07-24 11:45:46.027 +03:00 [INF] Executed DbCommand (203ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);
+2022-07-24 11:45:46.232 +03:00 [INF] Executed DbCommand (199ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2022-07-24 11:45:46.428 +03:00 [INF] Executed DbCommand (177ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(128) NOT NULL,
+    [ProviderKey] nvarchar(128) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2022-07-24 11:45:46.644 +03:00 [INF] Executed DbCommand (190ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2022-07-24 11:45:46.851 +03:00 [INF] Executed DbCommand (202ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(128) NOT NULL,
+    [Name] nvarchar(128) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2022-07-24 11:45:47.047 +03:00 [INF] Executed DbCommand (181ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);
+2022-07-24 11:45:47.267 +03:00 [INF] Executed DbCommand (198ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+2022-07-24 11:45:47.558 +03:00 [INF] Executed DbCommand (251ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);
+2022-07-24 11:45:47.769 +03:00 [INF] Executed DbCommand (205ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);
+2022-07-24 11:45:47.977 +03:00 [INF] Executed DbCommand (204ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);
+2022-07-24 11:45:48.172 +03:00 [INF] Executed DbCommand (191ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);
+2022-07-24 11:45:48.485 +03:00 [INF] Executed DbCommand (308ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+2022-07-24 11:45:48.686 +03:00 [INF] Executed DbCommand (193ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220713014725_Initialize', N'6.0.7');
+2022-07-24 11:45:48.906 +03:00 [INF] Applying migration '20220715125530_AddAvatar'.
+2022-07-24 11:45:49.401 +03:00 [INF] Executed DbCommand (194ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [AspNetUsers] ADD [Avatar] nvarchar(max) NULL;
+2022-07-24 11:45:49.561 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220715125530_AddAvatar', N'6.0.7');
+2022-07-24 11:46:18.642 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 11:46:20.350 +03:00 [INF] Executed DbCommand (290ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-07-24 11:46:20.549 +03:00 [INF] Executed DbCommand (178ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-07-24 11:46:20.732 +03:00 [INF] Executed DbCommand (162ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-07-24 11:46:20.941 +03:00 [INF] Executed DbCommand (190ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-07-24 11:46:21.156 +03:00 [INF] Executed DbCommand (185ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-07-24 11:46:21.181 +03:00 [INF] Applying migration '20220717025610_Init'.
+2022-07-24 11:46:21.760 +03:00 [INF] Executed DbCommand (201ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Categories] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Information] nvarchar(max) NULL,
+    CONSTRAINT [PK_Categories] PRIMARY KEY ([Id])
+);
+2022-07-24 11:46:21.968 +03:00 [INF] Executed DbCommand (201ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Blogs] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(max) NOT NULL,
+    [Text] nvarchar(max) NOT NULL,
+    [Image] nvarchar(max) NOT NULL,
+    [CreateDateTime] datetime2 NOT NULL,
+    [CreateWebUser] nvarchar(max) NOT NULL,
+    [CategoryId] int NOT NULL,
+    [Likes] int NOT NULL,
+    [Twits] int NOT NULL,
+    CONSTRAINT [PK_Blogs] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Blogs_Categories_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [Categories] ([Id]) ON DELETE CASCADE
+);
+2022-07-24 11:46:22.273 +03:00 [INF] Executed DbCommand (248ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [BlogMessages] (
+    [Id] int NOT NULL IDENTITY,
+    [Text] nvarchar(max) NOT NULL,
+    [Visible] bit NOT NULL,
+    [BlogId] int NOT NULL,
+    [CreateDateTime] datetime2 NOT NULL,
+    [CreateWebUser] nvarchar(max) NOT NULL,
+    [ResponseToBlogMessageId] int NULL,
+    CONSTRAINT [PK_BlogMessages] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_BlogMessages_BlogMessages_ResponseToBlogMessageId] FOREIGN KEY ([ResponseToBlogMessageId]) REFERENCES [BlogMessages] ([Id]),
+    CONSTRAINT [FK_BlogMessages_Blogs_BlogId] FOREIGN KEY ([BlogId]) REFERENCES [Blogs] ([Id]) ON DELETE CASCADE
+);
+2022-07-24 11:46:22.580 +03:00 [INF] Executed DbCommand (242ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_BlogMessages_BlogId] ON [BlogMessages] ([BlogId]);
+2022-07-24 11:46:22.787 +03:00 [INF] Executed DbCommand (183ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_BlogMessages_ResponseToBlogMessageId] ON [BlogMessages] ([ResponseToBlogMessageId]);
+2022-07-24 11:46:22.989 +03:00 [INF] Executed DbCommand (196ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Blogs_CategoryId] ON [Blogs] ([CategoryId]);
+2022-07-24 11:46:23.210 +03:00 [INF] Executed DbCommand (216ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220717025610_Init', N'6.0.7');
+2022-07-24 11:46:23.506 +03:00 [INF] Applying migration '20220722013555_Projects'.
+2022-07-24 11:46:23.910 +03:00 [INF] Executed DbCommand (203ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [CategoriesProject] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Information] nvarchar(max) NULL,
+    CONSTRAINT [PK_CategoriesProject] PRIMARY KEY ([Id])
+);
+2022-07-24 11:46:24.115 +03:00 [INF] Executed DbCommand (200ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Projects] (
+    [Id] int NOT NULL IDENTITY,
+    [ProjectName] nvarchar(max) NOT NULL,
+    [Text] nvarchar(max) NOT NULL,
+    [CreateDateTime] datetime2 NOT NULL,
+    [Image] nvarchar(max) NOT NULL,
+    [CreateWebUser] nvarchar(max) NOT NULL,
+    [PreviewLink] nvarchar(max) NOT NULL,
+    [CategoryId] int NOT NULL,
+    CONSTRAINT [PK_Projects] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Projects_CategoriesProject_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [CategoriesProject] ([Id]) ON DELETE CASCADE
+);
+2022-07-24 11:46:24.323 +03:00 [INF] Executed DbCommand (200ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Skills] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Information] nvarchar(max) NULL,
+    [ProjectId] int NULL,
+    CONSTRAINT [PK_Skills] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Skills_Projects_ProjectId] FOREIGN KEY ([ProjectId]) REFERENCES [Projects] ([Id])
+);
+2022-07-24 11:46:24.633 +03:00 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_CategoryId] ON [Projects] ([CategoryId]);
+2022-07-24 11:46:24.841 +03:00 [INF] Executed DbCommand (204ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Skills_ProjectId] ON [Skills] ([ProjectId]);
+2022-07-24 11:46:25.037 +03:00 [INF] Executed DbCommand (192ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220722013555_Projects', N'6.0.7');
+2022-07-24 15:11:32.694 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 15:11:35.176 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 15:11:39.525 +03:00 [INF] Executed DbCommand (330ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 15:11:40.386 +03:00 [INF] Executed DbCommand (300ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2022-07-24 15:11:41.221 +03:00 [INF] Executed DbCommand (173ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [Avatar], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2022-07-24 15:11:41.638 +03:00 [INF] Executed DbCommand (157ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2022-07-24 15:11:42.117 +03:00 [INF] Executed DbCommand (205ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2022-07-24 15:11:42.502 +03:00 [INF] Executed DbCommand (159ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2022-07-24 15:11:42.834 +03:00 [INF] Executed DbCommand (238ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2022-07-24 15:11:43.048 +03:00 [INF] Executed DbCommand (157ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2022-07-24 15:11:43.347 +03:00 [INF] Executed DbCommand (273ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2022-07-24 15:11:43.779 +03:00 [INF] Executed DbCommand (162ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+2022-07-24 15:11:44.165 +03:00 [INF] Executed DbCommand (266ms) [Parameters=[@p15='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p16='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [Avatar] = @p1, [ConcurrencyStamp] = @p2, [Email] = @p3, [EmailConfirmed] = @p4, [LockoutEnabled] = @p5, [LockoutEnd] = @p6, [NormalizedEmail] = @p7, [NormalizedUserName] = @p8, [PasswordHash] = @p9, [PhoneNumber] = @p10, [PhoneNumberConfirmed] = @p11, [SecurityStamp] = @p12, [TwoFactorEnabled] = @p13, [UserName] = @p14
+WHERE [Id] = @p15 AND [ConcurrencyStamp] = @p16;
+SELECT @@ROWCOUNT;
+2022-07-24 15:11:44.676 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 15:11:44.881 +03:00 [INF] Executed DbCommand (188ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 15:11:45.496 +03:00 [INF] Executed DbCommand (193ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Categories] ([Information], [Name])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [Categories]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-07-24 15:11:45.701 +03:00 [INF] Executed DbCommand (166ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Categories] ([Information], [Name])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [Categories]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-07-24 15:11:45.909 +03:00 [INF] Executed DbCommand (197ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Categories] ([Information], [Name])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [Categories]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-07-24 15:11:46.308 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Information], [c].[Name]
+FROM [Categories] AS [c]
+ORDER BY [c].[Id]
+2022-07-24 15:11:46.810 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Blogs] ([CategoryId], [CreateDateTime], [CreateWebUser], [Image], [Likes], [Text], [Title], [Twits])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [Blogs]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-07-24 15:11:46.971 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Blogs] ([CategoryId], [CreateDateTime], [CreateWebUser], [Image], [Likes], [Text], [Title], [Twits])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [Blogs]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-07-24 15:11:47.132 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Blogs] ([CategoryId], [CreateDateTime], [CreateWebUser], [Image], [Likes], [Text], [Title], [Twits])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [Blogs]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-07-24 15:11:47.544 +03:00 [INF] Executed DbCommand (224ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits]
+FROM [Blogs] AS [b]
+WHERE [b].[Id] = 2
+ORDER BY [b].[Id]
+2022-07-24 15:11:47.746 +03:00 [INF] Executed DbCommand (157ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits]
+FROM [Blogs] AS [b]
+WHERE [b].[Id] = 3
+ORDER BY [b].[Id]
+2022-07-24 15:11:48.231 +03:00 [INF] Executed DbCommand (172ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BlogMessages] ([BlogId], [CreateDateTime], [CreateWebUser], [ResponseToBlogMessageId], [Text], [Visible])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [BlogMessages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-07-24 15:11:48.471 +03:00 [INF] Executed DbCommand (164ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BlogMessages] ([BlogId], [CreateDateTime], [CreateWebUser], [ResponseToBlogMessageId], [Text], [Visible])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [BlogMessages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-07-24 15:11:48.909 +03:00 [INF] Executed DbCommand (312ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BlogMessages] ([BlogId], [CreateDateTime], [CreateWebUser], [ResponseToBlogMessageId], [Text], [Visible])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [BlogMessages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-07-24 15:11:49.388 +03:00 [INF] Executed DbCommand (258ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[BlogId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[ResponseToBlogMessageId], [b].[Text], [b].[Visible]
+FROM [BlogMessages] AS [b]
+ORDER BY [b].[Id]
+2022-07-24 15:11:49.592 +03:00 [INF] Executed DbCommand (171ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[BlogId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[ResponseToBlogMessageId], [b].[Text], [b].[Visible]
+FROM [BlogMessages] AS [b]
+WHERE [b].[Id] = 2
+2022-07-24 15:11:50.001 +03:00 [INF] Executed DbCommand (201ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [BlogMessages] SET [ResponseToBlogMessageId] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+2022-07-24 15:11:50.627 +03:00 [INF] Executed DbCommand (177ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Skills] USING (
+VALUES (@p0, @p1, @p2, 0),
+(@p3, @p4, @p5, 1),
+(@p6, @p7, @p8, 2),
+(@p9, @p10, @p11, 3)) AS i ([Information], [Name], [ProjectId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Information], [Name], [ProjectId])
+VALUES (i.[Information], i.[Name], i.[ProjectId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [i].[Id] FROM @inserted0 i
+ORDER BY [i].[_Position];
+2022-07-24 15:11:51.312 +03:00 [INF] Executed DbCommand (180ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [CategoriesProject] USING (
+VALUES (@p0, @p1, 0),
+(@p2, @p3, 1),
+(@p4, @p5, 2),
+(@p6, @p7, 3)) AS i ([Information], [Name], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Information], [Name])
+VALUES (i.[Information], i.[Name])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [i].[Id] FROM @inserted0 i
+ORDER BY [i].[_Position];
+2022-07-24 15:11:51.718 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Information], [c].[Name]
+FROM [CategoriesProject] AS [c]
+WHERE [c].[Id] = 1
+2022-07-24 15:11:51.951 +03:00 [INF] Executed DbCommand (216ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Information], [c].[Name]
+FROM [CategoriesProject] AS [c]
+WHERE [c].[Id] = 2
+2022-07-24 15:11:52.152 +03:00 [INF] Executed DbCommand (171ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Information], [s].[Name], [s].[ProjectId]
+FROM [Skills] AS [s]
+2022-07-24 15:11:52.676 +03:00 [INF] Executed DbCommand (198ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (DbType = DateTime2), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (Size = 4000), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (DbType = Int32), @p29='?' (DbType = DateTime2), @p30='?' (Size = 4000), @p31='?' (Size = 4000), @p32='?' (Size = 4000), @p33='?' (Size = 4000), @p34='?' (Size = 4000), @p35='?' (DbType = Int32), @p36='?' (DbType = DateTime2), @p37='?' (Size = 4000), @p38='?' (Size = 4000), @p39='?' (Size = 4000), @p40='?' (Size = 4000), @p41='?' (Size = 4000), @p42='?' (DbType = Int32), @p43='?' (DbType = DateTime2), @p44='?' (Size = 4000), @p45='?' (Size = 4000), @p46='?' (Size = 4000), @p47='?' (Size = 4000), @p48='?' (Size = 4000), @p49='?' (DbType = Int32), @p50='?' (DbType = DateTime2), @p51='?' (Size = 4000), @p52='?' (Size = 4000), @p53='?' (Size = 4000), @p54='?' (Size = 4000), @p55='?' (Size = 4000), @p56='?' (DbType = Int32), @p57='?' (DbType = DateTime2), @p58='?' (Size = 4000), @p59='?' (Size = 4000), @p60='?' (Size = 4000), @p61='?' (Size = 4000), @p62='?' (Size = 4000), @p63='?' (DbType = Int32), @p64='?' (DbType = DateTime2), @p65='?' (Size = 4000), @p66='?' (Size = 4000), @p67='?' (Size = 4000), @p68='?' (Size = 4000), @p69='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Projects] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, 0),
+(@p7, @p8, @p9, @p10, @p11, @p12, @p13, 1),
+(@p14, @p15, @p16, @p17, @p18, @p19, @p20, 2),
+(@p21, @p22, @p23, @p24, @p25, @p26, @p27, 3),
+(@p28, @p29, @p30, @p31, @p32, @p33, @p34, 4),
+(@p35, @p36, @p37, @p38, @p39, @p40, @p41, 5),
+(@p42, @p43, @p44, @p45, @p46, @p47, @p48, 6),
+(@p49, @p50, @p51, @p52, @p53, @p54, @p55, 7),
+(@p56, @p57, @p58, @p59, @p60, @p61, @p62, 8),
+(@p63, @p64, @p65, @p66, @p67, @p68, @p69, 9)) AS i ([CategoryId], [CreateDateTime], [CreateWebUser], [Image], [PreviewLink], [ProjectName], [Text], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([CategoryId], [CreateDateTime], [CreateWebUser], [Image], [PreviewLink], [ProjectName], [Text])
+VALUES (i.[CategoryId], i.[CreateDateTime], i.[CreateWebUser], i.[Image], i.[PreviewLink], i.[ProjectName], i.[Text])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [i].[Id] FROM @inserted0 i
+ORDER BY [i].[_Position];
+2022-07-24 15:11:52.869 +03:00 [INF] Executed DbCommand (183ms) [Parameters=[@p71='?' (DbType = Int32), @p70='?' (DbType = Int32), @p73='?' (DbType = Int32), @p72='?' (DbType = Int32), @p75='?' (DbType = Int32), @p74='?' (DbType = Int32), @p77='?' (DbType = Int32), @p76='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Skills] SET [ProjectId] = @p70
+WHERE [Id] = @p71;
+SELECT @@ROWCOUNT;
+
+UPDATE [Skills] SET [ProjectId] = @p72
+WHERE [Id] = @p73;
+SELECT @@ROWCOUNT;
+
+UPDATE [Skills] SET [ProjectId] = @p74
+WHERE [Id] = @p75;
+SELECT @@ROWCOUNT;
+
+UPDATE [Skills] SET [ProjectId] = @p76
+WHERE [Id] = @p77;
+SELECT @@ROWCOUNT;
+2022-07-24 15:11:55.141 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 15:11:55.148 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 15:11:55.159 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 15:11:55.171 +03:00 [INF] Hosting environment: Development
+2022-07-24 15:11:55.174 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 15:11:56.906 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 15:11:57.180 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 15:11:57.399 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 15:11:57.425 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 15:11:57.428 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 15:11:57.440 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 15:11:57.442 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 15:11:57.981 +03:00 [INF] Executed page /Index in 569.6409ms
+2022-07-24 15:11:57.987 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 15:11:58.230 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1351.2213ms
+2022-07-24 15:11:58.703 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 15:11:59.116 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 15:11:59.124 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 421.1798ms
+2022-07-24 15:11:59.797 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 680.8475ms
+2022-07-24 15:12:03.710 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Blog - -
+2022-07-24 15:12:03.723 +03:00 [INF] Executing endpoint '/Blog'
+2022-07-24 15:12:03.795 +03:00 [INF] Route matched with {page = "/Blog", area = ""}. Executing page /Blog
+2022-07-24 15:12:04.446 +03:00 [INF] Executing handler method Web.Pages.BlogModel.OnGetAsync - ModelState is "Invalid"
+2022-07-24 15:12:04.776 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 15:12:07.427 +03:00 [INF] Executed DbCommand (1,476ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Blogs] AS [b]
+2022-07-24 15:12:08.739 +03:00 [INF] Executed DbCommand (227ms) [Parameters=[@__category_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Information], [c].[Name]
+FROM [Categories] AS [c]
+WHERE [c].[Name] = @__category_0
+ORDER BY [c].[Id]
+2022-07-24 15:12:08.914 +03:00 [WRN] Категория по Name не найдена null
+2022-07-24 15:12:09.259 +03:00 [INF] Executed DbCommand (253ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits]
+FROM [Blogs] AS [b]
+ORDER BY [b].[Id]
+2022-07-24 15:12:11.142 +03:00 [INF] Executed DbCommand (250ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id]
+2022-07-24 15:12:12.278 +03:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 15:12:14.880 +03:00 [INF] Executed DbCommand (706ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Blogs] AS [b]
+2022-07-24 15:12:16.465 +03:00 [INF] Executed DbCommand (180ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Information], [c].[Name]
+FROM [Categories] AS [c]
+ORDER BY [c].[Id]
+2022-07-24 15:12:18.022 +03:00 [INF] Executed DbCommand (1,076ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CategoryId], [t].[CreateDateTime], [t].[CreateWebUser], [t].[Image], [t].[Likes], [t].[Text], [t].[Title], [t].[Twits], [c].[Id]
+FROM [Categories] AS [c]
+INNER JOIN (
+    SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits]
+    FROM [Blogs] AS [b]
+) AS [t] ON [c].[Id] = [t].[CategoryId]
+ORDER BY [c].[Id], [t].[CreateDateTime] DESC, [t].[Id]
+2022-07-24 15:12:20.318 +03:00 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [c].[Id], [t].[Id]
+FROM [Categories] AS [c]
+INNER JOIN (
+    SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime]
+    FROM [Blogs] AS [b]
+) AS [t] ON [c].[Id] = [t].[CategoryId]
+INNER JOIN [BlogMessages] AS [b0] ON [t].[Id] = [b0].[BlogId]
+ORDER BY [c].[Id], [t].[CreateDateTime] DESC, [t].[Id]
+2022-07-24 15:12:21.646 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [b].[Id], [b].[BlogId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[ResponseToBlogMessageId], [b].[Text], [b].[Visible]
+FROM [BlogMessages] AS [b]
+ORDER BY [b].[CreateDateTime] DESC
+2022-07-24 15:12:21.716 +03:00 [INF] Executed page /Blog in 17910.976ms
+2022-07-24 15:12:21.746 +03:00 [INF] Executed endpoint '/Blog'
+2022-07-24 15:12:21.794 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Blog - - - 200 - text/html;+charset=utf-8 18084.1285ms
+2022-07-24 15:12:22.851 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 15:12:22.852 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 15:12:22.886 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 35.0527ms
+2022-07-24 15:12:23.318 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 465.8579ms
+2022-07-24 15:12:24.619 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 15:12:24.627 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 15:12:24.629 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 15:12:24.633 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 15:12:24.636 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 15:12:24.639 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 15:12:24.641 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 15:12:24.675 +03:00 [INF] Executed page /Index in 41.4872ms
+2022-07-24 15:12:24.678 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 15:12:24.698 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 79.4578ms
+2022-07-24 15:12:25.248 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 15:12:25.249 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 15:12:25.423 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 174.4876ms
+2022-07-24 15:12:25.586 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 336.5634ms
+2022-07-24 18:06:46.384 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 18:06:48.600 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 18:06:52.476 +03:00 [INF] Executed DbCommand (258ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:06:52.862 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 18:06:53.063 +03:00 [INF] Executed DbCommand (184ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:09:08.438 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 18:09:11.002 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 18:09:13.900 +03:00 [INF] Executed DbCommand (280ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:09:14.112 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 18:09:14.294 +03:00 [INF] Executed DbCommand (163ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:09:16.186 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 18:09:16.188 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 18:09:16.194 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 18:09:16.196 +03:00 [INF] Hosting environment: Development
+2022-07-24 18:09:16.197 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 18:09:18.323 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 18:09:18.484 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 18:09:18.620 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 18:09:18.645 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 18:09:18.650 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 18:09:18.663 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 18:09:18.666 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 18:09:19.086 +03:00 [INF] Executed page /Index in 452.0106ms
+2022-07-24 18:09:19.093 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 18:09:19.248 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 959.4432ms
+2022-07-24 18:09:20.180 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 18:09:20.759 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 18:09:20.808 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 629.2316ms
+2022-07-24 18:09:21.058 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 519.5604ms
+2022-07-24 18:09:24.941 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 18:09:24.958 +03:00 [INF] Executing endpoint '/admin'
+2022-07-24 18:09:24.978 +03:00 [INF] Executed endpoint '/admin'
+2022-07-24 18:09:24.986 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 400 - text/plain 44.5221ms
+2022-07-24 18:36:35.476 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 18:36:37.633 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 18:36:40.386 +03:00 [INF] Executed DbCommand (245ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:36:40.733 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 18:36:40.964 +03:00 [INF] Executed DbCommand (210ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:36:41.838 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 18:36:41.841 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 18:36:41.848 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 18:36:41.851 +03:00 [INF] Hosting environment: Development
+2022-07-24 18:36:41.853 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 18:36:43.102 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 18:36:43.240 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 18:36:43.296 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 18:36:43.322 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 18:36:43.326 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 18:36:43.337 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 18:36:43.340 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 18:36:43.754 +03:00 [INF] Executed page /Index in 431.1223ms
+2022-07-24 18:36:43.776 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 18:36:43.852 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 758.5173ms
+2022-07-24 18:36:44.311 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 18:36:44.420 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 109.5637ms
+2022-07-24 18:36:44.430 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 18:36:44.547 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 116.6896ms
+2022-07-24 18:38:03.417 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 18:38:03.435 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+/admin
+/Admin/Index
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-07-24 18:38:03.727 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 500 - text/html;+charset=utf-8 309.5933ms
+2022-07-24 18:38:04.047 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 18:38:04.047 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 18:38:04.496 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 448.8109ms
+2022-07-24 18:38:04.518 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 470.2931ms
+2022-07-24 18:40:22.973 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 18:40:25.088 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 18:40:28.141 +03:00 [INF] Executed DbCommand (301ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:40:28.443 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 18:40:28.705 +03:00 [INF] Executed DbCommand (240ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:40:30.121 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 18:40:30.123 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 18:40:30.129 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 18:40:30.130 +03:00 [INF] Hosting environment: Development
+2022-07-24 18:40:30.132 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 18:40:31.694 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 18:40:31.841 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 18:40:31.901 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 18:40:31.931 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 18:40:31.937 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 18:40:31.947 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 18:40:31.950 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 18:40:32.587 +03:00 [INF] Executed page /Index in 671.7577ms
+2022-07-24 18:40:32.603 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 18:40:32.646 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 961.7776ms
+2022-07-24 18:40:34.516 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 18:40:34.517 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 18:40:34.547 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 30.9056ms
+2022-07-24 18:40:34.987 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 469.5414ms
+2022-07-24 18:40:41.301 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 18:40:41.309 +03:00 [INF] Executing endpoint '/admin'
+2022-07-24 18:40:41.328 +03:00 [INF] Executed endpoint '/admin'
+2022-07-24 18:40:41.331 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 400 - text/plain 29.7707ms
+2022-07-24 18:41:07.814 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 18:41:07.823 +03:00 [INF] Executing endpoint '/admin'
+2022-07-24 18:41:07.827 +03:00 [INF] Executed endpoint '/admin'
+2022-07-24 18:41:07.830 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 400 - text/plain 16.5333ms
+2022-07-24 18:41:08.018 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/favicon.ico - -
+2022-07-24 18:41:08.042 +03:00 [INF] The file /favicon.ico was not modified
+2022-07-24 18:41:08.053 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/favicon.ico - - - 304 - image/x-icon 35.6721ms
+2022-07-24 18:46:06.511 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 18:46:08.418 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 18:46:11.204 +03:00 [INF] Executed DbCommand (340ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:46:11.730 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 18:46:11.937 +03:00 [INF] Executed DbCommand (172ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:46:13.005 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 18:46:13.008 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 18:46:13.017 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 18:46:13.019 +03:00 [INF] Hosting environment: Development
+2022-07-24 18:46:13.021 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 18:46:14.729 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 18:46:14.972 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 18:46:15.211 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 18:46:15.256 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 18:46:15.262 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 18:46:15.293 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 18:46:15.298 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 18:46:15.852 +03:00 [INF] Executed page /Index in 622.093ms
+2022-07-24 18:46:15.870 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 18:46:15.994 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1273.4937ms
+2022-07-24 18:46:16.548 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 18:46:16.595 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 18:46:16.685 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 136.8345ms
+2022-07-24 18:46:16.925 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 382.0481ms
+2022-07-24 18:46:28.867 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 18:46:28.875 +03:00 [INF] Executing endpoint '/admin'
+2022-07-24 18:46:28.888 +03:00 [INF] Executed endpoint '/admin'
+2022-07-24 18:46:28.891 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 400 - text/plain 23.9468ms
+2022-07-24 18:46:29.281 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/favicon.ico - -
+2022-07-24 18:46:29.462 +03:00 [INF] The file /favicon.ico was not modified
+2022-07-24 18:46:29.476 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/favicon.ico - - - 304 - image/x-icon 195.2350ms
+2022-07-24 18:46:36.998 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/adminpanel - -
+2022-07-24 18:46:37.013 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/adminpanel - - - 404 0 - 15.1278ms
+2022-07-24 18:46:47.485 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin/adminpanel - -
+2022-07-24 18:46:47.537 +03:00 [INF] Executing endpoint '/Admin/AdminPanel'
+2022-07-24 18:46:47.584 +03:00 [INF] Route matched with {page = "/Admin/AdminPanel", area = ""}. Executing page /Admin/AdminPanel
+2022-07-24 18:46:47.624 +03:00 [INF] Executing handler method Web.Pages.Admin.AdminPanelModel.OnGet - ModelState is "Valid"
+2022-07-24 18:46:47.628 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 18:46:47.635 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 18:46:47.641 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 18:46:48.014 +03:00 [INF] Executed page /Admin/AdminPanel in 390.4942ms
+2022-07-24 18:46:48.018 +03:00 [INF] Executed endpoint '/Admin/AdminPanel'
+2022-07-24 18:46:48.032 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin/adminpanel - - - 200 - text/html;+charset=utf-8 544.7360ms
+2022-07-24 18:46:48.744 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 18:46:48.744 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 18:46:48.758 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 14.2850ms
+2022-07-24 18:46:49.010 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 265.9122ms
+2022-07-24 18:48:54.702 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 18:48:56.507 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 18:48:59.414 +03:00 [INF] Executed DbCommand (356ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:48:59.624 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 18:48:59.802 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:49:00.709 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 18:49:00.711 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 18:49:00.719 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 18:49:00.721 +03:00 [INF] Hosting environment: Development
+2022-07-24 18:49:00.722 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 18:49:02.733 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 18:49:03.043 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 18:49:03.164 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 18:49:03.186 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 18:49:03.191 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 18:49:03.206 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 18:49:03.211 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 18:49:03.801 +03:00 [INF] Executed page /Index in 615.4453ms
+2022-07-24 18:49:03.808 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 18:49:03.953 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1229.2808ms
+2022-07-24 18:49:04.702 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 18:49:04.712 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 9.9067ms
+2022-07-24 18:49:05.147 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 18:49:05.210 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 63.6471ms
+2022-07-24 18:49:09.338 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 18:49:09.349 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 18:49:09.364 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 18:49:09.371 +03:00 [INF] Executing handler method Web.Pages.Admin.AdminPanelModel.OnGet - ModelState is "Valid"
+2022-07-24 18:49:09.377 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 18:49:09.384 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 18:49:09.388 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 18:49:09.607 +03:00 [INF] Executed page /Admin/Index in 237.0952ms
+2022-07-24 18:49:09.612 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 18:49:09.619 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 281.6881ms
+2022-07-24 18:49:09.682 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 18:49:09.684 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 18:49:09.691 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 6.7276ms
+2022-07-24 18:49:09.907 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 224.9564ms
+2022-07-24 18:51:04.630 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 18:51:06.660 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 18:51:09.439 +03:00 [INF] Executed DbCommand (347ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:51:09.791 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 18:51:10.030 +03:00 [INF] Executed DbCommand (199ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 18:51:10.833 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 18:51:10.835 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 18:51:10.861 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 18:51:10.863 +03:00 [INF] Hosting environment: Development
+2022-07-24 18:51:10.865 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 18:51:12.360 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 18:51:12.576 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 18:51:12.669 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 18:51:12.706 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 18:51:12.710 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 18:51:12.721 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 18:51:12.724 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 18:51:13.316 +03:00 [INF] Executed page /Index in 589.1323ms
+2022-07-24 18:51:13.329 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 18:51:13.593 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1243.0897ms
+2022-07-24 18:51:13.814 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 18:51:13.880 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 18:51:13.893 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 82.0136ms
+2022-07-24 18:51:14.709 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 828.7964ms
+2022-07-24 18:51:18.025 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 18:51:18.234 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 18:51:18.241 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 18:51:18.247 +03:00 [INF] Executing handler method Web.Pages.Admin.AdminPanelModel.OnGet - ModelState is "Valid"
+2022-07-24 18:51:18.252 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 18:51:18.256 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 18:51:18.258 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 18:51:18.497 +03:00 [INF] Executed page /Admin/Index in 253.746ms
+2022-07-24 18:51:18.505 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 18:51:18.529 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The layout view 'Admin/_Layout.cshtml' could not be located. The following locations were searched:
+/Pages/Admin/Admin/_Layout.cshtml
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.GetLayoutPage(ViewContext context, String executingFilePath, String layoutPath)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-07-24 18:51:18.818 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 500 - text/html;+charset=utf-8 787.0120ms
+2022-07-24 18:51:18.898 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 18:51:18.898 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 18:51:18.906 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 7.2176ms
+2022-07-24 18:51:19.230 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 331.2292ms
+2022-07-24 18:51:34.917 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 18:51:34.932 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 18:51:34.935 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 18:51:34.938 +03:00 [INF] Executing handler method Web.Pages.Admin.AdminPanelModel.OnGet - ModelState is "Valid"
+2022-07-24 18:51:34.941 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 18:51:34.944 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 18:51:34.946 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 18:51:34.963 +03:00 [INF] Executed page /Admin/Index in 25.9582ms
+2022-07-24 18:51:35.001 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 18:51:35.004 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The layout view 'Admin/_Layout.cshtml' could not be located. The following locations were searched:
+/Pages/Admin/Admin/_Layout.cshtml
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.GetLayoutPage(ViewContext context, String executingFilePath, String layoutPath)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-07-24 18:51:35.094 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 500 - text/html;+charset=utf-8 177.3112ms
+2022-07-24 18:51:35.189 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 18:51:35.191 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 18:51:35.192 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 2.8388ms
+2022-07-24 18:51:35.498 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 306.6462ms
+2022-07-24 18:51:36.032 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/favicon.ico - -
+2022-07-24 18:51:36.771 +03:00 [INF] The file /favicon.ico was not modified
+2022-07-24 18:51:36.778 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/favicon.ico - - - 304 - image/x-icon 746.1438ms
+2022-07-24 18:51:47.278 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 18:51:47.292 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 18:51:47.336 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 18:51:47.342 +03:00 [INF] Executing handler method Web.Pages.Admin.AdminPanelModel.OnGet - ModelState is "Valid"
+2022-07-24 18:51:47.344 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 18:51:47.346 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 18:51:47.348 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 18:51:47.800 +03:00 [INF] Executed page /Admin/Index in 458.5403ms
+2022-07-24 18:51:47.803 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 18:51:47.807 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 529.1595ms
+2022-07-24 18:51:47.878 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 18:51:47.880 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 18:51:47.886 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 5.6095ms
+2022-07-24 18:51:47.956 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 78.9889ms
+2022-07-24 18:51:48.604 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/favicon.ico - -
+2022-07-24 18:51:48.608 +03:00 [INF] The file /favicon.ico was not modified
+2022-07-24 18:51:48.611 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/favicon.ico - - - 304 - image/x-icon 7.3136ms
+2022-07-24 22:10:18.946 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 22:10:20.810 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 22:10:24.702 +03:00 [INF] Executed DbCommand (391ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:10:25.015 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 22:10:25.225 +03:00 [INF] Executed DbCommand (189ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:10:26.512 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 22:10:26.515 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 22:10:26.530 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 22:10:26.542 +03:00 [INF] Hosting environment: Development
+2022-07-24 22:10:26.544 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 22:10:30.954 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 22:10:31.126 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 22:10:31.238 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 22:10:31.290 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 22:10:31.294 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 22:10:31.315 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:10:31.320 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:10:31.722 +03:00 [INF] Executed page /Index in 470.2069ms
+2022-07-24 22:10:31.728 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 22:10:32.508 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:10:32.509 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1334.1742ms
+2022-07-24 22:10:32.758 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 249.1062ms
+2022-07-24 22:10:32.766 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:10:33.428 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 661.6797ms
+2022-07-24 22:10:38.913 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:10:38.926 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 404 0 - 12.6745ms
+2022-07-24 22:11:59.359 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 22:12:01.293 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 22:12:03.892 +03:00 [INF] Executed DbCommand (333ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:12:04.079 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 22:12:04.366 +03:00 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:12:05.516 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 22:12:05.530 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 22:12:05.542 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 22:12:05.552 +03:00 [INF] Hosting environment: Development
+2022-07-24 22:12:05.553 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 22:12:10.474 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 22:12:10.765 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 22:12:10.925 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 22:12:11.086 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 22:12:11.093 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 22:12:11.103 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:12:11.107 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:12:11.805 +03:00 [INF] Executed page /Index in 739.1785ms
+2022-07-24 22:12:11.816 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 22:12:11.868 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1406.2842ms
+2022-07-24 22:12:12.291 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:12:12.316 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:12:12.332 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 41.1523ms
+2022-07-24 22:12:13.228 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 911.5654ms
+2022-07-24 22:12:15.872 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:12:15.882 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:12:15.891 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:12:15.919 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:12:15.922 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:12:16.708 +03:00 [INF] Executed page /Admin/Index in 793.7788ms
+2022-07-24 22:12:16.712 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:12:16.735 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 865.3005ms
+2022-07-24 22:12:16.840 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:12:16.841 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:12:16.855 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 14.5326ms
+2022-07-24 22:12:17.057 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 216.4009ms
+2022-07-24 22:12:42.711 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/counter - -
+2022-07-24 22:12:42.725 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/counter - - - 404 0 - 13.8437ms
+2022-07-24 22:12:45.253 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:12:45.276 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:12:45.450 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:12:45.468 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:12:45.470 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:12:45.496 +03:00 [INF] Executed page /Admin/Index in 28.2518ms
+2022-07-24 22:12:45.499 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:12:45.634 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 378.4443ms
+2022-07-24 22:12:45.701 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:12:45.762 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 60.4642ms
+2022-07-24 22:12:47.017 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/fetchdata - -
+2022-07-24 22:12:47.023 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/fetchdata - - - 404 0 - 6.4958ms
+2022-07-24 22:12:48.800 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:12:48.805 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:12:48.811 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:12:48.840 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:12:48.851 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:12:49.146 +03:00 [INF] Executed page /Admin/Index in 307.5744ms
+2022-07-24 22:12:49.153 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:12:49.195 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 394.4784ms
+2022-07-24 22:12:49.292 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:12:49.302 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 10.4269ms
+2022-07-24 22:12:50.676 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:12:50.681 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:12:50.685 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:12:50.692 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:12:50.695 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:12:50.734 +03:00 [INF] Executed page /Admin/Index in 42.7703ms
+2022-07-24 22:12:50.741 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:12:50.748 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 72.0525ms
+2022-07-24 22:12:50.799 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:12:50.804 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:12:50.809 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 4.0434ms
+2022-07-24 22:12:51.103 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 304.2373ms
+2022-07-24 22:12:51.990 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:12:51.995 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:12:51.997 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:12:52.001 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:12:52.003 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:12:52.014 +03:00 [INF] Executed page /Admin/Index in 13.4339ms
+2022-07-24 22:12:52.017 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:12:52.020 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 29.3862ms
+2022-07-24 22:12:52.060 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:12:52.062 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:12:52.068 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 5.6926ms
+2022-07-24 22:12:52.422 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 362.3474ms
+2022-07-24 22:12:53.498 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:12:53.571 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:12:53.574 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:12:53.589 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:12:53.591 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:12:53.609 +03:00 [INF] Executed page /Admin/Index in 20.053ms
+2022-07-24 22:12:53.612 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:12:53.616 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 117.7879ms
+2022-07-24 22:12:53.650 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:12:53.652 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:12:53.663 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 10.3464ms
+2022-07-24 22:12:53.805 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 155.3871ms
+2022-07-24 22:14:50.773 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 22:14:52.780 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 22:14:55.684 +03:00 [INF] Executed DbCommand (246ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:14:55.917 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 22:14:56.171 +03:00 [INF] Executed DbCommand (234ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:14:57.546 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 22:14:57.549 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 22:14:57.575 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 22:14:57.577 +03:00 [INF] Hosting environment: Development
+2022-07-24 22:14:57.579 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 22:15:14.804 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 22:15:14.977 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 22:15:15.077 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 22:15:15.115 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 22:15:15.119 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 22:15:15.134 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:15:15.137 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:15:15.777 +03:00 [INF] Executed page /Index in 681.7147ms
+2022-07-24 22:15:15.782 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 22:15:15.854 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1058.8251ms
+2022-07-24 22:15:16.285 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:15:16.294 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 9.2795ms
+2022-07-24 22:15:17.191 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:15:17.248 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 56.8414ms
+2022-07-24 22:15:21.878 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:15:21.888 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:15:21.899 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:15:21.904 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:15:21.911 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:15:22.116 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:15:22.346 +03:00 [INF] Executed page /Admin/Index in 443.4135ms
+2022-07-24 22:15:22.348 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:15:22.376 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 492.8029ms
+2022-07-24 22:15:22.863 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:15:22.866 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:15:22.870 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 7.2100ms
+2022-07-24 22:15:22.949 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 83.4410ms
+2022-07-24 22:20:58.110 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 22:20:59.876 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 22:21:02.472 +03:00 [INF] Executed DbCommand (231ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:21:02.668 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 22:21:02.867 +03:00 [INF] Executed DbCommand (178ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:21:03.728 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 22:21:03.734 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 22:21:03.763 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 22:21:03.765 +03:00 [INF] Hosting environment: Development
+2022-07-24 22:21:03.767 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 22:21:04.942 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 22:21:05.153 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 22:21:05.232 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 22:21:05.259 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 22:21:05.262 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 22:21:05.272 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:21:05.274 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:21:05.664 +03:00 [INF] Executed page /Index in 416.9862ms
+2022-07-24 22:21:05.670 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 22:21:05.769 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 832.8170ms
+2022-07-24 22:21:06.245 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:21:06.258 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:21:06.284 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 38.3942ms
+2022-07-24 22:21:06.801 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 542.7909ms
+2022-07-24 22:21:11.177 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:21:11.189 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:21:11.201 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:21:11.205 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:21:11.207 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:21:11.447 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:21:11.543 +03:00 [INF] Executed page /Admin/Index in 340.332ms
+2022-07-24 22:21:11.546 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:21:11.555 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 379.3659ms
+2022-07-24 22:21:11.602 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/bootstrap/bootstrap.min.css - -
+2022-07-24 22:21:11.603 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminsite.css - -
+2022-07-24 22:21:11.625 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/bootstrap/bootstrap.min.css - - - 404 0 - 23.3069ms
+2022-07-24 22:21:11.648 +03:00 [INF] Sending file. Request path: '/css/adminsite.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\adminsite.css'
+2022-07-24 22:21:11.659 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminsite.css - - - 200 2810 text/css 55.4507ms
+2022-07-24 22:21:11.664 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - -
+2022-07-24 22:21:11.667 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - - - 404 0 - 2.8355ms
+2022-07-24 22:21:11.670 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - -
+2022-07-24 22:21:11.680 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:21:11.701 +03:00 [INF] Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+2022-07-24 22:21:11.703 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.3593ms
+2022-07-24 22:21:11.704 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - - - 200 131635 application/javascript 33.9614ms
+2022-07-24 22:21:11.709 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:21:11.711 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 1.9845ms
+2022-07-24 22:21:12.840 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:21:12.853 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:21:12.858 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:21:12.863 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:21:12.866 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:21:12.879 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:21:12.895 +03:00 [INF] Executed page /Admin/Index in 32.1568ms
+2022-07-24 22:21:12.900 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:21:12.907 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 66.6108ms
+2022-07-24 22:21:13.014 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:21:13.019 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 5.3301ms
+2022-07-24 22:21:13.046 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:21:13.048 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - -
+2022-07-24 22:21:13.056 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - - - 404 0 - 8.1002ms
+2022-07-24 22:21:13.181 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_blazor/initializers - -
+2022-07-24 22:21:13.207 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 158.1128ms
+2022-07-24 22:21:13.210 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2022-07-24 22:21:13.224 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2022-07-24 22:21:13.227 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_blazor/initializers - - - 200 - application/json;+charset=utf-8 46.4064ms
+2022-07-24 22:21:13.442 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2022-07-24 22:21:13.471 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2022-07-24 22:21:13.508 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2022-07-24 22:21:13.524 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 82.4417ms
+2022-07-24 22:21:13.661 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7099/_blazor?id=t_M9-9zrFKRA0gR-zWXdBg - -
+2022-07-24 22:21:13.969 +03:00 [INF] Executing endpoint '/_blazor'
+2022-07-24 22:21:14.294 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:25:51.148 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 22:25:53.594 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 22:25:56.343 +03:00 [INF] Executed DbCommand (374ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:25:56.656 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 22:25:56.857 +03:00 [INF] Executed DbCommand (188ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:25:57.807 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 22:25:57.811 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 22:25:57.932 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 22:25:58.054 +03:00 [INF] Hosting environment: Development
+2022-07-24 22:25:58.056 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 22:25:59.738 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 22:25:59.977 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 22:26:00.100 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 22:26:00.122 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 22:26:00.127 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 22:26:00.135 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:26:00.139 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:26:00.723 +03:00 [INF] Executed page /Index in 610.7725ms
+2022-07-24 22:26:00.728 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 22:26:00.779 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1050.5330ms
+2022-07-24 22:26:01.149 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:26:01.210 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:26:01.227 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 77.1339ms
+2022-07-24 22:26:01.357 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 147.0590ms
+2022-07-24 22:26:07.192 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2022-07-24 22:26:07.200 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2022-07-24 22:26:07.239 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2022-07-24 22:26:07.244 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 51.4185ms
+2022-07-24 22:26:07.292 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7099/_blazor?id=r_o-bfGqLseWf84QH0UbpA - -
+2022-07-24 22:26:07.307 +03:00 [INF] Executing endpoint '/_blazor'
+2022-07-24 22:26:10.041 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:26:10.071 +03:00 [INF] Executed endpoint '/_blazor'
+2022-07-24 22:26:10.096 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:26:10.097 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7099/_blazor?id=r_o-bfGqLseWf84QH0UbpA - - - 101 - - 2804.5516ms
+2022-07-24 22:26:10.105 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:26:10.116 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:26:10.119 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:26:10.295 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:26:10.368 +03:00 [INF] Executed page /Admin/Index in 255.1659ms
+2022-07-24 22:26:10.373 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:26:10.387 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 345.6090ms
+2022-07-24 22:26:10.409 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundaryQ6A0RqNtdf3EuDqf 359
+2022-07-24 22:26:10.413 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2022-07-24 22:26:10.469 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:26:10.476 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 7.2907ms
+2022-07-24 22:26:10.478 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - -
+2022-07-24 22:26:10.475 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminsite.css - -
+2022-07-24 22:26:10.501 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2022-07-24 22:26:10.474 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - -
+2022-07-24 22:26:10.471 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/bootstrap/bootstrap.min.css - -
+2022-07-24 22:26:10.501 +03:00 [INF] The file /_framework/blazor.server.js was not modified
+2022-07-24 22:26:10.554 +03:00 [INF] The file /css/adminsite.css was not modified
+2022-07-24 22:26:10.554 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundaryQ6A0RqNtdf3EuDqf 359 - 200 0 - 145.8526ms
+2022-07-24 22:26:10.557 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - - - 404 0 - 82.2986ms
+2022-07-24 22:26:10.558 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/bootstrap/bootstrap.min.css - - - 404 0 - 86.9609ms
+2022-07-24 22:26:10.560 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - - - 304 - application/javascript 81.9678ms
+2022-07-24 22:26:10.568 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminsite.css - - - 304 - text/css 92.9691ms
+2022-07-24 22:26:10.656 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - -
+2022-07-24 22:26:10.656 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:26:10.669 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - - - 404 0 - 12.5957ms
+2022-07-24 22:26:10.737 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_blazor/initializers - -
+2022-07-24 22:26:10.775 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2022-07-24 22:26:10.800 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 144.0934ms
+2022-07-24 22:26:10.803 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2022-07-24 22:26:10.816 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_blazor/initializers - - - 200 - application/json;+charset=utf-8 79.6399ms
+2022-07-24 22:26:10.831 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2022-07-24 22:26:10.836 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2022-07-24 22:26:10.839 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2022-07-24 22:26:10.863 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 31.9755ms
+2022-07-24 22:26:10.928 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7099/_blazor?id=IVDqpZTsVjCR2CkVwrfBlA - -
+2022-07-24 22:26:11.227 +03:00 [INF] Executing endpoint '/_blazor'
+2022-07-24 22:26:11.215 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/favicon.ico - -
+2022-07-24 22:26:11.273 +03:00 [INF] The file /favicon.ico was not modified
+2022-07-24 22:26:11.278 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/favicon.ico - - - 304 - image/x-icon 62.8873ms
+2022-07-24 22:26:11.515 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:26:20.766 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminsite.css - -
+2022-07-24 22:26:20.772 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - -
+2022-07-24 22:26:20.781 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/bootstrap/bootstrap.min.css - -
+2022-07-24 22:26:20.781 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - -
+2022-07-24 22:26:20.790 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - - - 404 0 - 17.9467ms
+2022-07-24 22:26:20.790 +03:00 [INF] The file /css/adminsite.css was not modified
+2022-07-24 22:26:20.791 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/bootstrap/bootstrap.min.css - - - 404 0 - 10.3998ms
+2022-07-24 22:26:20.792 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - - - 404 0 - 11.2508ms
+2022-07-24 22:26:20.803 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminsite.css - - - 304 - text/css 37.2728ms
+2022-07-24 22:27:17.644 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 22:27:19.092 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 22:27:21.398 +03:00 [INF] Executed DbCommand (207ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:27:21.617 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 22:27:21.796 +03:00 [INF] Executed DbCommand (164ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:27:22.750 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 22:27:22.753 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 22:27:22.758 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 22:27:22.760 +03:00 [INF] Hosting environment: Development
+2022-07-24 22:27:22.762 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 22:27:23.887 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 22:27:24.032 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 22:27:24.109 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 22:27:24.134 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 22:27:24.137 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 22:27:24.146 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:27:24.148 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:27:24.681 +03:00 [INF] Executed page /Index in 554.3788ms
+2022-07-24 22:27:24.732 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 22:27:24.824 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 941.7121ms
+2022-07-24 22:27:25.095 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:27:25.131 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:27:25.136 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 41.2066ms
+2022-07-24 22:27:25.570 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 440.1744ms
+2022-07-24 22:27:33.372 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2022-07-24 22:27:33.382 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2022-07-24 22:27:33.413 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2022-07-24 22:27:33.416 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 43.3899ms
+2022-07-24 22:27:33.467 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7099/_blazor?id=v8LFmjBfUAV7JdP-cqQAJA - -
+2022-07-24 22:27:33.478 +03:00 [INF] Executing endpoint '/_blazor'
+2022-07-24 22:27:40.468 +03:00 [INF] Executed endpoint '/_blazor'
+2022-07-24 22:27:40.471 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7099/_blazor?id=v8LFmjBfUAV7JdP-cqQAJA - - - 101 - - 7004.3748ms
+2022-07-24 22:27:40.487 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:27:40.492 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:27:40.499 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:27:40.504 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:27:40.506 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:27:40.665 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:27:40.764 +03:00 [INF] Executed page /Admin/Index in 261.9049ms
+2022-07-24 22:27:40.769 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:27:40.783 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 295.2373ms
+2022-07-24 22:27:40.810 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundarygGuSbKKDAx4GJ7bk 359
+2022-07-24 22:27:40.839 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - -
+2022-07-24 22:27:40.837 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:27:40.840 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - -
+2022-07-24 22:27:40.857 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminsite.css - -
+2022-07-24 22:27:40.892 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 55.5171ms
+2022-07-24 22:27:40.898 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2022-07-24 22:27:40.902 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - - - 404 0 - 62.1900ms
+2022-07-24 22:27:40.911 +03:00 [INF] The file /_framework/blazor.server.js was not modified
+2022-07-24 22:27:40.911 +03:00 [INF] The file /css/adminsite.css was not modified
+2022-07-24 22:27:40.917 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - - - 304 - application/javascript 76.4493ms
+2022-07-24 22:27:40.917 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminsite.css - - - 304 - text/css 60.3177ms
+2022-07-24 22:27:40.976 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2022-07-24 22:27:40.980 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundarygGuSbKKDAx4GJ7bk 359 - 200 0 - 170.3603ms
+2022-07-24 22:27:40.993 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:27:41.053 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - -
+2022-07-24 22:27:41.080 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - - - 404 0 - 27.2652ms
+2022-07-24 22:27:41.111 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_blazor/initializers - -
+2022-07-24 22:27:41.156 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 164.2562ms
+2022-07-24 22:27:41.160 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2022-07-24 22:27:41.174 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2022-07-24 22:27:41.177 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_blazor/initializers - - - 200 - application/json;+charset=utf-8 66.3287ms
+2022-07-24 22:27:41.349 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2022-07-24 22:27:41.521 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/favicon.ico - -
+2022-07-24 22:27:41.542 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2022-07-24 22:27:41.543 +03:00 [INF] The file /favicon.ico was not modified
+2022-07-24 22:27:41.544 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2022-07-24 22:27:41.547 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/favicon.ico - - - 304 - image/x-icon 26.4706ms
+2022-07-24 22:27:41.550 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 201.4681ms
+2022-07-24 22:27:41.856 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7099/_blazor?id=5wR-h_MtnTgjXLpppnvR1Q - -
+2022-07-24 22:27:41.897 +03:00 [INF] Executing endpoint '/_blazor'
+2022-07-24 22:27:42.055 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:27:57.552 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - -
+2022-07-24 22:27:57.552 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - -
+2022-07-24 22:27:57.574 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - - - 404 0 - 22.4289ms
+2022-07-24 22:27:57.680 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminsite.css - -
+2022-07-24 22:27:57.576 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - - - 404 0 - 24.4726ms
+2022-07-24 22:27:57.694 +03:00 [INF] The file /css/adminsite.css was not modified
+2022-07-24 22:27:57.696 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminsite.css - - - 304 - text/css 16.3017ms
+2022-07-24 22:30:40.302 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 22:30:42.292 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 22:30:45.059 +03:00 [INF] Executed DbCommand (261ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:30:45.419 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 22:30:45.625 +03:00 [INF] Executed DbCommand (187ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:30:46.811 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 22:30:46.825 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 22:30:46.834 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 22:30:46.837 +03:00 [INF] Hosting environment: Development
+2022-07-24 22:30:46.840 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 22:30:48.427 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 22:30:48.781 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 22:30:48.873 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 22:30:48.915 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 22:30:48.920 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 22:30:48.932 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:30:48.935 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:30:49.469 +03:00 [INF] Executed page /Index in 576.2948ms
+2022-07-24 22:30:49.475 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 22:30:49.528 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1104.6680ms
+2022-07-24 22:30:50.613 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:30:50.613 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:30:50.693 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 79.5745ms
+2022-07-24 22:30:51.222 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 608.9381ms
+2022-07-24 22:30:53.127 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2022-07-24 22:30:53.150 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2022-07-24 22:30:53.319 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2022-07-24 22:30:53.322 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 195.1851ms
+2022-07-24 22:30:53.486 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7099/_blazor?id=4Vw1O1Ww7seIB29UxLJmzQ - -
+2022-07-24 22:30:53.501 +03:00 [INF] Executing endpoint '/_blazor'
+2022-07-24 22:30:55.167 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:30:55.176 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:30:55.189 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:30:55.199 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:30:55.209 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:30:55.241 +03:00 [INF] Executed endpoint '/_blazor'
+2022-07-24 22:30:55.273 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7099/_blazor?id=4Vw1O1Ww7seIB29UxLJmzQ - - - 101 - - 1787.1061ms
+2022-07-24 22:30:55.562 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:30:55.670 +03:00 [INF] Executed page /Admin/Index in 478.2505ms
+2022-07-24 22:30:55.673 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:30:55.681 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 514.0252ms
+2022-07-24 22:30:55.765 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundaryuP5A8RXG5YkBTpzA 359
+2022-07-24 22:30:55.900 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:30:56.190 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminsite.css - -
+2022-07-24 22:30:56.218 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - -
+2022-07-24 22:30:56.218 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - -
+2022-07-24 22:30:56.291 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2022-07-24 22:30:56.291 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 390.6360ms
+2022-07-24 22:30:56.308 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:30:56.313 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - - - 404 0 - 95.3769ms
+2022-07-24 22:30:56.336 +03:00 [INF] The file /css/adminsite.css was not modified
+2022-07-24 22:30:56.348 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminsite.css - - - 304 - text/css 157.8142ms
+2022-07-24 22:30:56.353 +03:00 [INF] The file /_framework/blazor.server.js was not modified
+2022-07-24 22:30:56.364 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - - - 304 - application/javascript 146.1036ms
+2022-07-24 22:30:56.433 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - -
+2022-07-24 22:30:56.440 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2022-07-24 22:30:56.615 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundaryuP5A8RXG5YkBTpzA 359 - 200 0 - 852.1313ms
+2022-07-24 22:30:56.613 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_blazor/initializers - -
+2022-07-24 22:30:56.614 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 306.2520ms
+2022-07-24 22:30:56.508 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - - - 404 0 - 75.1097ms
+2022-07-24 22:30:56.631 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2022-07-24 22:30:56.714 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2022-07-24 22:30:56.722 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_blazor/initializers - - - 200 - application/json;+charset=utf-8 108.0574ms
+2022-07-24 22:30:56.818 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/favicon.ico - -
+2022-07-24 22:30:56.866 +03:00 [INF] The file /favicon.ico was not modified
+2022-07-24 22:30:56.878 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2022-07-24 22:30:57.662 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/favicon.ico - - - 304 - image/x-icon 843.1496ms
+2022-07-24 22:30:57.666 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2022-07-24 22:30:57.679 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2022-07-24 22:30:57.685 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 807.1767ms
+2022-07-24 22:30:57.832 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7099/_blazor?id=18IJcUf-bKe7vsa2oN0J7w - -
+2022-07-24 22:30:57.835 +03:00 [INF] Executing endpoint '/_blazor'
+2022-07-24 22:30:58.006 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:31:37.710 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 22:31:37.716 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 22:31:37.720 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 22:31:37.724 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 22:31:37.727 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 22:31:37.730 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:31:37.732 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:31:37.748 +03:00 [INF] Executed page /Index in 25.0236ms
+2022-07-24 22:31:37.751 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 22:31:37.773 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 62.3213ms
+2022-07-24 22:31:37.891 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundaryVT0WHH6cCsVhJjs8 359
+2022-07-24 22:31:37.894 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2022-07-24 22:31:37.896 +03:00 [INF] Executed endpoint '/_blazor'
+2022-07-24 22:31:37.902 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2022-07-24 22:31:37.903 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7099/_blazor?id=18IJcUf-bKe7vsa2oN0J7w - - - 101 - - 40071.0001ms
+2022-07-24 22:31:37.906 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundaryVT0WHH6cCsVhJjs8 359 - 200 0 - 14.4037ms
+2022-07-24 22:31:38.272 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:31:38.286 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:31:38.963 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/lightbox.min.map - -
+2022-07-24 22:31:38.969 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 696.7226ms
+2022-07-24 22:31:39.025 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/lightbox.min.map - - - 404 0 - 61.2513ms
+2022-07-24 22:31:39.258 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 972.3165ms
+2022-07-24 22:31:53.450 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin/index - -
+2022-07-24 22:31:53.528 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:31:53.541 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:31:53.547 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:31:53.566 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:31:53.599 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:31:53.868 +03:00 [INF] Executed page /Admin/Index in 324.5214ms
+2022-07-24 22:31:53.874 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:31:53.879 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin/index - - - 200 - text/html;+charset=utf-8 428.7952ms
+2022-07-24 22:31:54.768 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - -
+2022-07-24 22:31:54.768 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - -
+2022-07-24 22:31:54.900 +03:00 [INF] The file /_framework/blazor.server.js was not modified
+2022-07-24 22:31:54.795 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:31:54.768 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminsite.css - -
+2022-07-24 22:31:54.939 +03:00 [INF] The file /css/adminsite.css was not modified
+2022-07-24 22:31:54.896 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - - - 404 0 - 127.8319ms
+2022-07-24 22:31:54.925 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - - - 304 - application/javascript 156.4516ms
+2022-07-24 22:31:54.770 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:31:55.017 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminsite.css - - - 304 - text/css 249.7959ms
+2022-07-24 22:31:55.076 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - -
+2022-07-24 22:31:55.271 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 493.9989ms
+2022-07-24 22:31:55.279 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - - - 404 0 - 202.3351ms
+2022-07-24 22:31:55.282 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 486.1638ms
+2022-07-24 22:31:55.543 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_blazor/initializers - -
+2022-07-24 22:31:56.276 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2022-07-24 22:31:56.280 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2022-07-24 22:31:56.282 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_blazor/initializers - - - 200 - application/json;+charset=utf-8 738.7249ms
+2022-07-24 22:31:56.359 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2022-07-24 22:31:56.397 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2022-07-24 22:31:56.400 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2022-07-24 22:31:56.404 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 45.2098ms
+2022-07-24 22:31:56.432 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7099/_blazor?id=thCb05UrAZMj4bzUiMpcGg - -
+2022-07-24 22:31:56.435 +03:00 [INF] Executing endpoint '/_blazor'
+2022-07-24 22:31:56.475 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:32:10.020 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/counter - -
+2022-07-24 22:32:10.025 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/counter - - - 404 0 - 4.5979ms
+2022-07-24 22:32:10.755 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundaryx3w7urfXMYPKA8ox 359
+2022-07-24 22:32:10.767 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2022-07-24 22:32:10.769 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2022-07-24 22:32:10.777 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundaryx3w7urfXMYPKA8ox 359 - 200 0 - 21.7558ms
+2022-07-24 22:32:10.801 +03:00 [INF] Executed endpoint '/_blazor'
+2022-07-24 22:32:10.803 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7099/_blazor?id=thCb05UrAZMj4bzUiMpcGg - - - 101 - - 14371.3218ms
+2022-07-24 22:32:16.199 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admincounter - -
+2022-07-24 22:32:16.202 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admincounter - - - 404 0 - 3.7512ms
+2022-07-24 22:32:20.376 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin/counter - -
+2022-07-24 22:32:20.385 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin/counter - - - 404 0 - 8.5772ms
+2022-07-24 22:32:24.163 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:32:24.172 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:32:24.175 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:32:24.180 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:32:24.183 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:32:24.191 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:32:24.212 +03:00 [INF] Executed page /Admin/Index in 34.1936ms
+2022-07-24 22:32:24.227 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:32:24.239 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 75.9107ms
+2022-07-24 22:32:24.376 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminsite.css - -
+2022-07-24 22:32:24.379 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - -
+2022-07-24 22:32:24.379 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - -
+2022-07-24 22:32:24.382 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:32:24.405 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 23.3299ms
+2022-07-24 22:32:24.402 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - - - 404 0 - 23.1571ms
+2022-07-24 22:32:24.403 +03:00 [INF] The file /_framework/blazor.server.js was not modified
+2022-07-24 22:32:24.400 +03:00 [INF] The file /css/adminsite.css was not modified
+2022-07-24 22:32:24.415 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminsite.css - - - 304 - text/css 38.9341ms
+2022-07-24 22:32:24.414 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - - - 304 - application/javascript 34.4819ms
+2022-07-24 22:32:24.498 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:32:24.529 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - -
+2022-07-24 22:32:24.564 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 67.3993ms
+2022-07-24 22:32:24.591 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - - - 404 0 - 61.9851ms
+2022-07-24 22:32:24.603 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_blazor/initializers - -
+2022-07-24 22:32:24.606 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2022-07-24 22:32:24.610 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2022-07-24 22:32:24.612 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_blazor/initializers - - - 200 - application/json;+charset=utf-8 8.4696ms
+2022-07-24 22:32:24.745 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2022-07-24 22:32:24.817 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2022-07-24 22:32:24.830 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2022-07-24 22:32:24.837 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 92.3684ms
+2022-07-24 22:32:25.144 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7099/_blazor?id=80_44FJ2OlYB5CaoQjQunw - -
+2022-07-24 22:32:25.150 +03:00 [INF] Executing endpoint '/_blazor'
+2022-07-24 22:32:25.243 +03:00 [INF] Executed endpoint '/_blazor'
+2022-07-24 22:32:25.246 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7099/_blazor?id=80_44FJ2OlYB5CaoQjQunw - - - 101 - - 102.5947ms
+2022-07-24 22:37:30.472 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 22:37:32.249 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 22:37:35.245 +03:00 [INF] Executed DbCommand (407ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:37:35.553 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 22:37:35.769 +03:00 [INF] Executed DbCommand (157ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 22:37:37.182 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 22:37:37.212 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 22:37:37.217 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 22:37:37.347 +03:00 [INF] Hosting environment: Development
+2022-07-24 22:37:37.349 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 22:37:38.940 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 22:37:39.118 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 22:37:39.208 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 22:37:39.247 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 22:37:39.251 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 22:37:39.265 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:37:39.268 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:37:40.106 +03:00 [INF] Executed page /Index in 883.7884ms
+2022-07-24 22:37:40.116 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 22:37:40.199 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1272.8301ms
+2022-07-24 22:37:41.062 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:37:41.062 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:37:41.094 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 32.4253ms
+2022-07-24 22:37:41.193 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 120.5789ms
+2022-07-24 22:37:46.997 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 22:37:47.006 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 22:37:47.011 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 22:37:47.014 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:37:47.017 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:37:47.256 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:37:47.334 +03:00 [INF] Executed page /Admin/Index in 321.6386ms
+2022-07-24 22:37:47.337 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 22:37:47.348 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 351.1889ms
+2022-07-24 22:37:47.410 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminsite.css - -
+2022-07-24 22:37:47.414 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - -
+2022-07-24 22:37:47.415 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:37:47.415 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - -
+2022-07-24 22:37:47.432 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 17.6456ms
+2022-07-24 22:37:47.437 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - - - 404 0 - 23.3302ms
+2022-07-24 22:37:47.440 +03:00 [INF] The file /_framework/blazor.server.js was not modified
+2022-07-24 22:37:47.442 +03:00 [INF] The file /css/adminsite.css was not modified
+2022-07-24 22:37:47.507 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - - - 304 - application/javascript 92.1185ms
+2022-07-24 22:37:47.491 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:37:47.507 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminsite.css - - - 304 - text/css 97.6401ms
+2022-07-24 22:37:47.550 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - -
+2022-07-24 22:37:47.571 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - - - 404 0 - 19.8555ms
+2022-07-24 22:37:47.590 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 99.1859ms
+2022-07-24 22:37:47.720 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_blazor/initializers - -
+2022-07-24 22:37:47.769 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2022-07-24 22:37:47.783 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2022-07-24 22:37:47.786 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_blazor/initializers - - - 200 - application/json;+charset=utf-8 65.8183ms
+2022-07-24 22:37:47.895 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2022-07-24 22:37:47.908 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2022-07-24 22:37:47.944 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2022-07-24 22:37:47.947 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 51.9373ms
+2022-07-24 22:37:48.364 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7099/_blazor?id=zx51d_SMOAo1QOdbE11wwg - -
+2022-07-24 22:37:48.372 +03:00 [INF] Executing endpoint '/_blazor'
+2022-07-24 22:37:48.649 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 22:37:53.207 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Identity/Account/Login - -
+2022-07-24 22:37:53.213 +03:00 [INF] Executing endpoint '/Account/Login'
+2022-07-24 22:37:53.258 +03:00 [INF] Route matched with {page = "/Account/Login", area = "Identity"}. Executing page /Account/Login
+2022-07-24 22:37:53.478 +03:00 [INF] Executing handler method Web.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2022-07-24 22:37:53.492 +03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2022-07-24 22:37:53.497 +03:00 [INF] Executed handler method OnGetAsync, returned result .
+2022-07-24 22:37:53.500 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 22:37:53.502 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 22:37:53.626 +03:00 [INF] Executed page /Account/Login in 363.843ms
+2022-07-24 22:37:53.630 +03:00 [INF] Executed endpoint '/Account/Login'
+2022-07-24 22:37:53.639 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Identity/Account/Login - - - 200 - text/html;+charset=utf-8 433.1355ms
+2022-07-24 22:37:53.784 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundarykDmgUNHH6NmV2ATk 359
+2022-07-24 22:37:54.637 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - -
+2022-07-24 22:37:54.609 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Identity/lib/jquery-validation/dist/jquery.validate.js - -
+2022-07-24 22:37:54.388 +03:00 [INF] Executed endpoint '/_blazor'
+2022-07-24 22:37:54.718 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 22:37:54.721 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 22:37:54.669 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2022-07-24 22:37:54.898 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 179.9638ms
+2022-07-24 22:37:54.895 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7099/_blazor?id=zx51d_SMOAo1QOdbE11wwg - - - 101 - - 6531.5412ms
+2022-07-24 22:37:56.086 +03:00 [INF] Sending file. Request path: '/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'C:\Users\Дмитрий\.nuget\packages\microsoft.aspnetcore.identity.ui\6.0.6\staticwebassets\V5\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js'
+2022-07-24 22:37:56.261 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1540.2653ms
+2022-07-24 22:37:56.324 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - - - 200 19366 application/javascript 1687.2468ms
+2022-07-24 22:37:56.328 +03:00 [INF] Sending file. Request path: '/Identity/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'C:\Users\Дмитрий\.nuget\packages\microsoft.aspnetcore.identity.ui\6.0.6\staticwebassets\V5\lib\jquery-validation\dist\jquery.validate.js'
+2022-07-24 22:37:56.378 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2022-07-24 22:37:56.522 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Identity/lib/jquery-validation/dist/jquery.validate.js - - - 200 48676 application/javascript 1912.9944ms
+2022-07-24 22:37:56.527 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/disconnect multipart/form-data;+boundary=----WebKitFormBoundarykDmgUNHH6NmV2ATk 359 - 200 0 - 2745.0407ms
+2022-07-24 23:42:04.625 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 23:42:06.966 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 23:42:11.167 +03:00 [INF] Executed DbCommand (399ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 23:42:11.569 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 23:42:11.789 +03:00 [INF] Executed DbCommand (203ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 23:42:13.142 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 23:42:13.144 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 23:42:13.150 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 23:42:13.151 +03:00 [INF] Hosting environment: Development
+2022-07-24 23:42:13.153 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 23:42:15.356 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 23:42:15.520 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 23:42:15.596 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 23:42:15.631 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 23:42:15.635 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 23:42:15.646 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 23:42:15.649 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 23:42:16.505 +03:00 [INF] Executed page /Index in 889.4238ms
+2022-07-24 23:42:16.512 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 23:42:16.575 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1227.1739ms
+2022-07-24 23:42:17.891 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 23:42:18.030 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 23:42:18.040 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 149.4468ms
+2022-07-24 23:42:19.736 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1704.9460ms
+2022-07-24 23:42:25.631 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 23:42:25.642 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 23:42:25.653 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 23:42:25.658 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 23:42:25.660 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 23:42:25.903 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 23:42:25.994 +03:00 [INF] Executed page /Admin/Index in 337.5316ms
+2022-07-24 23:42:25.999 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 23:42:26.019 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 388.5470ms
+2022-07-24 23:42:26.137 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 23:42:26.137 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminsite.css - -
+2022-07-24 23:42:26.163 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 26.1901ms
+2022-07-24 23:42:26.137 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - -
+2022-07-24 23:42:26.137 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - -
+2022-07-24 23:42:26.177 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 23:42:26.213 +03:00 [INF] The file /_framework/blazor.server.js was not modified
+2022-07-24 23:42:26.214 +03:00 [INF] The file /css/adminsite.css was not modified
+2022-07-24 23:42:26.213 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - - - 404 0 - 75.5307ms
+2022-07-24 23:42:26.229 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - - - 304 - application/javascript 91.2936ms
+2022-07-24 23:42:26.291 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminsite.css - - - 304 - text/css 153.8749ms
+2022-07-24 23:42:26.683 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - -
+2022-07-24 23:42:26.761 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 584.2522ms
+2022-07-24 23:42:27.293 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_blazor/initializers - -
+2022-07-24 23:42:26.772 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - - - 404 0 - 88.4520ms
+2022-07-24 23:42:27.772 +03:00 [INF] Executing endpoint 'Blazor initializers'
+2022-07-24 23:42:27.889 +03:00 [INF] Executed endpoint 'Blazor initializers'
+2022-07-24 23:42:27.894 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_blazor/initializers - - - 200 - application/json;+charset=utf-8 601.2735ms
+2022-07-24 23:42:28.021 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2022-07-24 23:42:28.034 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2022-07-24 23:42:28.074 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2022-07-24 23:42:28.077 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 56.3077ms
+2022-07-24 23:42:28.137 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7099/_blazor?id=wpnwOW9bM_WInMQMtZLiIg - -
+2022-07-24 23:42:28.140 +03:00 [INF] Executing endpoint '/_blazor'
+2022-07-24 23:42:28.417 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 23:58:48.072 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 23:58:51.884 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 23:59:17.155 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-24 23:59:19.209 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-24 23:59:21.874 +03:00 [INF] Executed DbCommand (303ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 23:59:22.290 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: QuerySplittingBehavior=SplitQuery 
+2022-07-24 23:59:22.482 +03:00 [INF] Executed DbCommand (163ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-07-24 23:59:23.624 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-24 23:59:23.627 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-24 23:59:23.633 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-24 23:59:23.635 +03:00 [INF] Hosting environment: Development
+2022-07-24 23:59:23.637 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-24 23:59:26.082 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-24 23:59:26.244 +03:00 [INF] Executing endpoint '/Index'
+2022-07-24 23:59:26.319 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-24 23:59:26.344 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-24 23:59:26.357 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-24 23:59:26.385 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 23:59:26.388 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 23:59:26.800 +03:00 [INF] Executed page /Index in 471.9302ms
+2022-07-24 23:59:26.808 +03:00 [INF] Executed endpoint '/Index'
+2022-07-24 23:59:26.887 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 805.5676ms
+2022-07-24 23:59:28.006 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 23:59:28.006 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 23:59:28.076 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 65.4080ms
+2022-07-24 23:59:28.648 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 642.0300ms
+2022-07-24 23:59:58.508 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/admin - -
+2022-07-24 23:59:58.550 +03:00 [INF] Executing endpoint '/Admin/Index'
+2022-07-24 23:59:58.561 +03:00 [INF] Route matched with {page = "/Admin/Index", area = ""}. Executing page /Admin/Index
+2022-07-24 23:59:58.602 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-24 23:59:58.604 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-24 23:59:58.915 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-07-24 23:59:59.040 +03:00 [INF] Executed page /Admin/Index in 440.9275ms
+2022-07-24 23:59:59.045 +03:00 [INF] Executed endpoint '/Admin/Index'
+2022-07-24 23:59:59.061 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/admin - - - 200 - text/html;+charset=utf-8 552.9568ms
+2022-07-24 23:59:59.111 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-24 23:59:59.111 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - -
+2022-07-24 23:59:59.111 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminsite.css - -
+2022-07-24 23:59:59.111 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - -
+2022-07-24 23:59:59.116 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 3.7036ms
+2022-07-24 23:59:59.136 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/BlazorShowApp.styles.css - - - 404 0 - 25.1173ms
+2022-07-24 23:59:59.138 +03:00 [INF] The file /_framework/blazor.server.js was not modified
+2022-07-24 23:59:59.138 +03:00 [INF] The file /css/adminsite.css was not modified
+2022-07-24 23:59:59.147 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/blazor.server.js - - - 304 - application/javascript 36.1976ms
+2022-07-24 23:59:59.148 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminsite.css - - - 304 - text/css 36.9624ms
+2022-07-24 23:59:59.290 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-24 23:59:59.291 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - -
+2022-07-24 23:59:59.884 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/open-iconic/font/css/open-iconic-bootstrap.min.css - - - 404 0 - 592.9175ms

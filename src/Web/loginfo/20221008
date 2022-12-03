@@ -1,0 +1,684 @@
+2022-10-08 19:40:38.261 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-08 19:40:42.830 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-10-08 19:40:50.311 +03:00 [INF] Executed DbCommand (320ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-08 19:40:50.919 +03:00 [INF] Executed DbCommand (166ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Name] = N'User'
+2022-10-08 19:40:51.438 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2022-10-08 19:40:51.514 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: SensitiveDataLoggingEnabled QuerySplittingBehavior=SplitQuery 
+2022-10-08 19:40:51.697 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-10-08 19:40:54.617 +03:00 [INF] Now listening on: https://localhost:7099
+2022-10-08 19:40:54.621 +03:00 [INF] Now listening on: http://localhost:5099
+2022-10-08 19:40:54.628 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-08 19:40:54.630 +03:00 [INF] Hosting environment: Development
+2022-10-08 19:40:54.632 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-10-08 19:41:05.215 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/ProjectAddOrEdit - -
+2022-10-08 19:41:06.467 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Administrator)
+2022-10-08 19:41:06.999 +03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2022-10-08 19:41:07.123 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/ProjectAddOrEdit - - - 302 0 - 1888.1761ms
+2022-10-08 19:41:07.196 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Identity/Account/Login?ReturnUrl=%2FAdministration%2FProjectAddOrEdit - -
+2022-10-08 19:41:07.454 +03:00 [INF] Executing endpoint '/Account/Login'
+2022-10-08 19:41:07.603 +03:00 [INF] Route matched with {page = "/Account/Login", area = "Identity"}. Executing page /Account/Login
+2022-10-08 19:41:08.399 +03:00 [INF] Executing handler method Web.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2022-10-08 19:41:08.758 +03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2022-10-08 19:41:08.786 +03:00 [INF] Executed handler method OnGetAsync, returned result .
+2022-10-08 19:41:08.904 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-10-08 19:41:09.011 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-10-08 19:41:11.133 +03:00 [INF] Executed page /Account/Login in 2977.2238ms
+2022-10-08 19:41:11.186 +03:00 [INF] Executed endpoint '/Account/Login'
+2022-10-08 19:41:11.294 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Identity/Account/Login?ReturnUrl=%2FAdministration%2FProjectAddOrEdit - - - 200 - text/html;+charset=utf-8 4097.8171ms
+2022-10-08 19:41:11.843 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/bootstrap.min.css - -
+2022-10-08 19:41:11.844 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/font-awesome.min.css - -
+2022-10-08 19:41:11.844 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/animate.min.css - -
+2022-10-08 19:41:11.845 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/lightbox.css - -
+2022-10-08 19:41:12.152 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/main.css?v=ZGfftS4QCJns-0lFMdxUqn7t13af-5v2oL8hVtKIEgc - -
+2022-10-08 19:41:12.188 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/responsive.css?v=2BDI_mBErR5t1bFa_Uj30NeSEt2kC1ySodPQcQ51l-g - -
+2022-10-08 19:41:12.188 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/site.css?v=egh-ruINew8vFmei20vlhM7OAGKxIGbDEEA1sBkKOoE - -
+2022-10-08 19:41:12.208 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/logo.png - -
+2022-10-08 19:41:12.221 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Identity/lib/jquery-validation/dist/jquery.validate.js - -
+2022-10-08 19:41:12.231 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - -
+2022-10-08 19:41:12.246 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\site.css'
+2022-10-08 19:41:12.293 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/under.png - -
+2022-10-08 19:41:12.296 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/profile1.png - -
+2022-10-08 19:41:12.357 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/profile2.png - -
+2022-10-08 19:41:12.361 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/jquery.js - -
+2022-10-08 19:41:12.367 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/bootstrap.min.js - -
+2022-10-08 19:41:12.386 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/wow.min.js - -
+2022-10-08 19:41:12.391 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/lightbox.min.js - -
+2022-10-08 19:41:12.498 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/main.js - -
+2022-10-08 19:41:12.529 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/htmx/htmx.min.js - -
+2022-10-08 19:41:12.540 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/site.js?v=Vuqtx2XQBFhayR01aXA3ZaVzh3DhhNb2S8JePMY7Va8 - -
+2022-10-08 19:41:12.548 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-10-08 19:41:12.559 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-10-08 19:41:12.592 +03:00 [INF] Sending file. Request path: '/css/lightbox.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\lightbox.css'
+2022-10-08 19:41:12.650 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/site.css?v=egh-ruINew8vFmei20vlhM7OAGKxIGbDEEA1sBkKOoE - - - 200 2593 text/css 462.0547ms
+2022-10-08 19:41:12.708 +03:00 [INF] Sending file. Request path: '/lib/htmx/htmx.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\lib\htmx\htmx.min.js'
+2022-10-08 19:41:12.787 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\site.js'
+2022-10-08 19:41:12.807 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 248.2717ms
+2022-10-08 19:41:12.823 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/lightbox.css - - - 200 3970 text/css 978.5284ms
+2022-10-08 19:41:12.826 +03:00 [INF] Sending file. Request path: '/images/logo.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\logo.png'
+2022-10-08 19:41:12.840 +03:00 [INF] Sending file. Request path: '/css/font-awesome.min.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\font-awesome.min.css'
+2022-10-08 19:41:12.830 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/htmx/htmx.min.js - - - 200 39433 application/javascript 300.9220ms
+2022-10-08 19:41:12.836 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/site.js?v=Vuqtx2XQBFhayR01aXA3ZaVzh3DhhNb2S8JePMY7Va8 - - - 200 924 application/javascript 296.6786ms
+2022-10-08 19:41:12.843 +03:00 [INF] Sending file. Request path: '/css/main.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\main.css'
+2022-10-08 19:41:12.849 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/logo.png - - - 200 4110 image/png 640.6185ms
+2022-10-08 19:41:12.855 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/font-awesome.min.css - - - 200 23739 text/css 1010.7166ms
+2022-10-08 19:41:12.859 +03:00 [INF] Sending file. Request path: '/css/animate.min.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\animate.min.css'
+2022-10-08 19:41:12.863 +03:00 [INF] Sending file. Request path: '/js/main.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\main.js'
+2022-10-08 19:41:12.867 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/main.css?v=ZGfftS4QCJns-0lFMdxUqn7t13af-5v2oL8hVtKIEgc - - - 200 43316 text/css 715.3258ms
+2022-10-08 19:41:12.870 +03:00 [INF] Sending file. Request path: '/js/lightbox.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\lightbox.min.js'
+2022-10-08 19:41:12.872 +03:00 [INF] Sending file. Request path: '/js/wow.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\wow.min.js'
+2022-10-08 19:41:12.876 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/animate.min.css - - - 200 55844 text/css 1031.3551ms
+2022-10-08 19:41:12.879 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/main.js - - - 200 2568 application/javascript 381.3658ms
+2022-10-08 19:41:12.881 +03:00 [INF] Sending file. Request path: '/images/home/profile2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\profile2.png'
+2022-10-08 19:41:12.888 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/wow.min.js - - - 200 4776 application/javascript 502.2844ms
+2022-10-08 19:41:12.891 +03:00 [INF] Sending file. Request path: '/images/home/profile1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\profile1.png'
+2022-10-08 19:41:12.885 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/lightbox.min.js - - - 200 7800 application/javascript 493.3820ms
+2022-10-08 19:41:12.900 +03:00 [INF] Sending file. Request path: '/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'C:\Users\Дмитрий\.nuget\packages\microsoft.aspnetcore.identity.ui\6.0.8\staticwebassets\V5\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js'
+2022-10-08 19:41:12.904 +03:00 [INF] Sending file. Request path: '/images/home/under.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\under.png'
+2022-10-08 19:41:12.901 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/profile2.png - - - 200 351 image/png 544.9747ms
+2022-10-08 19:41:12.909 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/profile1.png - - - 200 351 image/png 613.0377ms
+2022-10-08 19:41:12.919 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - - - 200 19366 application/javascript 688.3112ms
+2022-10-08 19:41:12.920 +03:00 [INF] Sending file. Request path: '/css/responsive.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\responsive.css'
+2022-10-08 19:41:12.925 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/under.png - - - 200 12837 image/png 632.8279ms
+2022-10-08 19:41:13.166 +03:00 [INF] Sending file. Request path: '/Identity/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'C:\Users\Дмитрий\.nuget\packages\microsoft.aspnetcore.identity.ui\6.0.8\staticwebassets\V5\lib\jquery-validation\dist\jquery.validate.js'
+2022-10-08 19:41:13.167 +03:00 [INF] Sending file. Request path: '/js/bootstrap.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\bootstrap.min.js'
+2022-10-08 19:41:13.183 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/responsive.css?v=2BDI_mBErR5t1bFa_Uj30NeSEt2kC1ySodPQcQ51l-g - - - 200 10698 text/css 995.4916ms
+2022-10-08 19:41:13.180 +03:00 [INF] Sending file. Request path: '/css/bootstrap.min.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\bootstrap.min.css'
+2022-10-08 19:41:13.200 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Identity/lib/jquery-validation/dist/jquery.validate.js - - - 200 48676 application/javascript 979.9327ms
+2022-10-08 19:41:13.202 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/bootstrap.min.js - - - 200 35951 application/javascript 834.7226ms
+2022-10-08 19:41:13.242 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/bootstrap.min.css - - - 200 117305 text/css 1398.3367ms
+2022-10-08 19:41:13.256 +03:00 [INF] Sending file. Request path: '/js/jquery.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\jquery.js'
+2022-10-08 19:41:13.273 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/jquery.js - - - 200 93106 application/javascript 911.7028ms
+2022-10-08 19:41:13.291 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 742.8127ms
+2022-10-08 19:41:14.760 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/fonts/fontawesome-webfont.woff2?v=4.3.0 - -
+2022-10-08 19:41:14.760 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/footer.png - -
+2022-10-08 19:41:15.369 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/lightbox/prev.png - -
+2022-10-08 19:41:15.376 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/lightbox/next.png - -
+2022-10-08 19:41:15.562 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/lightbox/loading.gif - -
+2022-10-08 19:41:15.562 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/lightbox/close.png - -
+2022-10-08 19:41:15.604 +03:00 [INF] Sending file. Request path: '/images/lightbox/next.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\lightbox\next.png'
+2022-10-08 19:41:15.605 +03:00 [INF] Sending file. Request path: '/images/lightbox/prev.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\lightbox\prev.png'
+2022-10-08 19:41:15.622 +03:00 [INF] Sending file. Request path: '/images/home/footer.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\footer.png'
+2022-10-08 19:41:15.623 +03:00 [INF] Sending file. Request path: '/images/lightbox/close.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\lightbox\close.png'
+2022-10-08 19:41:15.628 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/lightbox/next.png - - - 200 1350 image/png 251.5896ms
+2022-10-08 19:41:15.631 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/lightbox/prev.png - - - 200 1360 image/png 262.1545ms
+2022-10-08 19:41:15.634 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/footer.png - - - 200 31995 image/png 873.4920ms
+2022-10-08 19:41:15.640 +03:00 [INF] Sending file. Request path: '/images/lightbox/loading.gif'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\lightbox\loading.gif'
+2022-10-08 19:41:15.637 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/lightbox/close.png - - - 200 280 image/png 75.0404ms
+2022-10-08 19:41:15.652 +03:00 [INF] Sending file. Request path: '/fonts/fontawesome-webfont.woff2'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\fonts\fontawesome-webfont.woff2'
+2022-10-08 19:41:15.731 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/fonts/fontawesome-webfont.woff2?v=4.3.0 - - - 200 56780 font/woff2 998.4373ms
+2022-10-08 19:41:15.717 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/lightbox/loading.gif - - - 200 8476 image/gif 193.8152ms
+2022-10-08 19:41:16.078 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/ico/apple-touch-icon-144-precomposed.png - -
+2022-10-08 19:41:16.088 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/ico/favicon.ico - -
+2022-10-08 19:41:16.110 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/ico/favicon.ico - - - 404 0 - 21.3199ms
+2022-10-08 19:41:16.110 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/ico/apple-touch-icon-144-precomposed.png - - - 404 0 - 31.7382ms
+2022-10-08 20:38:01.845 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-10-08 20:38:01.855 +03:00 [INF] Executing endpoint '/Index'
+2022-10-08 20:38:01.871 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-10-08 20:38:01.876 +03:00 [INF] Executing handler method Web.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-10-08 20:38:01.879 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-10-08 20:38:01.883 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-10-08 20:38:01.885 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-10-08 20:38:02.022 +03:00 [INF] Executed page /Index in 148.3813ms
+2022-10-08 20:38:02.027 +03:00 [INF] Executed endpoint '/Index'
+2022-10-08 20:38:02.040 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 195.3403ms
+2022-10-08 20:38:02.722 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/house.png - -
+2022-10-08 20:38:02.722 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle1.png - -
+2022-10-08 20:38:02.722 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle2.png - -
+2022-10-08 20:38:02.722 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud1.png - -
+2022-10-08 20:38:02.745 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud2.png - -
+2022-10-08 20:38:02.745 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud3.png - -
+2022-10-08 20:38:02.753 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/cycle.png - -
+2022-10-08 20:38:02.760 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/icon2.png - -
+2022-10-08 20:38:02.757 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/icon1.png - -
+2022-10-08 20:38:02.765 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/icon3.png - -
+2022-10-08 20:38:02.770 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/image1.png - -
+2022-10-08 20:38:02.778 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/image3.png - -
+2022-10-08 20:38:02.774 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/image2.png - -
+2022-10-08 20:38:02.782 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/clients.png - -
+2022-10-08 20:38:02.786 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/circle1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\circle1.png'
+2022-10-08 20:38:02.789 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/circle2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\circle2.png'
+2022-10-08 20:38:02.746 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/sun.png - -
+2022-10-08 20:38:02.797 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/cloud1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\cloud1.png'
+2022-10-08 20:38:02.803 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle2.png - - - 200 1722 image/png 80.8990ms
+2022-10-08 20:38:02.800 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle1.png - - - 200 2259 image/png 77.2952ms
+2022-10-08 20:38:02.813 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/cloud2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\cloud2.png'
+2022-10-08 20:38:02.830 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/cloud3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\cloud3.png'
+2022-10-08 20:38:02.829 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud1.png - - - 200 3583 image/png 105.5578ms
+2022-10-08 20:38:02.833 +03:00 [INF] Sending file. Request path: '/images/home/icon2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\icon2.png'
+2022-10-08 20:38:02.836 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud2.png - - - 200 4628 image/png 91.4506ms
+2022-10-08 20:38:02.875 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud3.png - - - 200 3894 image/png 130.5458ms
+2022-10-08 20:38:02.878 +03:00 [INF] Sending file. Request path: '/images/home/icon1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\icon1.png'
+2022-10-08 20:38:02.882 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/icon2.png - - - 200 392 image/png 121.6189ms
+2022-10-08 20:38:02.884 +03:00 [INF] Sending file. Request path: '/images/home/icon3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\icon3.png'
+2022-10-08 20:38:02.887 +03:00 [INF] Sending file. Request path: '/images/home/image1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\image1.png'
+2022-10-08 20:38:02.890 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/icon1.png - - - 200 392 image/png 132.5468ms
+2022-10-08 20:38:02.892 +03:00 [INF] Sending file. Request path: '/images/home/image3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\image3.png'
+2022-10-08 20:38:02.898 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/image1.png - - - 200 1826 image/png 128.3403ms
+2022-10-08 20:38:02.926 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/image3.png - - - 200 1816 image/png 148.5298ms
+2022-10-08 20:38:02.895 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/icon3.png - - - 200 392 image/png 129.9303ms
+2022-10-08 20:38:02.928 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/house.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\house.png'
+2022-10-08 20:38:02.952 +03:00 [INF] Sending file. Request path: '/images/home/image2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\image2.png'
+2022-10-08 20:38:02.953 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/sun.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\sun.png'
+2022-10-08 20:38:02.972 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/sun.png - - - 200 6170 image/png 226.3725ms
+2022-10-08 20:38:02.958 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/house.png - - - 200 32159 image/png 235.3461ms
+2022-10-08 20:38:02.964 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/image2.png - - - 200 1700 image/png 186.7564ms
+2022-10-08 20:38:02.955 +03:00 [INF] Sending file. Request path: '/images/home/cycle.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\cycle.png'
+2022-10-08 20:38:02.975 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client1.png - -
+2022-10-08 20:38:02.978 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client2.png - -
+2022-10-08 20:38:02.982 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client3.png - -
+2022-10-08 20:38:03.011 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client4.png - -
+2022-10-08 20:38:03.014 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client5.png - -
+2022-10-08 20:38:03.016 +03:00 [INF] Sending file. Request path: '/images/home/client3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client3.png'
+2022-10-08 20:38:03.019 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client6.png - -
+2022-10-08 20:38:02.991 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/cycle.png - - - 200 31630 image/png 237.9046ms
+2022-10-08 20:38:03.025 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client3.png - - - 200 536 image/png 43.1035ms
+2022-10-08 20:38:03.023 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-10-08 20:38:03.035 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/htmx/htmx.min.js - -
+2022-10-08 20:38:03.037 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-10-08 20:38:03.047 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider-bg.png - -
+2022-10-08 20:38:03.059 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/tour-bg.png - -
+2022-10-08 20:38:03.035 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/site.js?v=Vuqtx2XQBFhayR01aXA3ZaVzh3DhhNb2S8JePMY7Va8 - -
+2022-10-08 20:38:03.075 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/tour-icon2.png - -
+2022-10-08 20:38:03.105 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\site.js'
+2022-10-08 20:38:03.064 +03:00 [INF] Sending file. Request path: '/lib/htmx/htmx.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\lib\htmx\htmx.min.js'
+2022-10-08 20:38:03.109 +03:00 [INF] Sending file. Request path: '/images/home/slider-bg.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider-bg.png'
+2022-10-08 20:38:03.115 +03:00 [INF] Sending file. Request path: '/images/home/client6.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client6.png'
+2022-10-08 20:38:03.147 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider-bg.png - - - 200 6484 image/png 99.4321ms
+2022-10-08 20:38:03.112 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/site.js?v=Vuqtx2XQBFhayR01aXA3ZaVzh3DhhNb2S8JePMY7Va8 - - - 0 924 application/javascript 76.8202ms
+2022-10-08 20:38:03.118 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/htmx/htmx.min.js - - - 0 39433 application/javascript 83.2500ms
+2022-10-08 20:38:03.156 +03:00 [INF] Sending file. Request path: '/images/home/client5.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client5.png'
+2022-10-08 20:38:03.157 +03:00 [INF] Sending file. Request path: '/images/home/client4.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client4.png'
+2022-10-08 20:38:03.159 +03:00 [INF] Sending file. Request path: '/images/home/client2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client2.png'
+2022-10-08 20:38:03.181 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client4.png - - - 200 536 image/png 169.1057ms
+2022-10-08 20:38:03.161 +03:00 [INF] Sending file. Request path: '/images/home/client1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client1.png'
+2022-10-08 20:38:03.343 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client6.png - - - 200 536 image/png 323.4666ms
+2022-10-08 20:38:03.343 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client2.png - - - 200 536 image/png 365.4731ms
+2022-10-08 20:38:03.345 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 322.0040ms
+2022-10-08 20:38:03.349 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client1.png - - - 200 536 image/png 373.8078ms
+2022-10-08 20:38:03.353 +03:00 [INF] Sending file. Request path: '/images/home/clients.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\clients.png'
+2022-10-08 20:38:03.356 +03:00 [INF] Sending file. Request path: '/images/home/tour-icon2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\tour-icon2.png'
+2022-10-08 20:38:03.358 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client5.png - - - 200 536 image/png 343.4771ms
+2022-10-08 20:38:03.363 +03:00 [INF] Sending file. Request path: '/images/home/tour-bg.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\tour-bg.png'
+2022-10-08 20:38:03.371 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/tour-icon2.png - - - 200 13478 image/png 296.0580ms
+2022-10-08 20:38:03.365 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/clients.png - - - 200 44633 image/png 582.6641ms
+2022-10-08 20:38:03.391 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/tour-bg.png - - - 200 17691 image/png 332.0766ms
+2022-10-08 20:38:03.392 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 354.8843ms
+2022-10-08 20:38:12.213 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Blog - -
+2022-10-08 20:38:12.230 +03:00 [INF] Executing endpoint '/Blog'
+2022-10-08 20:38:12.241 +03:00 [INF] Route matched with {page = "/Blog", area = ""}. Executing page /Blog
+2022-10-08 20:38:12.548 +03:00 [INF] Executing handler method Web.Pages.BlogModel.OnGetAsync - ModelState is "Valid"
+2022-10-08 20:38:12.591 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: SensitiveDataLoggingEnabled QuerySplittingBehavior=SplitQuery 
+2022-10-08 20:38:13.670 +03:00 [INF] Executed DbCommand (157ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Blogs] AS [b]
+2022-10-08 20:38:14.231 +03:00 [INF] Executed DbCommand (224ms) [Parameters=[@__category_0='Все' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Information], [c].[Name]
+FROM [Categories] AS [c]
+WHERE [c].[Name] = @__category_0
+ORDER BY [c].[Id]
+2022-10-08 20:38:14.291 +03:00 [WRN] Категория по Name не найдена null
+2022-10-08 20:38:14.680 +03:00 [INF] Executed DbCommand (165ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits]
+FROM [Blogs] AS [b]
+ORDER BY [b].[CreateDateTime] DESC, [b].[Id]
+2022-10-08 20:38:14.946 +03:00 [INF] Executed DbCommand (158ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[BlogId], [t].[CreateDateTime], [t].[CreateWebUser], [t].[ResponseToBlogMessageId], [t].[Text], [t].[Visible], [b].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN (
+    SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible]
+    FROM [BlogMessages] AS [b0]
+    WHERE [b0].[Visible] = CAST(1 AS bit)
+) AS [t] ON [b].[Id] = [t].[BlogId]
+ORDER BY [b].[CreateDateTime] DESC, [b].[Id]
+2022-10-08 20:38:15.084 +03:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-10-08 20:38:15.308 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Blogs] AS [b]
+2022-10-08 20:38:15.528 +03:00 [INF] Executed DbCommand (171ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Information], [c].[Name]
+FROM [Categories] AS [c]
+ORDER BY [c].[Id]
+2022-10-08 20:38:15.815 +03:00 [INF] Executed DbCommand (164ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CategoryId], [t].[CreateDateTime], [t].[CreateWebUser], [t].[Image], [t].[Likes], [t].[Text], [t].[Title], [t].[Twits], [c].[Id]
+FROM [Categories] AS [c]
+INNER JOIN (
+    SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits]
+    FROM [Blogs] AS [b]
+) AS [t] ON [c].[Id] = [t].[CategoryId]
+ORDER BY [c].[Id], [t].[CreateDateTime] DESC, [t].[Id]
+2022-10-08 20:38:15.981 +03:00 [INF] Executed DbCommand (158ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[BlogId], [t0].[CreateDateTime], [t0].[CreateWebUser], [t0].[ResponseToBlogMessageId], [t0].[Text], [t0].[Visible], [c].[Id], [t].[Id]
+FROM [Categories] AS [c]
+INNER JOIN (
+    SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime]
+    FROM [Blogs] AS [b]
+) AS [t] ON [c].[Id] = [t].[CategoryId]
+INNER JOIN (
+    SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible]
+    FROM [BlogMessages] AS [b0]
+    WHERE [b0].[Visible] = CAST(1 AS bit)
+) AS [t0] ON [t].[Id] = [t0].[BlogId]
+ORDER BY [c].[Id], [t].[CreateDateTime] DESC, [t].[Id]
+2022-10-08 20:38:16.189 +03:00 [INF] Executed DbCommand (161ms) [Parameters=[@__p_0='5'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [b].[Id], [b].[BlogId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[ResponseToBlogMessageId], [b].[Text], [b].[Visible]
+FROM [BlogMessages] AS [b]
+ORDER BY [b].[CreateDateTime] DESC
+2022-10-08 20:38:16.273 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-10-08 20:38:16.456 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[@__ToUpper_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__ToUpper_0
+2022-10-08 20:38:16.681 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[@__ToUpper_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__ToUpper_0
+2022-10-08 20:38:17.038 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[@__ToUpper_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__ToUpper_0
+2022-10-08 20:38:17.203 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[@__ToUpper_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__ToUpper_0
+2022-10-08 20:38:17.381 +03:00 [INF] Executed DbCommand (167ms) [Parameters=[@__ToUpper_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__ToUpper_0
+2022-10-08 20:38:17.578 +03:00 [INF] Executed page /Blog in 5331.2675ms
+2022-10-08 20:38:17.581 +03:00 [INF] Executed endpoint '/Blog'
+2022-10-08 20:38:17.595 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Blog - - - 200 - text/html;+charset=utf-8 5381.8632ms
+2022-10-08 20:38:18.092 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/blog/2.jpg - -
+2022-10-08 20:38:18.124 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/blog/3.jpg - -
+2022-10-08 20:38:18.288 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/tour-icon1.png - -
+2022-10-08 20:38:18.124 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/avatars/avatar1591-1.jpg - -
+2022-10-08 20:38:18.124 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/avatars/avatar1675.jpg - -
+2022-10-08 20:38:18.125 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-10-08 20:38:18.344 +03:00 [INF] Sending file. Request path: '/images/home/tour-icon1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\tour-icon1.png'
+2022-10-08 20:38:18.384 +03:00 [INF] Sending file. Request path: '/images/avatars/avatar1675.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\avatars\avatar1675.jpg'
+2022-10-08 20:38:18.420 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/tour-icon1.png - - - 200 10612 image/png 132.1215ms
+2022-10-08 20:38:18.388 +03:00 [INF] Sending file. Request path: '/images/avatars/avatar1591-1.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\avatars\avatar1591-1.jpg'
+2022-10-08 20:38:18.481 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/avatars/avatar1675.jpg - - - 200 2813 image/jpeg 355.9084ms
+2022-10-08 20:38:18.186 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-10-08 20:38:18.332 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/left.png - -
+2022-10-08 20:38:18.340 +03:00 [INF] Sending file. Request path: '/images/blog/3.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\blog\3.jpg'
+2022-10-08 20:38:18.614 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 489.6955ms
+2022-10-08 20:38:18.627 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/avatars/avatar1591-1.jpg - - - 200 4726 image/jpeg 503.0093ms
+2022-10-08 20:38:18.640 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 454.4734ms
+2022-10-08 20:38:18.252 +03:00 [INF] Sending file. Request path: '/images/blog/2.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\blog\2.jpg'
+2022-10-08 20:38:18.332 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/right.png - -
+2022-10-08 20:38:18.703 +03:00 [INF] Sending file. Request path: '/images/portfolio/left.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\left.png'
+2022-10-08 20:38:18.705 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/blog/3.jpg - - - 200 17750 image/jpeg 581.3917ms
+2022-10-08 20:38:18.719 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/blog/2.jpg - - - 200 17790 image/jpeg 626.3325ms
+2022-10-08 20:38:18.757 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/left.png - - - 200 1311 image/png 425.1042ms
+2022-10-08 20:38:18.763 +03:00 [INF] Sending file. Request path: '/images/portfolio/right.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\right.png'
+2022-10-08 20:38:19.354 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/right.png - - - 200 1312 image/png 1021.0439ms
+2022-10-08 20:38:39.006 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/blog/blog-arrow.png - -
+2022-10-08 20:38:39.016 +03:00 [INF] Sending file. Request path: '/images/blog/blog-arrow.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\blog\blog-arrow.png'
+2022-10-08 20:38:39.020 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/blog/blog-arrow.png - - - 200 2794 image/png 13.9107ms
+2022-10-08 21:55:54.617 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Portfolio - -
+2022-10-08 21:55:54.674 +03:00 [INF] Executing endpoint '/Portfolio'
+2022-10-08 21:55:54.681 +03:00 [INF] Route matched with {page = "/Portfolio", area = ""}. Executing page /Portfolio
+2022-10-08 21:55:54.688 +03:00 [INF] Executing handler method Web.Pages.PortfolioModel.OnGetAsync - ModelState is "Valid"
+2022-10-08 21:55:54.930 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: SensitiveDataLoggingEnabled QuerySplittingBehavior=SplitQuery 
+2022-10-08 21:55:55.910 +03:00 [INF] Executed DbCommand (161ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Projects] AS [p]
+2022-10-08 21:55:56.131 +03:00 [INF] Executed DbCommand (157ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Information], [c].[Name]
+FROM [CategoriesProject] AS [c]
+ORDER BY [c].[Id]
+2022-10-08 21:55:56.313 +03:00 [INF] Executed DbCommand (161ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDateTime], [p].[CreateWebUser], [p].[Image], [p].[PreviewLink], [p].[ProjectName], [p].[Text], [c].[Id]
+FROM [CategoriesProject] AS [c]
+INNER JOIN [Projects] AS [p] ON [c].[Id] = [p].[CategoryId]
+ORDER BY [c].[Id]
+2022-10-08 21:55:56.694 +03:00 [INF] Executed DbCommand (158ms) [Parameters=[@__category_0='Все' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Information], [c].[Name]
+FROM [CategoriesProject] AS [c]
+WHERE [c].[Name] = @__category_0
+ORDER BY [c].[Id]
+2022-10-08 21:55:56.701 +03:00 [WRN] Категория по Name не найдена null
+2022-10-08 21:55:57.010 +03:00 [INF] Executed DbCommand (159ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDateTime], [p].[CreateWebUser], [p].[Image], [p].[PreviewLink], [p].[ProjectName], [p].[Text], [c].[Id], [c].[Information], [c].[Name]
+FROM [Projects] AS [p]
+INNER JOIN [CategoriesProject] AS [c] ON [p].[CategoryId] = [c].[Id]
+ORDER BY [p].[Id], [c].[Id]
+2022-10-08 21:55:57.183 +03:00 [INF] Executed DbCommand (161ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ProjectsId], [t].[SkillsId], [t].[Id], [t].[Information], [t].[Name], [p].[Id], [c].[Id]
+FROM [Projects] AS [p]
+INNER JOIN [CategoriesProject] AS [c] ON [p].[CategoryId] = [c].[Id]
+INNER JOIN (
+    SELECT [p0].[ProjectsId], [p0].[SkillsId], [s].[Id], [s].[Information], [s].[Name]
+    FROM [ProjectSkill] AS [p0]
+    INNER JOIN [Skills] AS [s] ON [p0].[SkillsId] = [s].[Id]
+) AS [t] ON [p].[Id] = [t].[ProjectsId]
+ORDER BY [p].[Id], [c].[Id]
+2022-10-08 21:55:57.267 +03:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-10-08 21:55:57.324 +03:00 [INF] Executed page /Portfolio in 2638.0303ms
+2022-10-08 21:55:57.329 +03:00 [INF] Executed endpoint '/Portfolio'
+2022-10-08 21:55:57.344 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Portfolio - - - 200 - text/html;+charset=utf-8 2727.3479ms
+2022-10-08 21:55:57.593 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/1.jpg - -
+2022-10-08 21:55:57.595 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/3.jpg - -
+2022-10-08 21:55:57.595 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/2.jpg - -
+2022-10-08 21:55:57.595 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/4.jpg - -
+2022-10-08 21:55:57.608 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/5.jpg - -
+2022-10-08 21:55:57.622 +03:00 [INF] Sending file. Request path: '/images/portfolio/2.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\2.jpg'
+2022-10-08 21:55:57.640 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/6.jpg - -
+2022-10-08 21:55:57.622 +03:00 [INF] Sending file. Request path: '/images/portfolio/3.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\3.jpg'
+2022-10-08 21:55:57.661 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/7.jpg - -
+2022-10-08 21:55:57.664 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/2.jpg - - - 200 3485 image/jpeg 69.7808ms
+2022-10-08 21:55:57.678 +03:00 [INF] Sending file. Request path: '/images/portfolio/6.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\6.jpg'
+2022-10-08 21:55:57.681 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/3.jpg - - - 200 4056 image/jpeg 85.8912ms
+2022-10-08 21:55:57.692 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/8.jpg - -
+2022-10-08 21:55:57.694 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/9.jpg - -
+2022-10-08 21:55:57.704 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/6.jpg - - - 200 3539 image/jpeg 63.2043ms
+2022-10-08 21:55:57.706 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/10.jpg - -
+2022-10-08 21:55:57.753 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-10-08 21:55:57.755 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-10-08 21:55:57.769 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 15.1568ms
+2022-10-08 21:55:57.772 +03:00 [INF] Sending file. Request path: '/images/portfolio/4.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\4.jpg'
+2022-10-08 21:55:57.768 +03:00 [INF] Sending file. Request path: '/images/portfolio/1.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\1.jpg'
+2022-10-08 21:55:57.840 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/1.jpg - - - 200 4187 image/jpeg 247.0429ms
+2022-10-08 21:55:57.788 +03:00 [INF] Sending file. Request path: '/images/portfolio/7.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\7.jpg'
+2022-10-08 21:55:57.838 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/4.jpg - - - 200 4178 image/jpeg 242.6323ms
+2022-10-08 21:55:57.783 +03:00 [INF] Sending file. Request path: '/images/portfolio/5.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\5.jpg'
+2022-10-08 21:55:57.844 +03:00 [INF] Sending file. Request path: '/images/portfolio/9.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\9.jpg'
+2022-10-08 21:55:57.848 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/7.jpg - - - 200 3459 image/jpeg 186.3648ms
+2022-10-08 21:55:57.854 +03:00 [INF] Sending file. Request path: '/images/portfolio/10.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\10.jpg'
+2022-10-08 21:55:57.857 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/5.jpg - - - 200 3998 image/jpeg 249.4529ms
+2022-10-08 21:55:57.860 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/9.jpg - - - 200 4187 image/jpeg 166.6286ms
+2022-10-08 21:55:57.869 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/10.jpg - - - 200 3485 image/jpeg 162.9177ms
+2022-10-08 21:55:57.863 +03:00 [INF] Sending file. Request path: '/images/portfolio/8.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\8.jpg'
+2022-10-08 21:55:57.937 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/8.jpg - - - 200 4197 image/jpeg 245.1383ms
+2022-10-08 21:55:58.075 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 319.7233ms
+2022-10-08 21:56:05.500 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Contact - -
+2022-10-08 21:56:05.510 +03:00 [INF] Executing endpoint '/Contact'
+2022-10-08 21:56:05.520 +03:00 [INF] Route matched with {page = "/Contact", area = ""}. Executing page /Contact
+2022-10-08 21:56:05.524 +03:00 [INF] Executing handler method Web.Pages.ContactModel.OnGet - ModelState is "Valid"
+2022-10-08 21:56:05.527 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-10-08 21:56:05.531 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-10-08 21:56:05.533 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-10-08 21:56:05.561 +03:00 [INF] Executed page /Contact in 37.5879ms
+2022-10-08 21:56:05.564 +03:00 [INF] Executed endpoint '/Contact'
+2022-10-08 21:56:05.577 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Contact - - - 200 - text/html;+charset=utf-8 77.0627ms
+2022-10-08 21:56:05.717 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-10-08 21:56:05.717 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-10-08 21:56:05.875 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 157.5942ms
+2022-10-08 21:56:06.736 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1020.0894ms
+2022-10-08 21:56:17.928 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/AboutUs - -
+2022-10-08 21:56:17.976 +03:00 [INF] Executing endpoint '/AboutUs'
+2022-10-08 21:56:17.988 +03:00 [INF] Route matched with {page = "/AboutUs", area = ""}. Executing page /AboutUs
+2022-10-08 21:56:17.992 +03:00 [INF] Executing handler method Web.Pages.AboutUsModel.OnGet - ModelState is "Valid"
+2022-10-08 21:56:17.996 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-10-08 21:56:18.004 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-10-08 21:56:18.006 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-10-08 21:56:18.065 +03:00 [INF] Executed page /AboutUs in 73.6663ms
+2022-10-08 21:56:18.069 +03:00 [INF] Executed endpoint '/AboutUs'
+2022-10-08 21:56:18.684 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/aboutus/1.png - -
+2022-10-08 21:56:18.736 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/AboutUs - - - 200 - text/html;+charset=utf-8 807.3216ms
+2022-10-08 21:56:18.743 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/aboutus/1.jpg - -
+2022-10-08 21:56:18.743 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/aboutus/2.jpg - -
+2022-10-08 21:56:18.743 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/aboutus/3.jpg - -
+2022-10-08 21:56:18.744 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/aboutus/4.jpg - -
+2022-10-08 21:56:19.399 +03:00 [INF] Sending file. Request path: '/images/aboutus/1.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\aboutus\1.jpg'
+2022-10-08 21:56:19.399 +03:00 [INF] Sending file. Request path: '/images/aboutus/2.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\aboutus\2.jpg'
+2022-10-08 21:56:19.404 +03:00 [INF] Sending file. Request path: '/images/aboutus/3.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\aboutus\3.jpg'
+2022-10-08 21:56:19.115 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-10-08 21:56:19.309 +03:00 [INF] Sending file. Request path: '/images/aboutus/1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\aboutus\1.png'
+2022-10-08 21:56:19.419 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/aboutus/1.jpg - - - 200 8315 image/jpeg 676.0961ms
+2022-10-08 21:56:19.426 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/aboutus/2.jpg - - - 200 10040 image/jpeg 682.3535ms
+2022-10-08 21:56:19.431 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/aboutus/3.jpg - - - 200 9865 image/jpeg 687.3302ms
+2022-10-08 21:56:19.417 +03:00 [INF] Sending file. Request path: '/images/aboutus/4.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\aboutus\4.jpg'
+2022-10-08 21:56:19.442 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/aboutus/1.png - - - 200 2606 image/png 758.6250ms
+2022-10-08 21:56:19.137 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-10-08 21:56:19.502 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/aboutus/4.jpg - - - 200 9856 image/jpeg 758.4787ms
+2022-10-08 21:56:19.517 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 380.1010ms
+2022-10-08 21:56:19.292 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/aboutus/left.png - -
+2022-10-08 21:56:19.139 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/aboutus/right.png - -
+2022-10-08 21:56:19.862 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 746.5417ms
+2022-10-08 21:56:19.915 +03:00 [INF] Sending file. Request path: '/images/aboutus/left.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\aboutus\left.png'
+2022-10-08 21:56:19.928 +03:00 [INF] Sending file. Request path: '/images/aboutus/right.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\aboutus\right.png'
+2022-10-08 21:56:19.932 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/aboutus/left.png - - - 200 1291 image/png 658.7990ms
+2022-10-08 21:56:19.936 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/aboutus/right.png - - - 200 1300 image/png 797.3824ms
+2022-10-08 21:56:27.211 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-10-08 21:56:27.215 +03:00 [INF] Executing endpoint '/Index'
+2022-10-08 21:56:27.217 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-10-08 21:56:27.221 +03:00 [INF] Executing handler method Web.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-10-08 21:56:27.227 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-10-08 21:56:27.233 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-10-08 21:56:27.237 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-10-08 21:56:27.316 +03:00 [INF] Executed page /Index in 96.2736ms
+2022-10-08 21:56:27.322 +03:00 [INF] Executed endpoint '/Index'
+2022-10-08 21:56:27.339 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 127.7336ms
+2022-10-08 21:56:28.348 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle2.png - -
+2022-10-08 21:56:28.345 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/house.png - -
+2022-10-08 21:56:28.550 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-10-08 21:56:29.445 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/circle2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\circle2.png'
+2022-10-08 21:56:29.457 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/house.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\house.png'
+2022-10-08 21:56:29.463 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle2.png - - - 0 1722 image/png 1115.1101ms
+2022-10-08 21:56:28.348 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle1.png - -
+2022-10-08 21:56:28.348 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud1.png - -
+2022-10-08 21:56:29.725 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/house.png - - - 0 32159 image/png 1380.0344ms
+2022-10-08 21:56:29.752 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/circle1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\circle1.png'
+2022-10-08 21:56:28.348 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud2.png - -
+2022-10-08 21:56:28.348 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud3.png - -
+2022-10-08 21:56:29.769 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle1.png - - - 0 2259 image/png 1422.4498ms
+2022-10-08 21:56:29.761 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/cloud1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\cloud1.png'
+2022-10-08 21:56:29.780 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/cloud2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\cloud2.png'
+2022-10-08 21:56:28.348 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/sun.png - -
+2022-10-08 21:56:28.349 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/cycle.png - -
+2022-10-08 21:56:29.800 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud1.png - - - 0 3583 image/png 1451.8277ms
+2022-10-08 21:56:29.814 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud2.png - - - 0 4628 image/png 1466.0327ms
+2022-10-08 21:56:29.791 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/cloud3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\cloud3.png'
+2022-10-08 21:56:30.039 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/sun.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\sun.png'
+2022-10-08 21:56:28.349 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/image1.png - -
+2022-10-08 21:56:28.349 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/image2.png - -
+2022-10-08 21:56:30.266 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud3.png - - - 0 3894 image/png 1917.8600ms
+2022-10-08 21:56:30.271 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/sun.png - - - 0 6170 image/png 1922.6138ms
+2022-10-08 21:56:30.254 +03:00 [INF] Sending file. Request path: '/images/home/cycle.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\cycle.png'
+2022-10-08 21:56:30.280 +03:00 [INF] Sending file. Request path: '/images/home/image1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\image1.png'
+2022-10-08 21:56:30.317 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/image1.png - - - 0 1826 image/png 1967.5231ms
+2022-10-08 21:56:28.349 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/clients.png - -
+2022-10-08 21:56:28.349 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client1.png - -
+2022-10-08 21:56:30.302 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/cycle.png - - - 0 31630 image/png 1953.4350ms
+2022-10-08 21:56:30.290 +03:00 [INF] Sending file. Request path: '/images/home/image2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\image2.png'
+2022-10-08 21:56:30.383 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/image2.png - - - 0 1700 image/png 2034.2128ms
+2022-10-08 21:56:30.340 +03:00 [INF] Sending file. Request path: '/images/home/clients.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\clients.png'
+2022-10-08 21:56:28.412 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client2.png - -
+2022-10-08 21:56:28.365 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client3.png - -
+2022-10-08 21:56:28.349 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/image3.png - -
+2022-10-08 21:56:30.389 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/clients.png - - - 0 44633 image/png 2039.6613ms
+2022-10-08 21:56:30.379 +03:00 [INF] Sending file. Request path: '/images/home/client1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client1.png'
+2022-10-08 21:56:30.446 +03:00 [INF] Sending file. Request path: '/images/home/client2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client2.png'
+2022-10-08 21:56:30.465 +03:00 [INF] Sending file. Request path: '/images/home/client3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client3.png'
+2022-10-08 21:56:28.412 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client4.png - -
+2022-10-08 21:56:28.417 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client5.png - -
+2022-10-08 21:56:30.480 +03:00 [INF] Sending file. Request path: '/images/home/image3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\image3.png'
+2022-10-08 21:56:30.484 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client1.png - - - 0 536 image/png 2135.0909ms
+2022-10-08 21:56:30.491 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client2.png - - - 0 536 image/png 2079.4870ms
+2022-10-08 21:56:30.497 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client3.png - - - 0 536 image/png 2131.9600ms
+2022-10-08 21:56:30.508 +03:00 [INF] Sending file. Request path: '/images/home/client4.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client4.png'
+2022-10-08 21:56:29.726 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1175.7695ms
+2022-10-08 21:56:28.752 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client6.png - -
+2022-10-08 21:56:29.319 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-10-08 21:56:30.523 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/image3.png - - - 0 1816 image/png 2174.0699ms
+2022-10-08 21:56:30.541 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client4.png - - - 0 536 image/png 2128.0229ms
+2022-10-08 21:56:30.516 +03:00 [INF] Sending file. Request path: '/images/home/client5.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client5.png'
+2022-10-08 21:56:30.589 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client5.png - - - 0 536 image/png 2171.9151ms
+2022-10-08 21:56:30.559 +03:00 [INF] Sending file. Request path: '/images/home/client6.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client6.png'
+2022-10-08 21:56:30.555 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 1236.9316ms
+2022-10-08 21:56:30.942 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client6.png - - - 0 536 image/png 2189.2266ms
+2022-10-08 22:00:59.672 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-10-08 22:00:59.685 +03:00 [INF] Executing endpoint '/Index'
+2022-10-08 22:00:59.688 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-10-08 22:00:59.690 +03:00 [INF] Executing handler method Web.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-10-08 22:00:59.694 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-10-08 22:00:59.699 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-10-08 22:00:59.701 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-10-08 22:00:59.718 +03:00 [INF] Executed page /Index in 27.8399ms
+2022-10-08 22:00:59.721 +03:00 [INF] Executed endpoint '/Index'
+2022-10-08 22:00:59.733 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 61.6023ms
+2022-10-08 22:00:59.861 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/bootstrap.min.css - -
+2022-10-08 22:00:59.861 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/font-awesome.min.css - -
+2022-10-08 22:00:59.862 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/animate.min.css - -
+2022-10-08 22:00:59.863 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/lightbox.css - -
+2022-10-08 22:00:59.882 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/responsive.css?v=2BDI_mBErR5t1bFa_Uj30NeSEt2kC1ySodPQcQ51l-g - -
+2022-10-08 22:00:59.888 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/site.css?v=egh-ruINew8vFmei20vlhM7OAGKxIGbDEEA1sBkKOoE - -
+2022-10-08 22:00:59.897 +03:00 [INF] Sending file. Request path: '/css/lightbox.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\lightbox.css'
+2022-10-08 22:00:59.905 +03:00 [INF] Sending file. Request path: '/css/font-awesome.min.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\font-awesome.min.css'
+2022-10-08 22:00:59.877 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/main.css?v=ZGfftS4QCJns-0lFMdxUqn7t13af-5v2oL8hVtKIEgc - -
+2022-10-08 22:00:59.910 +03:00 [INF] Sending file. Request path: '/css/responsive.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\responsive.css'
+2022-10-08 22:00:59.917 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/font-awesome.min.css - - - 200 23739 text/css 55.5020ms
+2022-10-08 22:00:59.988 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/responsive.css?v=2BDI_mBErR5t1bFa_Uj30NeSEt2kC1ySodPQcQ51l-g - - - 200 10698 text/css 105.1964ms
+2022-10-08 22:00:59.912 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/lightbox.css - - - 200 3970 text/css 48.8592ms
+2022-10-08 22:01:00.004 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/logo.png - -
+2022-10-08 22:01:00.016 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/house.png - -
+2022-10-08 22:01:00.019 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle1.png - -
+2022-10-08 22:01:00.129 +03:00 [INF] Sending file. Request path: '/css/animate.min.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\animate.min.css'
+2022-10-08 22:01:00.134 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\site.css'
+2022-10-08 22:01:00.132 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/circle1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\circle1.png'
+2022-10-08 22:01:00.133 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle2.png - -
+2022-10-08 22:01:00.139 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud1.png - -
+2022-10-08 22:01:00.210 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/site.css?v=egh-ruINew8vFmei20vlhM7OAGKxIGbDEEA1sBkKOoE - - - 200 2593 text/css 322.4201ms
+2022-10-08 22:01:00.255 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle1.png - - - 200 2259 image/png 236.4174ms
+2022-10-08 22:01:00.141 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/animate.min.css - - - 200 55844 text/css 279.3036ms
+2022-10-08 22:01:00.259 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/sun.png - -
+2022-10-08 22:01:00.134 +03:00 [INF] Sending file. Request path: '/images/logo.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\logo.png'
+2022-10-08 22:01:00.265 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/icon1.png - -
+2022-10-08 22:01:00.268 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/icon2.png - -
+2022-10-08 22:01:00.270 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/icon3.png - -
+2022-10-08 22:01:00.286 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/image2.png - -
+2022-10-08 22:01:00.290 +03:00 [INF] Sending file. Request path: '/images/home/icon2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\icon2.png'
+2022-10-08 22:01:00.293 +03:00 [INF] Sending file. Request path: '/images/home/icon3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\icon3.png'
+2022-10-08 22:01:00.275 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/image1.png - -
+2022-10-08 22:01:00.280 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/logo.png - - - 200 4110 image/png 276.1578ms
+2022-10-08 22:01:00.297 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/image3.png - -
+2022-10-08 22:01:00.301 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/icon2.png - - - 200 392 image/png 32.6497ms
+2022-10-08 22:01:00.305 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/icon3.png - - - 200 392 image/png 34.2773ms
+2022-10-08 22:01:00.310 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/clients.png - -
+2022-10-08 22:01:00.310 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client1.png - -
+2022-10-08 22:01:00.315 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client2.png - -
+2022-10-08 22:01:00.317 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client3.png - -
+2022-10-08 22:01:00.319 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client4.png - -
+2022-10-08 22:01:00.331 +03:00 [INF] Sending file. Request path: '/images/home/client2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client2.png'
+2022-10-08 22:01:00.335 +03:00 [INF] Sending file. Request path: '/images/home/client3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client3.png'
+2022-10-08 22:01:00.324 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client5.png - -
+2022-10-08 22:01:00.327 +03:00 [INF] Sending file. Request path: '/images/home/client1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client1.png'
+2022-10-08 22:01:00.340 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client2.png - - - 200 536 image/png 25.2990ms
+2022-10-08 22:01:00.347 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client3.png - - - 200 536 image/png 30.0216ms
+2022-10-08 22:01:00.338 +03:00 [INF] Sending file. Request path: '/images/home/client4.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client4.png'
+2022-10-08 22:01:00.263 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/cycle.png - -
+2022-10-08 22:01:00.196 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud2.png - -
+2022-10-08 22:01:00.356 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client6.png - -
+2022-10-08 22:01:00.359 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/under.png - -
+2022-10-08 22:01:00.364 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client4.png - - - 200 536 image/png 44.6511ms
+2022-10-08 22:01:00.375 +03:00 [INF] Sending file. Request path: '/images/home/client6.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client6.png'
+2022-10-08 22:01:00.352 +03:00 [INF] Sending file. Request path: '/images/home/client5.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client5.png'
+2022-10-08 22:01:00.354 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client1.png - - - 200 536 image/png 43.2501ms
+2022-10-08 22:01:00.368 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/profile1.png - -
+2022-10-08 22:01:00.371 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/profile2.png - -
+2022-10-08 22:01:00.384 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client6.png - - - 200 536 image/png 28.5886ms
+2022-10-08 22:01:00.379 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/jquery.js - -
+2022-10-08 22:01:00.380 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/bootstrap.min.js - -
+2022-10-08 22:01:00.401 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/wow.min.js - -
+2022-10-08 22:01:00.405 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/main.js - -
+2022-10-08 22:01:00.418 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/site.js?v=Vuqtx2XQBFhayR01aXA3ZaVzh3DhhNb2S8JePMY7Va8 - -
+2022-10-08 22:01:00.411 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/htmx/htmx.min.js - -
+2022-10-08 22:01:00.538 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\site.js'
+2022-10-08 22:01:00.669 +03:00 [INF] Sending file. Request path: '/js/main.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\main.js'
+2022-10-08 22:01:00.676 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-10-08 22:01:00.388 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client5.png - - - 200 536 image/png 63.9584ms
+2022-10-08 22:01:00.390 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/lightbox.min.js - -
+2022-10-08 22:01:00.397 +03:00 [INF] Sending file. Request path: '/images/home/profile1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\profile1.png'
+2022-10-08 22:01:00.400 +03:00 [INF] Sending file. Request path: '/images/home/profile2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\profile2.png'
+2022-10-08 22:01:00.702 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/site.js?v=Vuqtx2XQBFhayR01aXA3ZaVzh3DhhNb2S8JePMY7Va8 - - - 200 924 application/javascript 284.7764ms
+2022-10-08 22:01:00.706 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/main.js - - - 200 2568 application/javascript 300.6128ms
+2022-10-08 22:01:00.708 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 31.9906ms
+2022-10-08 22:01:00.711 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/house.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\house.png'
+2022-10-08 22:01:00.766 +03:00 [INF] Sending file. Request path: '/js/lightbox.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\lightbox.min.js'
+2022-10-08 22:01:00.717 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/profile1.png - - - 200 351 image/png 348.0265ms
+2022-10-08 22:01:00.253 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud3.png - -
+2022-10-08 22:01:00.676 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-10-08 22:01:00.771 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/circle2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\circle2.png'
+2022-10-08 22:01:00.780 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/profile2.png - - - 200 351 image/png 408.4368ms
+2022-10-08 22:01:00.787 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/cloud1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\cloud1.png'
+2022-10-08 22:01:01.032 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud1.png - - - 200 3583 image/png 896.2425ms
+2022-10-08 22:01:01.071 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/lightbox.min.js - - - 200 7800 application/javascript 680.8141ms
+2022-10-08 22:01:01.035 +03:00 [INF] Sending file. Request path: '/images/home/image1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\image1.png'
+2022-10-08 22:01:01.035 +03:00 [INF] Sending file. Request path: '/images/home/under.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\under.png'
+2022-10-08 22:01:01.034 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/sun.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\sun.png'
+2022-10-08 22:01:01.071 +03:00 [INF] Sending file. Request path: '/images/home/image2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\image2.png'
+2022-10-08 22:01:01.236 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/sun.png - - - 200 6170 image/png 976.4780ms
+2022-10-08 22:01:01.073 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/house.png - - - 200 32159 image/png 1057.3121ms
+2022-10-08 22:01:01.076 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/cloud3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\cloud3.png'
+2022-10-08 22:01:01.077 +03:00 [INF] Sending file. Request path: '/js/wow.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\wow.min.js'
+2022-10-08 22:01:01.087 +03:00 [INF] Sending file. Request path: '/css/main.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\main.css'
+2022-10-08 22:01:01.077 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/image1.png - - - 200 1826 image/png 802.0780ms
+2022-10-08 22:01:01.084 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/under.png - - - 200 12837 image/png 724.7864ms
+2022-10-08 22:01:01.038 +03:00 [INF] Sending file. Request path: '/images/home/cycle.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\cycle.png'
+2022-10-08 22:01:01.035 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle2.png - - - 200 1722 image/png 902.5107ms
+2022-10-08 22:01:01.038 +03:00 [INF] Sending file. Request path: '/images/home/image3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\image3.png'
+2022-10-08 22:01:01.083 +03:00 [INF] Sending file. Request path: '/js/bootstrap.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\bootstrap.min.js'
+2022-10-08 22:01:01.089 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/cloud2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\cloud2.png'
+2022-10-08 22:01:01.410 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/bootstrap.min.js - - - 200 35951 application/javascript 1029.3445ms
+2022-10-08 22:01:01.365 +03:00 [INF] Sending file. Request path: '/images/home/clients.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\clients.png'
+2022-10-08 22:01:01.362 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 686.3638ms
+2022-10-08 22:01:01.109 +03:00 [INF] Sending file. Request path: '/images/home/icon1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\icon1.png'
+2022-10-08 22:01:01.235 +03:00 [INF] Sending file. Request path: '/lib/htmx/htmx.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\lib\htmx\htmx.min.js'
+2022-10-08 22:01:01.368 +03:00 [INF] Sending file. Request path: '/js/jquery.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\jquery.js'
+2022-10-08 22:01:01.353 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/image2.png - - - 200 1700 image/png 1066.9319ms
+2022-10-08 22:01:01.370 +03:00 [INF] Sending file. Request path: '/css/bootstrap.min.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\bootstrap.min.css'
+2022-10-08 22:01:01.370 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud3.png - - - 200 3894 image/png 1117.0403ms
+2022-10-08 22:01:01.374 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/wow.min.js - - - 200 4776 application/javascript 973.1041ms
+2022-10-08 22:01:01.379 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/main.css?v=ZGfftS4QCJns-0lFMdxUqn7t13af-5v2oL8hVtKIEgc - - - 200 43316 text/css 1501.9920ms
+2022-10-08 22:01:01.392 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/cycle.png - - - 200 31630 image/png 1128.7622ms
+2022-10-08 22:01:01.403 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/image3.png - - - 200 1816 image/png 1105.4393ms
+2022-10-08 22:01:01.413 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud2.png - - - 200 4628 image/png 1217.6481ms
+2022-10-08 22:01:01.424 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/clients.png - - - 200 44633 image/png 1113.5434ms
+2022-10-08 22:01:01.437 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/icon1.png - - - 200 392 image/png 1171.9389ms
+2022-10-08 22:01:01.441 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/htmx/htmx.min.js - - - 200 39433 application/javascript 1029.6685ms
+2022-10-08 22:01:01.447 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/jquery.js - - - 200 93106 application/javascript 1068.0609ms
+2022-10-08 22:01:01.454 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/bootstrap.min.css - - - 200 117305 text/css 1592.3054ms
+2022-10-08 22:01:01.927 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider-bg.png - -
+2022-10-08 22:01:01.931 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/tour-bg.png - -
+2022-10-08 22:01:01.931 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/tour-icon2.png - -
+2022-10-08 22:01:01.955 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/fonts/fontawesome-webfont.woff2?v=4.3.0 - -
+2022-10-08 22:01:01.958 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/lightbox/prev.png - -
+2022-10-08 22:01:01.967 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/lightbox/next.png - -
+2022-10-08 22:01:01.971 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/lightbox/loading.gif - -
+2022-10-08 22:01:01.980 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/lightbox/close.png - -
+2022-10-08 22:01:01.932 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/footer.png - -
+2022-10-08 22:01:01.987 +03:00 [INF] Sending file. Request path: '/images/home/slider-bg.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider-bg.png'
+2022-10-08 22:01:02.003 +03:00 [INF] Sending file. Request path: '/images/lightbox/close.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\lightbox\close.png'
+2022-10-08 22:01:02.011 +03:00 [INF] Sending file. Request path: '/images/lightbox/loading.gif'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\lightbox\loading.gif'
+2022-10-08 22:01:02.024 +03:00 [INF] Sending file. Request path: '/images/home/tour-icon2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\tour-icon2.png'
+2022-10-08 22:01:02.027 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider-bg.png - - - 200 6484 image/png 100.6283ms
+2022-10-08 22:01:02.032 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/lightbox/close.png - - - 200 280 image/png 52.3253ms
+2022-10-08 22:01:02.036 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/lightbox/loading.gif - - - 200 8476 image/gif 65.1118ms
+2022-10-08 22:01:02.040 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/tour-icon2.png - - - 200 13478 image/png 108.3355ms
+2022-10-08 22:01:02.048 +03:00 [INF] Sending file. Request path: '/images/home/tour-bg.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\tour-bg.png'
+2022-10-08 22:01:02.049 +03:00 [INF] Sending file. Request path: '/images/home/footer.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\footer.png'
+2022-10-08 22:01:02.084 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/footer.png - - - 200 31995 image/png 152.1844ms
+2022-10-08 22:01:02.058 +03:00 [INF] Sending file. Request path: '/images/lightbox/prev.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\lightbox\prev.png'
+2022-10-08 22:01:02.066 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/tour-bg.png - - - 200 17691 image/png 134.5983ms
+2022-10-08 22:01:02.051 +03:00 [INF] Sending file. Request path: '/images/lightbox/next.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\lightbox\next.png'
+2022-10-08 22:01:02.091 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/lightbox/prev.png - - - 200 1360 image/png 133.1718ms
+2022-10-08 22:01:02.105 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/lightbox/next.png - - - 200 1350 image/png 137.9900ms
+2022-10-08 22:01:02.121 +03:00 [INF] Sending file. Request path: '/fonts/fontawesome-webfont.woff2'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\fonts\fontawesome-webfont.woff2'
+2022-10-08 22:01:02.132 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/fonts/fontawesome-webfont.woff2?v=4.3.0 - - - 200 56780 font/woff2 175.6417ms

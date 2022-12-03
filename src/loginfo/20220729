@@ -1,0 +1,50 @@
+2022-07-29 00:51:07.787 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-29 00:51:07.895 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-07-29 00:51:09.388 +03:00 [INF] Executed DbCommand (251ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-07-29 00:51:09.780 +03:00 [INF] Executed DbCommand (255ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2022-07-29 00:51:09.985 +03:00 [INF] Executed DbCommand (187ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2022-07-29 00:51:10.148 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2022-07-29 00:51:10.307 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2022-07-29 00:51:10.342 +03:00 [INF] Executing endpoint '/Index'
+2022-07-29 00:51:10.344 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-29 00:51:10.347 +03:00 [INF] Executing handler method Triagle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-29 00:51:10.350 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-29 00:51:10.353 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-29 00:51:10.355 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-29 00:51:10.407 +03:00 [INF] Executed page /Index in 59.9537ms
+2022-07-29 00:51:10.415 +03:00 [INF] Executed endpoint '/Index'
+2022-07-29 00:51:10.444 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 2656.2735ms
+2022-07-29 00:51:10.530 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/site.css - -
+2022-07-29 00:51:10.550 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\site.css'
+2022-07-29 00:51:10.554 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/site.css - - - 200 885 text/css 23.7619ms
+2022-07-29 00:51:10.788 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-29 00:51:10.788 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-29 00:51:10.791 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 3.4087ms
+2022-07-29 00:51:11.070 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/lightbox.min.map - -
+2022-07-29 00:51:11.158 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/lightbox.min.map - - - 404 0 - 88.1365ms
+2022-07-29 00:51:11.212 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 423.8788ms
+2022-07-29 00:51:23.707 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/site.css?__browserLink_refresh=055bedc152124990891e1e465c3ed07f - -
+2022-07-29 00:51:23.719 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\site.css'
+2022-07-29 00:51:23.722 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/site.css?__browserLink_refresh=055bedc152124990891e1e465c3ed07f - - - 200 884 text/css 15.1900ms
+2022-07-29 00:52:28.166 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/site.css?__browserLink_refresh=fb52e24162e942c3aa333f2d6ae779d3 - -
+2022-07-29 00:52:28.207 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\site.css'
+2022-07-29 00:52:28.222 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/site.css?__browserLink_refresh=fb52e24162e942c3aa333f2d6ae779d3 - - - 200 850 text/css 56.2533ms
+2022-07-29 00:52:44.384 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/site.css?__browserLink_refresh=dd356c5f12b84d3e8497d6099cca4555 - -
+2022-07-29 00:52:44.406 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\site.css'
+2022-07-29 00:52:44.410 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/site.css?__browserLink_refresh=dd356c5f12b84d3e8497d6099cca4555 - - - 200 888 text/css 27.2439ms

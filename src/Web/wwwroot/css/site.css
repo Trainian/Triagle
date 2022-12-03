@@ -1,0 +1,154 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+#logout {
+    padding: 0px 15px;
+    color: #a5732a;
+    vertical-align: baseline;
+    transition: all 0.2s linear;
+}
+
+    #logout:hover,
+    #logout:focus {
+        text-decoration: none;
+        color: #dab074;
+        border-color: transparent;
+        outline-style: none;
+        transition: all 0.2s linear;
+    }
+
+#login_partial {
+    float: right;
+    padding-right: 50px;
+    overflow: visible;
+}
+
+#login_partial ul {
+    float: right;
+    margin: 0 auto;
+}
+
+    #login_partial .navbar-nav {
+        display: flex;
+    }
+
+    #login_partial .navbar-nav .nav-item {
+        margin: 0 15px;
+    }
+
+.clients-logo > div {
+    margin-bottom: 10px;
+}
+
+#avatar_img {
+    min-width: 150px;
+    min-height: 150px;
+    object-fit: cover;
+}
+
+.blogComment {
+    margin-top: 15px;
+    background-color: #f6f2ed;
+    border: 1px solid #d89b4e;
+    border-radius: 2px;
+    height: 100%;
+    width: 100%;
+    transition: all .5s linear;
+    overflow: hidden;
+}
+
+.blogComment_base > ul {
+    display: flex;
+    justify-content: space-around;
+    border: 0px solid black;
+}
+
+    .blogComment_base > ul > li {
+        padding: 10px;
+        background-color: rgb(216, 155, 78);
+        border-radius: 2px;
+    }
+
+        .blogComment_base > ul > li > a {
+            color: white;
+        }
+
+.blogComment_title {
+    background-color: white;
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+    .blogComment_title > i {
+        color: rgb(216, 155, 78);
+    }
+
+    .blogComment_title > button {
+        border: none;
+        background-color: transparent;
+    }
+
+.blogComment_base {
+    padding: 15px;
+}
+
+.commentHide {
+    transition: all .5s linear;
+    height: 0px;
+    width: 100%;
+    overflow: hidden;
+    border: none;
+    transform: translate(0, -200px);
+}
+
+.response-area {
+    overflow: hidden;
+}
+
+.searchResult {
+    display: grid;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    padding: 0 15px;
+    margin-top: 5px;
+}
+
+.statusMessage {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 9;
+}
+
+.media-body > h4 > a {
+
+}
+
+.pull-left > a > img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.portfolio-items {
+    display: flex;
+    flex-flow: wrap;
+}

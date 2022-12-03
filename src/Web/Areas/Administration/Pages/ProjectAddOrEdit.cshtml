@@ -1,0 +1,80 @@
+﻿@page
+@model Web.Areas.Administration.Pages.ProjectAddOrEditModel
+@{
+}
+
+<section>
+    <div class="container-fluid">
+        <div class="row justify-content-start">
+            <div class="col-md-4 border border-3">
+                <form method="post">
+                    <input asp-for="Project.Id" hidden/>
+                    <input asp-for="Project.CreateDateTime" hidden/>
+                    <input asp-for="Project.CreateWebUser" hidden/>
+                    <div class="form-group">
+                        <label asp-for="Project.ProjectName" class="control-label"></label>
+                        <input asp-for="Project.ProjectName" name="ProjectName" class="form-control"/>
+                        <span asp-validation-for="Project.ProjectName" data-valmsg-for="ProjectName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Project.Text" class="control-label"></label>
+                        <textarea asp-for="Project.Text" class="form-control"></textarea>
+                        <span asp-validation-for="Project.Text" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Project.Image" class="control-label"></label>
+                        <select asp-for="Project.Image" asp-items="@(new SelectList(Model.Images, Model.Project.Image))" class="form-control" onchange="ChangeImage()"></select>
+                        <span asp-validation-for="Project.Image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Project.PreviewLink" class="control-label"></label>
+                        <input asp-for="Project.PreviewLink" class="form-control"/>
+                        <span asp-validation-for="Project.PreviewLink" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Project.Skills" class="control-label"></label>
+                        <select asp-for="Project.Skills" class="form-control" asp-items="@(new SelectList(Model.Skills, "Id", "Name", Model.Project.Skills))"></select>
+                        <span asp-validation-for="Project.Skills" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Project.Category" class="control-label"></label>
+                        <select asp-for="Project.Category.Id" class="form-control" asp-items="@(new SelectList(Model.Categories, "Id", "Name", Model.Project.Category))"></select>
+                        <span asp-validation-for="Project.Category" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Сохранить" class="btn btn-default"/>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 border border-3 d-flex align-content-between flex-wrap">
+                <div class="col-image">
+                    <label>Текущее изображение:</label>
+                    <br/>
+                    <img id="projectImage" class="img-fluid" src=""/>
+                </div>
+                <div></div>
+                <form method="post"  asp-page-handler="Upload" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Input.Image" class="control-label col-form-label"></label>
+                        <input asp-for="Input.Image" type="file" multiple accept="image/png,image/jpeg"/>
+                        <span asp-validation-for="Input.Image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Загрузить" class="btn btn-default" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        $(document).ready(ChangeImage());
+        function ChangeImage ()
+        {
+            var el = $("#Project_Image").val();
+            $("#projectImage").attr("src", "/images/portfolio/" + el);
+        }
+    </script>
+}

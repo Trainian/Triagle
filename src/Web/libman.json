@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "qrcodejs@1.0.0",
+      "destination": "wwwroot/qrcodejs/"
+    },
+    {
+      "library": "htmx@1.8.0",
+      "destination": "wwwroot/lib/htmx/",
+      "files": [
+        "htmx.min.js"
+      ]
+    },
+    {
+      "library": "jquery-validation-unobtrusive@4.0.0",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "jquery-validation@1.19.5",
+      "destination": "wwwroot/lib/jquery-validation/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "bootstrap@5.2.1",
+      "destination": "wwwroot/lib/bootstrap/"
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+2022-07-12 03:06:41.068 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-12 03:06:42.941 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-12 03:06:42.944 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-12 03:06:42.951 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-12 03:06:42.953 +03:00 [INF] Hosting environment: Development
+2022-07-12 03:06:42.955 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-12 03:06:44.863 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-12 03:06:45.075 +03:00 [INF] Executing endpoint '/Index'
+2022-07-12 03:06:45.333 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-12 03:06:45.362 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-12 03:06:45.369 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-12 03:06:45.378 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-12 03:06:45.380 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-12 03:06:46.176 +03:00 [INF] Executed page /Index in 824.0431ms
+2022-07-12 03:06:46.194 +03:00 [INF] Executed endpoint '/Index'
+2022-07-12 03:06:46.332 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1467.4279ms
+2022-07-12 03:06:47.814 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-12 03:06:47.814 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-12 03:06:48.000 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 186.5962ms
+2022-07-12 03:06:48.819 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1004.2125ms
+2022-07-12 03:06:51.846 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ComingSoon - -
+2022-07-12 03:06:51.858 +03:00 [INF] Executing endpoint '/ComingSoon'
+2022-07-12 03:06:51.864 +03:00 [INF] Route matched with {page = "/ComingSoon", area = ""}. Executing page /ComingSoon
+2022-07-12 03:06:51.868 +03:00 [INF] Executing handler method Web.Pages.ComingSoonModel.OnGet - ModelState is "Valid"
+2022-07-12 03:06:51.871 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-12 03:06:51.876 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-12 03:06:51.879 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-12 03:06:53.921 +03:00 [INF] Executed page /ComingSoon in 2053.7909ms
+2022-07-12 03:06:53.926 +03:00 [INF] Executed endpoint '/ComingSoon'
+2022-07-12 03:06:53.935 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The partial view '_ComingSoon' was not found. The following locations were searched:
+/Pages/_ComingSoon.cshtml
+/Pages/Shared/_ComingSoon.cshtml
+/Views/Shared/_ComingSoon.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.RenderPartialCoreAsync(String partialViewName, Object model, ViewDataDictionary viewData, TextWriter writer)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.PartialAsync(String partialViewName, Object model, ViewDataDictionary viewData)
+   at Tragle.Pages.Pages_ComingSoon.ExecuteAsync() in C:\Users\Дмитрий\source\repos\Triagle\src\Web\Pages\ComingSoon.cshtml:line 8
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-07-12 03:06:55.018 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ComingSoon - - - 500 - text/html;+charset=utf-8 3172.0421ms
+2022-07-12 03:06:55.229 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-12 03:06:55.230 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-12 03:06:55.251 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 21.9936ms
+2022-07-12 03:06:55.506 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 276.0218ms
+2022-07-12 03:07:49.419 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-12 03:07:50.685 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-12 03:07:50.691 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-12 03:07:50.698 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-12 03:07:50.700 +03:00 [INF] Hosting environment: Development
+2022-07-12 03:07:50.702 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-12 03:07:51.717 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-12 03:07:51.904 +03:00 [INF] Executing endpoint '/Index'
+2022-07-12 03:07:52.086 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-12 03:07:52.126 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-12 03:07:52.133 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-12 03:07:52.150 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-12 03:07:52.155 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-12 03:07:53.423 +03:00 [INF] Executed page /Index in 1304.9251ms
+2022-07-12 03:07:53.439 +03:00 [INF] Executed endpoint '/Index'
+2022-07-12 03:07:53.514 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1804.8803ms
+2022-07-12 03:07:54.241 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-12 03:07:54.256 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-12 03:07:54.287 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 47.7266ms
+2022-07-12 03:07:54.456 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 200.4223ms
+2022-07-12 03:07:56.446 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ComingSoon - -
+2022-07-12 03:07:56.459 +03:00 [INF] Executing endpoint '/ComingSoon'
+2022-07-12 03:07:56.473 +03:00 [INF] Route matched with {page = "/ComingSoon", area = ""}. Executing page /ComingSoon
+2022-07-12 03:07:56.477 +03:00 [INF] Executing handler method Web.Pages.ComingSoonModel.OnGet - ModelState is "Valid"
+2022-07-12 03:07:56.485 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-12 03:07:56.489 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-12 03:07:56.490 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-12 03:07:56.590 +03:00 [INF] Executed page /ComingSoon in 114.2211ms
+2022-07-12 03:07:56.599 +03:00 [INF] Executed endpoint '/ComingSoon'
+2022-07-12 03:07:57.130 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ComingSoon - - - 200 - text/html;+charset=utf-8 683.5767ms
+2022-07-12 03:07:57.240 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-12 03:07:57.240 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-12 03:07:57.354 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 113.6548ms
+2022-07-12 03:07:57.730 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 489.5159ms
+2022-07-12 03:08:08.961 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ComingSoon?email=Dimon007%40inbox.ru - -
+2022-07-12 03:08:08.972 +03:00 [INF] Executing endpoint '/ComingSoon'
+2022-07-12 03:08:08.974 +03:00 [INF] Route matched with {page = "/ComingSoon", area = ""}. Executing page /ComingSoon
+2022-07-12 03:08:08.989 +03:00 [INF] Executing handler method Web.Pages.ComingSoonModel.OnGet - ModelState is "Valid"
+2022-07-12 03:08:08.991 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-12 03:08:08.995 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-12 03:08:08.997 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-12 03:08:09.013 +03:00 [INF] Executed page /ComingSoon in 36.3795ms
+2022-07-12 03:08:09.016 +03:00 [INF] Executed endpoint '/ComingSoon'
+2022-07-12 03:08:09.023 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ComingSoon?email=Dimon007%40inbox.ru - - - 200 - text/html;+charset=utf-8 62.1310ms
+2022-07-12 03:08:09.116 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-12 03:08:09.182 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-12 03:08:09.209 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 25.8919ms
+2022-07-12 03:08:09.290 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 173.3334ms
+2022-07-12 03:08:22.717 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/lightbox.min.map - -
+2022-07-12 03:08:22.799 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/lightbox.min.map - - - 404 0 - 82.2283ms
+2022-07-12 03:10:19.882 +03:00 [INF] Application is shutting down...
+2022-07-12 03:46:52.686 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-12 03:46:54.717 +03:00 [INF] Now listening on: https://localhost:7099
+2022-07-12 03:46:54.720 +03:00 [INF] Now listening on: http://localhost:5099
+2022-07-12 03:46:54.726 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-12 03:46:54.729 +03:00 [INF] Hosting environment: Development
+2022-07-12 03:46:54.732 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-07-12 03:46:56.392 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-07-12 03:46:56.570 +03:00 [INF] Executing endpoint '/Index'
+2022-07-12 03:46:56.775 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-07-12 03:46:56.850 +03:00 [INF] Executing handler method Tragle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-07-12 03:46:56.863 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-12 03:46:56.901 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-12 03:46:56.930 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-12 03:46:57.904 +03:00 [INF] Executed page /Index in 1103.4498ms
+2022-07-12 03:46:58.141 +03:00 [INF] Executed endpoint '/Index'
+2022-07-12 03:46:58.773 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 2394.5208ms
+2022-07-12 03:47:01.553 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-12 03:47:01.563 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 10.3641ms
+2022-07-12 03:47:02.389 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-12 03:47:02.491 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 101.5533ms
+2022-07-12 03:47:24.420 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Blog - -
+2022-07-12 03:47:24.428 +03:00 [INF] Executing endpoint '/Blog'
+2022-07-12 03:47:24.456 +03:00 [INF] Route matched with {page = "/Blog", area = ""}. Executing page /Blog
+2022-07-12 03:47:24.526 +03:00 [INF] Executing handler method Web.Pages.BlogModel.OnGet - ModelState is "Valid"
+2022-07-12 03:47:24.538 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-07-12 03:47:24.550 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-07-12 03:47:24.551 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-07-12 03:47:24.696 +03:00 [INF] Executed page /Blog in 172.5226ms
+2022-07-12 03:47:24.700 +03:00 [INF] Executed endpoint '/Blog'
+2022-07-12 03:47:24.710 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Blog - - - 200 - text/html;+charset=utf-8 292.3787ms
+2022-07-12 03:47:24.857 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/blog/7.jpg - -
+2022-07-12 03:47:24.857 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-07-12 03:47:24.858 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/blog/8.jpg - -
+2022-07-12 03:47:24.858 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/blog/9.jpg - -
+2022-07-12 03:47:24.935 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 77.4866ms
+2022-07-12 03:47:24.907 +03:00 [INF] Sending file. Request path: '/images/blog/7.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\blog\7.jpg'
+2022-07-12 03:47:25.001 +03:00 [INF] Sending file. Request path: '/images/blog/8.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\blog\8.jpg'
+2022-07-12 03:47:24.858 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/project1.jpg - -
+2022-07-12 03:47:25.002 +03:00 [INF] Sending file. Request path: '/images/blog/9.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\blog\9.jpg'
+2022-07-12 03:47:25.005 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/project2.jpg - -
+2022-07-12 03:47:25.010 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/blog/7.jpg - - - 200 14410 image/jpeg 153.0504ms
+2022-07-12 03:47:25.015 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/blog/8.jpg - - - 200 16948 image/jpeg 156.8364ms
+2022-07-12 03:47:25.021 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/blog/9.jpg - - - 200 17580 image/jpeg 162.7288ms
+2022-07-12 03:47:25.026 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/project3.jpg - -
+2022-07-12 03:47:25.032 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/popular2.jpg - -
+2022-07-12 03:47:25.032 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/popular1.jpg - -
+2022-07-12 03:47:25.035 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/popular3.jpg - -
+2022-07-12 03:47:25.036 +03:00 [INF] Sending file. Request path: '/images/portfolio/project2.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\project2.jpg'
+2022-07-12 03:47:25.049 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/project2.jpg - - - 200 906 image/jpeg 43.5766ms
+2022-07-12 03:47:25.051 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/popular4.jpg - -
+2022-07-12 03:47:25.081 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/popular5.jpg - -
+2022-07-12 03:47:25.106 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-07-12 03:47:25.107 +03:00 [INF] Sending file. Request path: '/images/portfolio/project1.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\project1.jpg'
+2022-07-12 03:47:25.128 +03:00 [INF] Sending file. Request path: '/images/portfolio/popular4.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\popular4.jpg'
+2022-07-12 03:47:25.224 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/popular4.jpg - - - 200 1106 image/jpeg 172.9143ms
+2022-07-12 03:47:25.231 +03:00 [INF] Sending file. Request path: '/images/portfolio/popular2.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\popular2.jpg'
+2022-07-12 03:47:25.128 +03:00 [INF] Sending file. Request path: '/images/portfolio/project3.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\project3.jpg'
+2022-07-12 03:47:25.170 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/project1.jpg - - - 200 898 image/jpeg 311.8845ms
+2022-07-12 03:47:25.128 +03:00 [INF] Sending file. Request path: '/images/portfolio/popular5.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\popular5.jpg'
+2022-07-12 03:47:25.129 +03:00 [INF] Sending file. Request path: '/images/portfolio/popular3.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\popular3.jpg'
+2022-07-12 03:47:25.270 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/popular3.jpg - - - 200 1128 image/jpeg 235.3561ms
+2022-07-12 03:47:25.240 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/project3.jpg - - - 200 908 image/jpeg 213.9853ms
+2022-07-12 03:47:25.243 +03:00 [INF] Sending file. Request path: '/images/portfolio/popular1.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\popular1.jpg'
+2022-07-12 03:47:25.235 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/popular2.jpg - - - 200 1086 image/jpeg 202.9126ms
+2022-07-12 03:47:25.246 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/popular5.jpg - - - 200 1055 image/jpeg 164.4920ms
+2022-07-12 03:47:25.430 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/right.png - -
+2022-07-12 03:47:25.434 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/popular1.jpg - - - 200 1115 image/jpeg 401.7643ms
+2022-07-12 03:47:25.418 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/tour-icon1.png - -
+2022-07-12 03:47:25.423 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/left.png - -
+2022-07-12 03:47:25.469 +03:00 [INF] Sending file. Request path: '/images/home/tour-icon1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\tour-icon1.png'
+2022-07-12 03:47:25.469 +03:00 [INF] Sending file. Request path: '/images/portfolio/right.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\right.png'
+2022-07-12 03:47:25.474 +03:00 [INF] Sending file. Request path: '/images/portfolio/left.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\left.png'
+2022-07-12 03:47:25.487 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/right.png - - - 200 1312 image/png 56.5696ms
+2022-07-12 03:47:25.484 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/tour-icon1.png - - - 200 10612 image/png 65.4942ms
+2022-07-12 03:47:25.502 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/left.png - - - 200 1311 image/png 78.6957ms
+2022-07-12 03:47:25.506 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 400.0081ms
+2022-07-12 03:48:19.115 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/blog/blog-arrow.png - -
+2022-07-12 03:48:19.380 +03:00 [INF] Sending file. Request path: '/images/blog/blog-arrow.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\blog\blog-arrow.png'
+2022-07-12 03:48:19.385 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/blog/blog-arrow.png - - - 200 2794 image/png 270.3661ms

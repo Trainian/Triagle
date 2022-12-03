@@ -1,0 +1,8 @@
+﻿@{
+    Layout = "/Pages/Shared/_Layout.cshtml";
+}
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    @await RenderSectionAsync("Scripts", required: false)

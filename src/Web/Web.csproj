@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="wwwroot\js\adminsite.js" />
+    <None Include="wwwroot\js\adminx.js" />
+    <None Include="wwwroot\js\adminx.vanilla.js" />
+    <None Include="wwwroot\js\audio.min.js" />
+    <None Include="wwwroot\js\audiojs.swf" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\coundown-timer.js" />
+    <None Include="wwwroot\js\gmaps.js" />
+    <None Include="wwwroot\js\holder.js" />
+    <None Include="wwwroot\js\html5shiv.js" />
+    <None Include="wwwroot\js\jquery.countTo.js" />
+    <None Include="wwwroot\js\jquery.fitvids.js" />
+    <None Include="wwwroot\js\jquery.isotope.min.js" />
+    <None Include="wwwroot\js\jquery.js" />
+    <None Include="wwwroot\js\lightbox.min.js" />
+    <None Include="wwwroot\js\main.js" />
+    <None Include="wwwroot\js\masonry.min.js" />
+    <None Include="wwwroot\js\respond.min.js" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\js\vendor.js" />
+    <None Include="wwwroot\js\wow.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AspNet.Security.OAuth.Yandex" Version="6.0.7" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="Serilog.Sinks.Seq" Version="5.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApplicationCore\ApplicationCore.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

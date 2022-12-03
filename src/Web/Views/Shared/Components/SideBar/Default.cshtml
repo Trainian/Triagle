@@ -1,0 +1,29 @@
+﻿@model Web.ViewModels.SideBarViewModel
+
+<div class="col-md-3 col-sm-5">
+    <div class="sidebar blog-sidebar">
+        <div class="sidebar-item  recent">
+            <h3>Последние комментарии:</h3>
+            @foreach (var message in Model.LastBlogMessages)
+            {
+            <div class="media">
+                <div class="pull-left">
+                    <a href="#"><img src="~/images/avatars/@message.CreateWebUserAvatar" alt=""></a>
+                </div>
+                <div class="media-body">
+                    <h4><a href="#">@message.Text</a></h4>
+                    <p>сообщение от: @message.CreateDateTime.Day @MonthsDictionary.GetMonths(@message.CreateDateTime.Month) @message.CreateDateTime.Year</p>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="sidebar-item categories">
+            <h3>Категории</h3>
+            <ul class="nav navbar-stacked">
+                <li class=@(@Model.CategoryChoised == "Все" ? "active" : "")><a asp-area="" asp-page="Blog" asp-route-category="Все">Все<span class="pull-right">(@Model.CountAllBlogs)</span></a></li>
+                @foreach(var category in Model.Categorys)
+                    {<li class=@(@Model.CategoryChoised == category.Name ? "active" : "")><a asp-area="" asp-page="Blog" asp-route-category="@category.Name">@category.Name<span class="pull-right">(@category.BlogsCount)</span></a></li>}
+            </ul>
+        </div>
+    </div>
+</div>

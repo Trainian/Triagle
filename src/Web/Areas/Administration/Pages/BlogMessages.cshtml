@@ -1,0 +1,48 @@
+﻿@page
+@model Web.Areas.Administration.Pages.BlogMessagesModel
+@{
+    ViewData["Title"] = "Сообщения в Блоге";
+}
+
+<section class="blogMessages-manager preloader-manager" >
+    <div>
+        <table id="data-table" class="display">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Блог</th>
+                    <th>Создал</th>
+                    <th>Дата создания</th>
+                    <th>Сообщение</th>
+                    <th>Показывать?</th>
+                    <th>Ответ на сообщение (id)</th>
+                    <th>Редактировать</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var blogMessage in @Model.BlogMessages)
+                {
+                <tr>
+                    <td>@blogMessage.Id</td>
+                    <td>@blogMessage.Blog.Title</td>
+                    <td>@blogMessage.CreateWebUser</td>
+                    <td>@blogMessage.CreateDateTime <span>@blogMessage.CreateDateTime.Ticks</span></td>
+                    <td>@blogMessage.Text</td>
+                    <td class="form-check form-switch"><a asp-area="Administration" asp-page="BlogMessages" asp-page-handler="ChangeVisible" asp-route-bmId="@blogMessage.Id" asp-route-returnUrl="@Request.Path"><input asp-for="@blogMessage.Visible" type="checkbox"/><span>@blogMessage.Visible</span></a></td>
+                    <td>@blogMessage.ResponseToBlogMessage?.Id</td>
+                    <td>
+                    @if(blogMessage.ResponseToBlogMessage == null)
+                    {
+                    <a asp-area="Administration" asp-page="BlogMessageAddOrEdit" asp-route-responseMessageId="@blogMessage.Id" title="Ответить"><i data-feather="message-square"></i></a>
+                    }
+                    <a asp-area="Administration" asp-page="BlogMessageAddOrEdit" asp-route-id="@blogMessage.Id" title="Редактировать"><i data-feather="edit"></i></a>
+                    <a asp-area="Administration" asp-page="BlogMessages" asp-page-handler="Remove" asp-route-id="@blogMessage.Id" asp-route-returnUrl="@Request.Path" title="Удалить"><i data-feather="trash-2"></i></a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>

@@ -1,0 +1,26 @@
+﻿@page
+@model Web.Pages.AboutUsModel
+@{
+    ViewData["Title"] = "О нас";
+}
+
+<section id="page-breadcrumb">
+    <div class="vertical-center sun">
+            <div class="container">
+            <div class="row">
+                <div class="action">
+                    <div class="col-sm-12">
+                        <h1 class="title">О нас</h1>
+                        <p>Узнайте кто работает в нашей компании.</p>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/#page-breadcrumb-->
+
+@await Html.PartialAsync("_CompanyInformation")
+@await Html.PartialAsync("_Services")
+@await Html.PartialAsync("_Action")
+@await Html.PartialAsync("_Team")

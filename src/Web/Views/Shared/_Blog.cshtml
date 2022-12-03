@@ -1,0 +1,45 @@
+﻿@model Web.Pages.BlogModel
+
+<section id="blog" class="padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-7">
+                <div class="row">
+                    @foreach(var blog in Model.BlogsInPage)
+                    {
+                        <div class="col-sm-12 col-md-12" data-blog-id="@blog.Id">
+                            <div class="single-blog single-column">
+                                <div class="post-thumb">
+                                    <a href="blogdetails.html"><img src="~/images/blog/@blog.Image" class="img-responsive" alt=""></a>
+                                    <div class="post-overlay">
+                                        <span class="uppercase"><a href="#">@blog.CreateDateTime.Day<br><small>@MonthsDictionary.GetMonths(@blog.CreateDateTime.Month)</small></a></span>
+                                    </div>
+                                </div>
+                                <div class="post-content overflow">
+                                    <h2 class="post-title bold"><a href="blogdetails.html">@blog.Title</a></h2>
+                                    <h3 class="post-author"><a href="#">Запостил: @blog.CreateWebUser</a></h3>
+                                    <p>@blog.Text.Substring(0,20) [...]</p>
+                                    <a asp-area="" asp-page="BlogDetails" asp-route-id="@blog.Id" class="read-more">Открыть</a>
+                                    <div class="post-bottom overflow">
+                                        <ul class="nav navbar-nav post-nav">
+                                            <li onclick="Like(this)"><i class="fa fa-heart"></i>Лайки <div class="likesCount">@blog.LikesCount</div></li>
+                                            <li><a asp-area="" asp-page="BlogDetails" asp-route-id="@blog.Id"><i class="fa fa-comments"></i>Комментарии @blog.Comments</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+
+            @await Component.InvokeAsync("SideBar", new {category = @Model.CategoryChoised})
+
+        </div>
+    </div>
+</section>
+<div class="blog-pagination">
+    <pagination current-page="@Model.Page" page-link="@Context.Request.PathBase.Value" 
+        elements-count="@Model.BlogsCount" max-elements-onpage="@Model.MaxBlogsOnPage"></pagination>
+</div>

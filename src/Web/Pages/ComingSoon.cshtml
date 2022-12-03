@@ -1,0 +1,9 @@
+﻿@page
+@model Web.Pages.ComingSoonModel
+@{
+    ViewData["Title"] = "Скоро";
+    Layout = "ComingSoon/_Layout";
+}
+
+@await Html.PartialAsync("_ComingSoon")
+@await Html.PartialAsync("_Subscribe")

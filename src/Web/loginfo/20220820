@@ -1,0 +1,892 @@
+2022-08-20 21:31:22.557 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-20 21:31:26.542 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:31:33.333 +03:00 [INF] Executed DbCommand (285ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-08-20 21:31:33.863 +03:00 [INF] Executed DbCommand (172ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Name] = N'User'
+2022-08-20 21:31:34.305 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:31:34.486 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-08-20 21:31:36.303 +03:00 [INF] Now listening on: https://localhost:7099
+2022-08-20 21:31:36.307 +03:00 [INF] Now listening on: http://localhost:5099
+2022-08-20 21:31:36.315 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-20 21:31:36.317 +03:00 [INF] Hosting environment: Development
+2022-08-20 21:31:36.320 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-08-20 21:31:38.520 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-08-20 21:31:38.988 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:31:39.256 +03:00 [INF] Executed DbCommand (202ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:31:39.655 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2022-08-20 21:31:39.892 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2022-08-20 21:31:40.073 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2022-08-20 21:31:40.255 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2022-08-20 21:31:40.344 +03:00 [INF] Executing endpoint '/Index'
+2022-08-20 21:31:40.401 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-08-20 21:31:40.439 +03:00 [INF] Executing handler method Triagle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-08-20 21:31:40.445 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-08-20 21:31:40.456 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-08-20 21:31:40.459 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:31:41.371 +03:00 [INF] Executed page /Index in 950.7828ms
+2022-08-20 21:31:41.382 +03:00 [INF] Executed endpoint '/Index'
+2022-08-20 21:31:41.522 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 3010.6370ms
+2022-08-20 21:31:41.710 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/font-awesome.min.css - -
+2022-08-20 21:31:41.710 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/animate.min.css - -
+2022-08-20 21:31:41.710 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/bootstrap.min.css - -
+2022-08-20 21:31:41.713 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/lightbox.css - -
+2022-08-20 21:31:42.016 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/main.css?v=ZGfftS4QCJns-0lFMdxUqn7t13af-5v2oL8hVtKIEgc - -
+2022-08-20 21:31:42.017 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/responsive.css?v=2BDI_mBErR5t1bFa_Uj30NeSEt2kC1ySodPQcQ51l-g - -
+2022-08-20 21:31:42.056 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/site.css?v=JnF1q1BOPTzd4H-bCahjY20JjP2vNEOQZpeuIWtuSFk - -
+2022-08-20 21:31:42.064 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/jquery.js - -
+2022-08-20 21:31:42.071 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/bootstrap.min.js - -
+2022-08-20 21:31:42.083 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/lightbox.min.js - -
+2022-08-20 21:31:42.084 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/wow.min.js - -
+2022-08-20 21:31:42.214 +03:00 [INF] Sending file. Request path: '/js/wow.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\wow.min.js'
+2022-08-20 21:31:42.277 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/main.js - -
+2022-08-20 21:31:42.279 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/htmx/htmx.min.js - -
+2022-08-20 21:31:42.280 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/site.js?v=Vuqtx2XQBFhayR01aXA3ZaVzh3DhhNb2S8JePMY7Va8 - -
+2022-08-20 21:31:42.298 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/logo.png - -
+2022-08-20 21:31:42.299 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:31:42.307 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/house.png - -
+2022-08-20 21:31:42.316 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle1.png - -
+2022-08-20 21:31:42.321 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle2.png - -
+2022-08-20 21:31:42.321 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud1.png - -
+2022-08-20 21:31:42.333 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud2.png - -
+2022-08-20 21:31:42.333 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud3.png - -
+2022-08-20 21:31:42.336 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider/slide1/sun.png - -
+2022-08-20 21:31:42.341 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/cycle.png - -
+2022-08-20 21:31:42.348 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/icon1.png - -
+2022-08-20 21:31:42.354 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/icon2.png - -
+2022-08-20 21:31:42.358 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/icon3.png - -
+2022-08-20 21:31:42.359 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/image1.png - -
+2022-08-20 21:31:42.364 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/image2.png - -
+2022-08-20 21:31:42.368 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/image3.png - -
+2022-08-20 21:31:42.372 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/clients.png - -
+2022-08-20 21:31:42.376 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client1.png - -
+2022-08-20 21:31:42.386 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client2.png - -
+2022-08-20 21:31:42.387 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client3.png - -
+2022-08-20 21:31:42.393 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client4.png - -
+2022-08-20 21:31:42.397 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client5.png - -
+2022-08-20 21:31:42.411 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/client6.png - -
+2022-08-20 21:31:42.412 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/under.png - -
+2022-08-20 21:31:42.416 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/profile1.png - -
+2022-08-20 21:31:42.420 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/profile2.png - -
+2022-08-20 21:31:42.442 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:31:42.449 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\site.css'
+2022-08-20 21:31:42.461 +03:00 [INF] Sending file. Request path: '/css/lightbox.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\lightbox.css'
+2022-08-20 21:31:42.465 +03:00 [INF] Sending file. Request path: '/css/font-awesome.min.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\font-awesome.min.css'
+2022-08-20 21:31:42.483 +03:00 [INF] Sending file. Request path: '/css/responsive.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\responsive.css'
+2022-08-20 21:31:43.191 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/responsive.css?v=2BDI_mBErR5t1bFa_Uj30NeSEt2kC1ySodPQcQ51l-g - - - 200 10698 text/css 1172.0030ms
+2022-08-20 21:31:43.195 +03:00 [INF] Sending file. Request path: '/css/main.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\main.css'
+2022-08-20 21:31:43.211 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/font-awesome.min.css - - - 200 23739 text/css 1501.5835ms
+2022-08-20 21:31:43.195 +03:00 [INF] Sending file. Request path: '/images/home/profile1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\profile1.png'
+2022-08-20 21:31:43.196 +03:00 [INF] Sending file. Request path: '/images/home/client4.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client4.png'
+2022-08-20 21:31:43.224 +03:00 [INF] Sending file. Request path: '/images/home/client6.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client6.png'
+2022-08-20 21:31:43.228 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/lightbox.css - - - 200 3970 text/css 1514.8503ms
+2022-08-20 21:31:43.238 +03:00 [INF] Sending file. Request path: '/images/home/client5.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client5.png'
+2022-08-20 21:31:43.251 +03:00 [INF] Sending file. Request path: '/images/home/client2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client2.png'
+2022-08-20 21:31:43.266 +03:00 [INF] Sending file. Request path: '/images/home/client1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client1.png'
+2022-08-20 21:31:43.267 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/site.css?v=JnF1q1BOPTzd4H-bCahjY20JjP2vNEOQZpeuIWtuSFk - - - 200 2452 text/css 1210.9103ms
+2022-08-20 21:31:43.279 +03:00 [INF] Sending file. Request path: '/images/home/image2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\image2.png'
+2022-08-20 21:31:43.286 +03:00 [INF] Sending file. Request path: '/images/home/image1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\image1.png'
+2022-08-20 21:31:43.289 +03:00 [INF] Sending file. Request path: '/images/home/icon2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\icon2.png'
+2022-08-20 21:31:43.292 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/wow.min.js - - - 200 4776 application/javascript 1207.9426ms
+2022-08-20 21:31:43.302 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/sun.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\sun.png'
+2022-08-20 21:31:43.196 +03:00 [INF] Sending file. Request path: '/images/home/under.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\under.png'
+2022-08-20 21:31:43.334 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/cloud2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\cloud2.png'
+2022-08-20 21:31:43.336 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/cloud1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\cloud1.png'
+2022-08-20 21:31:43.351 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/circle2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\circle2.png'
+2022-08-20 21:31:43.360 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/circle1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\circle1.png'
+2022-08-20 21:31:43.366 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud2.png - - - 200 4628 image/png 1032.8403ms
+2022-08-20 21:31:43.374 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud1.png - - - 200 3583 image/png 1051.6377ms
+2022-08-20 21:31:43.380 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle2.png - - - 200 1722 image/png 1060.7795ms
+2022-08-20 21:31:43.395 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/under.png - - - 200 12837 image/png 982.0748ms
+2022-08-20 21:31:43.385 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/circle1.png - - - 200 2259 image/png 1069.2066ms
+2022-08-20 21:31:43.397 +03:00 [INF] Sending file. Request path: '/images/home/profile2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\profile2.png'
+2022-08-20 21:31:43.407 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/sun.png - - - 200 6170 image/png 1071.1843ms
+2022-08-20 21:31:43.407 +03:00 [INF] Sending file. Request path: '/images/home/client3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\client3.png'
+2022-08-20 21:31:43.409 +03:00 [INF] Sending file. Request path: '/images/home/image3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\image3.png'
+2022-08-20 21:31:43.414 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/profile2.png - - - 200 351 image/png 993.7580ms
+2022-08-20 21:31:43.419 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/icon2.png - - - 200 392 image/png 1065.5228ms
+2022-08-20 21:31:43.426 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client3.png - - - 200 536 image/png 1039.0616ms
+2022-08-20 21:31:43.431 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/image3.png - - - 200 1816 image/png 1062.5308ms
+2022-08-20 21:31:43.438 +03:00 [INF] Sending file. Request path: '/images/home/icon3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\icon3.png'
+2022-08-20 21:31:43.441 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/image1.png - - - 200 1826 image/png 1081.3069ms
+2022-08-20 21:31:43.445 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/cloud3.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\cloud3.png'
+2022-08-20 21:31:43.449 +03:00 [INF] Sending file. Request path: '/images/home/icon1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\icon1.png'
+2022-08-20 21:31:43.453 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/icon3.png - - - 200 392 image/png 1095.0349ms
+2022-08-20 21:31:43.455 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/image2.png - - - 200 1700 image/png 1090.9672ms
+2022-08-20 21:31:43.460 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/cloud3.png - - - 200 3894 image/png 1126.1055ms
+2022-08-20 21:31:43.464 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/icon1.png - - - 200 392 image/png 1116.4004ms
+2022-08-20 21:31:43.467 +03:00 [INF] Sending file. Request path: '/js/main.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\main.js'
+2022-08-20 21:31:43.473 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client1.png - - - 200 536 image/png 1096.3166ms
+2022-08-20 21:31:43.477 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 1185.6697ms
+2022-08-20 21:31:43.477 +03:00 [INF] Sending file. Request path: '/images/logo.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\logo.png'
+2022-08-20 21:31:43.483 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/main.js - - - 200 2568 application/javascript 1208.5369ms
+2022-08-20 21:31:43.486 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client2.png - - - 200 536 image/png 1100.8934ms
+2022-08-20 21:31:43.490 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\site.js'
+2022-08-20 21:31:43.494 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/logo.png - - - 200 4110 image/png 1195.5782ms
+2022-08-20 21:31:43.501 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client5.png - - - 200 536 image/png 1103.6092ms
+2022-08-20 21:31:43.499 +03:00 [INF] Sending file. Request path: '/js/lightbox.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\lightbox.min.js'
+2022-08-20 21:31:43.539 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/site.js?v=Vuqtx2XQBFhayR01aXA3ZaVzh3DhhNb2S8JePMY7Va8 - - - 200 924 application/javascript 1258.8251ms
+2022-08-20 21:31:43.551 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client6.png - - - 200 536 image/png 1138.7776ms
+2022-08-20 21:31:43.553 +03:00 [INF] Sending file. Request path: '/images/home/clients.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\clients.png'
+2022-08-20 21:31:43.576 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/lightbox.min.js - - - 200 7800 application/javascript 1492.2629ms
+2022-08-20 21:31:43.593 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/client4.png - - - 200 536 image/png 1199.4317ms
+2022-08-20 21:31:43.633 +03:00 [INF] Sending file. Request path: '/lib/htmx/htmx.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\lib\htmx\htmx.min.js'
+2022-08-20 21:31:43.676 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/profile1.png - - - 200 351 image/png 1259.9790ms
+2022-08-20 21:31:43.597 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/clients.png - - - 200 44633 image/png 1225.2154ms
+2022-08-20 21:31:43.602 +03:00 [INF] Sending file. Request path: '/js/bootstrap.min.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\bootstrap.min.js'
+2022-08-20 21:31:43.723 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/main.css?v=ZGfftS4QCJns-0lFMdxUqn7t13af-5v2oL8hVtKIEgc - - - 200 43316 text/css 1706.3823ms
+2022-08-20 21:31:43.722 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/htmx/htmx.min.js - - - 200 39433 application/javascript 1442.2492ms
+2022-08-20 21:31:43.594 +03:00 [INF] Sending file. Request path: '/images/home/slider/slide1/house.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider\slide1\house.png'
+2022-08-20 21:31:43.945 +03:00 [INF] Sending file. Request path: '/js/jquery.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\jquery.js'
+2022-08-20 21:31:43.651 +03:00 [INF] Sending file. Request path: '/images/home/cycle.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\cycle.png'
+2022-08-20 21:31:44.058 +03:00 [INF] Sending file. Request path: '/css/bootstrap.min.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\bootstrap.min.css'
+2022-08-20 21:31:44.058 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/jquery.js - - - 200 93106 application/javascript 1994.3575ms
+2022-08-20 21:31:44.058 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider/slide1/house.png - - - 200 32159 image/png 1750.1307ms
+2022-08-20 21:31:44.076 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/bootstrap.min.css - - - 200 117305 text/css 2366.0918ms
+2022-08-20 21:31:43.705 +03:00 [INF] Sending file. Request path: '/css/animate.min.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\animate.min.css'
+2022-08-20 21:31:43.790 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/bootstrap.min.js - - - 200 35951 application/javascript 1712.6114ms
+2022-08-20 21:31:44.073 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/cycle.png - - - 200 31630 image/png 1730.9821ms
+2022-08-20 21:31:44.225 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/animate.min.css - - - 200 55844 text/css 2516.4008ms
+2022-08-20 21:31:44.230 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1788.3720ms
+2022-08-20 21:31:44.474 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/slider-bg.png - -
+2022-08-20 21:31:44.675 +03:00 [INF] Sending file. Request path: '/images/home/slider-bg.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\slider-bg.png'
+2022-08-20 21:31:44.738 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/tour-icon2.png - -
+2022-08-20 21:31:44.737 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/tour-bg.png - -
+2022-08-20 21:31:44.834 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/footer.png - -
+2022-08-20 21:31:44.895 +03:00 [INF] Sending file. Request path: '/images/home/tour-icon2.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\tour-icon2.png'
+2022-08-20 21:31:44.723 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/fonts/fontawesome-webfont.woff2?v=4.3.0 - -
+2022-08-20 21:31:44.908 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/slider-bg.png - - - 200 6484 image/png 401.5660ms
+2022-08-20 21:31:44.910 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/tour-icon2.png - - - 200 13478 image/png 172.7845ms
+2022-08-20 21:31:44.917 +03:00 [INF] Sending file. Request path: '/images/home/tour-bg.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\tour-bg.png'
+2022-08-20 21:31:44.918 +03:00 [INF] Sending file. Request path: '/images/home/footer.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\footer.png'
+2022-08-20 21:31:44.929 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/tour-bg.png - - - 200 17691 image/png 191.3513ms
+2022-08-20 21:31:44.937 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/footer.png - - - 200 31995 image/png 103.2927ms
+2022-08-20 21:31:45.021 +03:00 [INF] Sending file. Request path: '/fonts/fontawesome-webfont.woff2'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\fonts\fontawesome-webfont.woff2'
+2022-08-20 21:31:45.034 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/fonts/fontawesome-webfont.woff2?v=4.3.0 - - - 200 56780 font/woff2 310.2239ms
+2022-08-20 21:31:45.177 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/lightbox/prev.png - -
+2022-08-20 21:31:45.177 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/lightbox/next.png - -
+2022-08-20 21:31:45.178 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/lightbox/loading.gif - -
+2022-08-20 21:31:45.200 +03:00 [INF] Sending file. Request path: '/images/lightbox/next.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\lightbox\next.png'
+2022-08-20 21:31:45.178 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/lightbox/close.png - -
+2022-08-20 21:31:45.205 +03:00 [INF] Sending file. Request path: '/images/lightbox/prev.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\lightbox\prev.png'
+2022-08-20 21:31:45.209 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/lightbox/next.png - - - 200 1350 image/png 32.0705ms
+2022-08-20 21:31:45.215 +03:00 [INF] Sending file. Request path: '/images/lightbox/loading.gif'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\lightbox\loading.gif'
+2022-08-20 21:31:45.220 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/lightbox/prev.png - - - 200 1360 image/png 42.8544ms
+2022-08-20 21:31:45.221 +03:00 [INF] Sending file. Request path: '/images/lightbox/close.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\lightbox\close.png'
+2022-08-20 21:31:45.228 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/lightbox/loading.gif - - - 200 8476 image/gif 50.8673ms
+2022-08-20 21:31:45.236 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/lightbox/close.png - - - 200 280 image/png 57.4012ms
+2022-08-20 21:31:45.727 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/ico/favicon.ico - -
+2022-08-20 21:31:45.873 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/ico/favicon.ico - - - 404 0 - 145.8348ms
+2022-08-20 21:32:49.423 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration - -
+2022-08-20 21:32:49.472 +03:00 [INF] Executing endpoint '/Index'
+2022-08-20 21:32:49.485 +03:00 [INF] Route matched with {page = "/Index", area = "Administration"}. Executing page /Index
+2022-08-20 21:32:49.490 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.IndexModel.OnGetAsync - ModelState is "Valid"
+2022-08-20 21:32:49.505 +03:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:32:49.567 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:32:49.737 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:32:50.157 +03:00 [INF] Executed page /Index in 668.1854ms
+2022-08-20 21:32:50.162 +03:00 [INF] Executed endpoint '/Index'
+2022-08-20 21:32:50.177 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration - - - 200 - text/html;+charset=utf-8 753.6675ms
+2022-08-20 21:32:50.439 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:32:50.439 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminx.css - -
+2022-08-20 21:32:50.441 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/adminsite.css?v=cBnz_TZbkWeuSly8WTP1oRYZXLQTc14qpBKgBv2KNFg - -
+2022-08-20 21:32:50.441 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:32:50.465 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 26.3246ms
+2022-08-20 21:32:50.646 +03:00 [INF] Sending file. Request path: '/css/adminsite.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\adminsite.css'
+2022-08-20 21:32:50.643 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 202.1146ms
+2022-08-20 21:32:50.658 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminsite.css?v=cBnz_TZbkWeuSly8WTP1oRYZXLQTc14qpBKgBv2KNFg - - - 200 1245 text/css 217.7992ms
+2022-08-20 21:32:50.662 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/adminx.js - -
+2022-08-20 21:32:50.762 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/vendor.js - -
+2022-08-20 21:32:50.767 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/adminsite.js?v=u6DWmChiuLX9zFw2aylC2slF7ACHg8B9XPZQKqFw8iM - -
+2022-08-20 21:32:50.774 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/logo-mini.jpg - -
+2022-08-20 21:32:50.776 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/avatars/avatar_01.jpg - -
+2022-08-20 21:32:50.801 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:32:50.831 +03:00 [INF] Sending file. Request path: '/js/adminx.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\adminx.js'
+2022-08-20 21:32:50.846 +03:00 [INF] Sending file. Request path: '/js/adminsite.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\adminsite.js'
+2022-08-20 21:32:50.850 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/adminsite.js?v=u6DWmChiuLX9zFw2aylC2slF7ACHg8B9XPZQKqFw8iM - - - 200 207 application/javascript 82.3517ms
+2022-08-20 21:32:50.847 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/adminx.js - - - 200 6270 application/javascript 184.4063ms
+2022-08-20 21:32:50.886 +03:00 [INF] Sending file. Request path: '/images/avatars/avatar_01.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\avatars\avatar_01.jpg'
+2022-08-20 21:32:50.899 +03:00 [INF] Sending file. Request path: '/images/logo-mini.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\logo-mini.jpg'
+2022-08-20 21:32:50.965 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/avatars/avatar_01.jpg - - - 200 2490 image/jpeg 187.5606ms
+2022-08-20 21:32:50.969 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/logo-mini.jpg - - - 200 2490 image/jpeg 195.1830ms
+2022-08-20 21:32:51.038 +03:00 [INF] Sending file. Request path: '/js/vendor.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\vendor.js'
+2022-08-20 21:32:51.054 +03:00 [INF] Sending file. Request path: '/css/adminx.css'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\css\adminx.css'
+2022-08-20 21:32:51.062 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 260.5567ms
+2022-08-20 21:32:51.072 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/adminx.css - - - 200 219153 text/css 633.0018ms
+2022-08-20 21:32:51.072 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/vendor.js - - - 200 190117 application/javascript 310.5576ms
+2022-08-20 21:32:51.547 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/fonts/iconic/open-iconic.woff - -
+2022-08-20 21:32:51.630 +03:00 [INF] Sending file. Request path: '/fonts/iconic/open-iconic.woff'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\fonts\iconic\open-iconic.woff'
+2022-08-20 21:32:51.635 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/fonts/iconic/open-iconic.woff - - - 200 14984 application/font-woff 87.2325ms
+2022-08-20 21:32:55.769 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/Blogs - -
+2022-08-20 21:32:55.796 +03:00 [INF] Executing endpoint '/Blogs'
+2022-08-20 21:32:55.848 +03:00 [INF] Route matched with {page = "/Blogs", area = "Administration"}. Executing page /Blogs
+2022-08-20 21:32:56.127 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogsModel.OnGet - ModelState is "Valid"
+2022-08-20 21:32:56.136 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:32:56.461 +03:00 [INF] Executed DbCommand (187ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits]
+FROM [Blogs] AS [b]
+ORDER BY [b].[Id]
+2022-08-20 21:32:56.812 +03:00 [INF] Executed DbCommand (157ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id]
+2022-08-20 21:32:57.019 +03:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:32:57.049 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:32:57.210 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:32:57.362 +03:00 [INF] Executed page /Blogs in 1510.6229ms
+2022-08-20 21:32:57.365 +03:00 [INF] Executed endpoint '/Blogs'
+2022-08-20 21:32:57.376 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/Blogs - - - 200 - text/html;+charset=utf-8 1606.7419ms
+2022-08-20 21:32:57.486 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:32:57.499 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:32:57.518 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:32:57.522 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 35.6866ms
+2022-08-20 21:32:57.537 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 38.3832ms
+2022-08-20 21:32:58.079 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 561.3202ms
+2022-08-20 21:36:57.639 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-20 21:37:00.518 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:37:03.358 +03:00 [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-08-20 21:37:03.771 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Name] = N'User'
+2022-08-20 21:37:04.164 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:37:04.331 +03:00 [INF] Executed DbCommand (149ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-08-20 21:37:05.609 +03:00 [INF] Now listening on: https://localhost:7099
+2022-08-20 21:37:05.611 +03:00 [INF] Now listening on: http://localhost:5099
+2022-08-20 21:37:05.620 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-20 21:37:05.622 +03:00 [INF] Hosting environment: Development
+2022-08-20 21:37:05.624 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-08-20 21:37:07.453 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-08-20 21:37:07.808 +03:00 [INF] Executing endpoint '/Index'
+2022-08-20 21:37:07.874 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-08-20 21:37:07.947 +03:00 [INF] Executing handler method Triagle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-08-20 21:37:07.957 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-08-20 21:37:07.986 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-08-20 21:37:07.992 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:37:09.736 +03:00 [INF] Executed page /Index in 1841.2942ms
+2022-08-20 21:37:09.769 +03:00 [INF] Executed endpoint '/Index'
+2022-08-20 21:37:09.892 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 2442.0517ms
+2022-08-20 21:37:10.806 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:37:10.832 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 26.2939ms
+2022-08-20 21:37:11.354 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:37:11.434 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 80.1005ms
+2022-08-20 21:39:18.576 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-08-20 21:39:18.599 +03:00 [INF] Executing endpoint '/Index'
+2022-08-20 21:39:18.609 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-08-20 21:39:18.614 +03:00 [INF] Executing handler method Triagle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-08-20 21:39:18.618 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-08-20 21:39:18.624 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-08-20 21:39:18.627 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:39:18.666 +03:00 [INF] Executed page /Index in 53.4883ms
+2022-08-20 21:39:18.673 +03:00 [INF] Executed endpoint '/Index'
+2022-08-20 21:39:18.692 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 115.0546ms
+2022-08-20 21:39:18.962 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:39:18.965 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 3.0789ms
+2022-08-20 21:39:18.974 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:39:19.005 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.5746ms
+2022-08-20 21:39:54.756 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/Blogs - -
+2022-08-20 21:39:54.825 +03:00 [INF] Executing endpoint '/Blogs'
+2022-08-20 21:39:54.913 +03:00 [INF] Route matched with {page = "/Blogs", area = "Administration"}. Executing page /Blogs
+2022-08-20 21:39:55.947 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogsModel.OnGet - ModelState is "Valid"
+2022-08-20 21:39:56.534 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:39:57.175 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits], [c].[Id], [c].[Information], [c].[Name]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:39:57.636 +03:00 [INF] Executed DbCommand (173ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id], [c].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:39:58.412 +03:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:39:58.511 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:39:58.827 +03:00 [INF] Executed DbCommand (215ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:39:59.522 +03:00 [INF] Executed page /Blogs in 4605.8155ms
+2022-08-20 21:39:59.564 +03:00 [INF] Executed endpoint '/Blogs'
+2022-08-20 21:39:59.604 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/Blogs - - - 200 - text/html;+charset=utf-8 4848.0803ms
+2022-08-20 21:39:59.713 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:39:59.745 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 32.4440ms
+2022-08-20 21:39:59.886 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - -
+2022-08-20 21:39:59.885 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:39:59.890 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:39:59.899 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 13.5303ms
+2022-08-20 21:40:00.244 +03:00 [INF] Sending file. Request path: '/js/adminsite.js'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\js\adminsite.js'
+2022-08-20 21:40:00.510 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 620.1868ms
+2022-08-20 21:40:00.681 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - - - 200 415 application/javascript 794.8895ms
+2022-08-20 21:40:00.865 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/favicon.ico - -
+2022-08-20 21:40:01.153 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\favicon.ico'
+2022-08-20 21:40:01.156 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/favicon.ico - - - 200 5430 image/x-icon 290.5990ms
+2022-08-20 21:40:03.426 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/Blogs - -
+2022-08-20 21:40:03.454 +03:00 [INF] Executing endpoint '/Blogs'
+2022-08-20 21:40:03.457 +03:00 [INF] Route matched with {page = "/Blogs", area = "Administration"}. Executing page /Blogs
+2022-08-20 21:40:03.461 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogsModel.OnGet - ModelState is "Valid"
+2022-08-20 21:40:03.466 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:40:03.638 +03:00 [INF] Executed DbCommand (158ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits], [c].[Id], [c].[Information], [c].[Name]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:40:03.800 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id], [c].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:40:03.863 +03:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:40:03.939 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:40:04.179 +03:00 [INF] Executed DbCommand (170ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:40:04.222 +03:00 [INF] Executed page /Blogs in 761.8828ms
+2022-08-20 21:40:04.226 +03:00 [INF] Executed endpoint '/Blogs'
+2022-08-20 21:40:04.376 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:40:04.376 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:40:04.400 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/Blogs - - - 200 - text/html;+charset=utf-8 975.0555ms
+2022-08-20 21:40:04.512 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 136.5548ms
+2022-08-20 21:40:04.376 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:40:04.494 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - -
+2022-08-20 21:40:04.601 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 224.2930ms
+2022-08-20 21:40:04.837 +03:00 [INF] The file /js/adminsite.js was not modified
+2022-08-20 21:40:05.081 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - - - 304 - application/javascript 581.7811ms
+2022-08-20 21:40:05.211 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 834.8370ms
+2022-08-20 21:40:14.702 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/Blogs - -
+2022-08-20 21:40:14.709 +03:00 [INF] Executing endpoint '/Blogs'
+2022-08-20 21:40:14.729 +03:00 [INF] Route matched with {page = "/Blogs", area = "Administration"}. Executing page /Blogs
+2022-08-20 21:40:14.739 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogsModel.OnGet - ModelState is "Valid"
+2022-08-20 21:40:14.745 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:40:14.909 +03:00 [INF] Executed DbCommand (150ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits], [c].[Id], [c].[Information], [c].[Name]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:40:15.074 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id], [c].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:40:15.108 +03:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:40:15.148 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:40:15.319 +03:00 [INF] Executed DbCommand (159ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:40:15.364 +03:00 [INF] Executed page /Blogs in 630.7146ms
+2022-08-20 21:40:15.367 +03:00 [INF] Executed endpoint '/Blogs'
+2022-08-20 21:40:15.376 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/Blogs - - - 200 - text/html;+charset=utf-8 674.1969ms
+2022-08-20 21:40:15.617 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:40:15.636 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 18.8820ms
+2022-08-20 21:40:15.664 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:40:15.686 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 21.9338ms
+2022-08-20 21:40:15.756 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:40:15.759 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 3.2862ms
+2022-08-20 21:40:15.771 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - -
+2022-08-20 21:40:15.774 +03:00 [INF] The file /js/adminsite.js was not modified
+2022-08-20 21:40:15.779 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - - - 304 - application/javascript 7.5829ms
+2022-08-20 21:40:51.395 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:40:51.398 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:40:51.400 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:40:51.440 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 44.6303ms
+2022-08-20 21:40:51.440 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 42.0187ms
+2022-08-20 21:40:52.247 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 846.9993ms
+2022-08-20 21:40:55.763 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration - -
+2022-08-20 21:40:55.783 +03:00 [INF] Executing endpoint '/Index'
+2022-08-20 21:40:55.807 +03:00 [INF] Route matched with {page = "/Index", area = "Administration"}. Executing page /Index
+2022-08-20 21:40:55.811 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.IndexModel.OnGetAsync - ModelState is "Valid"
+2022-08-20 21:40:55.820 +03:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:40:55.857 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:40:56.065 +03:00 [INF] Executed DbCommand (150ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:40:56.096 +03:00 [INF] Executed page /Index in 287.7491ms
+2022-08-20 21:40:56.101 +03:00 [INF] Executed endpoint '/Index'
+2022-08-20 21:40:56.112 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration - - - 200 - text/html;+charset=utf-8 349.0414ms
+2022-08-20 21:40:56.217 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:40:56.264 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:40:56.270 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:40:56.281 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 11.1774ms
+2022-08-20 21:40:56.283 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 66.9648ms
+2022-08-20 21:40:56.350 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - -
+2022-08-20 21:40:56.423 +03:00 [INF] The file /js/adminsite.js was not modified
+2022-08-20 21:40:56.426 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - - - 304 - application/javascript 76.2537ms
+2022-08-20 21:40:57.117 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 852.4949ms
+2022-08-20 21:40:59.332 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-08-20 21:40:59.491 +03:00 [INF] Executing endpoint '/Index'
+2022-08-20 21:40:59.497 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-08-20 21:40:59.500 +03:00 [INF] Executing handler method Triagle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-08-20 21:40:59.503 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-08-20 21:40:59.506 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-08-20 21:40:59.508 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:40:59.576 +03:00 [INF] Executed page /Index in 76.1261ms
+2022-08-20 21:40:59.580 +03:00 [INF] Executed endpoint '/Index'
+2022-08-20 21:40:59.596 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 263.6074ms
+2022-08-20 21:40:59.799 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:41:00.353 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:41:00.362 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 562.3598ms
+2022-08-20 21:41:00.863 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 509.8763ms
+2022-08-20 21:41:02.115 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Blog - -
+2022-08-20 21:41:02.121 +03:00 [INF] Executing endpoint '/Blog'
+2022-08-20 21:41:02.133 +03:00 [INF] Route matched with {page = "/Blog", area = ""}. Executing page /Blog
+2022-08-20 21:41:02.202 +03:00 [INF] Executing handler method Web.Pages.BlogModel.OnGetAsync - ModelState is "Invalid"
+2022-08-20 21:41:02.233 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:41:02.505 +03:00 [INF] Executed DbCommand (211ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Blogs] AS [b]
+2022-08-20 21:41:03.039 +03:00 [INF] Executed DbCommand (168ms) [Parameters=[@__category_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Information], [c].[Name]
+FROM [Categories] AS [c]
+WHERE [c].[Name] = @__category_0
+ORDER BY [c].[Id]
+2022-08-20 21:41:03.256 +03:00 [WRN] Категория по Name не найдена null
+2022-08-20 21:41:03.567 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits]
+FROM [Blogs] AS [b]
+ORDER BY [b].[Id]
+2022-08-20 21:41:03.983 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[BlogId], [t].[CreateDateTime], [t].[CreateWebUser], [t].[ResponseToBlogMessageId], [t].[Text], [t].[Visible], [b].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN (
+    SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible]
+    FROM [BlogMessages] AS [b0]
+    WHERE [b0].[Visible] = CAST(1 AS bit)
+) AS [t] ON [b].[Id] = [t].[BlogId]
+ORDER BY [b].[Id]
+2022-08-20 21:41:03.997 +03:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:41:04.494 +03:00 [INF] Executed DbCommand (149ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Blogs] AS [b]
+2022-08-20 21:41:04.756 +03:00 [INF] Executed DbCommand (150ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Information], [c].[Name]
+FROM [Categories] AS [c]
+ORDER BY [c].[Id]
+2022-08-20 21:41:04.926 +03:00 [INF] Executed DbCommand (161ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CategoryId], [t].[CreateDateTime], [t].[CreateWebUser], [t].[Image], [t].[Likes], [t].[Text], [t].[Title], [t].[Twits], [c].[Id]
+FROM [Categories] AS [c]
+INNER JOIN (
+    SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits]
+    FROM [Blogs] AS [b]
+) AS [t] ON [c].[Id] = [t].[CategoryId]
+ORDER BY [c].[Id], [t].[CreateDateTime] DESC, [t].[Id]
+2022-08-20 21:41:05.087 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[BlogId], [t0].[CreateDateTime], [t0].[CreateWebUser], [t0].[ResponseToBlogMessageId], [t0].[Text], [t0].[Visible], [c].[Id], [t].[Id]
+FROM [Categories] AS [c]
+INNER JOIN (
+    SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime]
+    FROM [Blogs] AS [b]
+) AS [t] ON [c].[Id] = [t].[CategoryId]
+INNER JOIN (
+    SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible]
+    FROM [BlogMessages] AS [b0]
+    WHERE [b0].[Visible] = CAST(1 AS bit)
+) AS [t0] ON [t].[Id] = [t0].[BlogId]
+ORDER BY [c].[Id], [t].[CreateDateTime] DESC, [t].[Id]
+2022-08-20 21:41:05.298 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [b].[Id], [b].[BlogId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[ResponseToBlogMessageId], [b].[Text], [b].[Visible]
+FROM [BlogMessages] AS [b]
+ORDER BY [b].[CreateDateTime] DESC
+2022-08-20 21:41:05.466 +03:00 [INF] Executed page /Blog in 3328.6396ms
+2022-08-20 21:41:05.470 +03:00 [INF] Executed endpoint '/Blog'
+2022-08-20 21:41:05.489 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Blog - - - 200 - text/html;+charset=utf-8 3373.7680ms
+2022-08-20 21:41:05.622 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:41:05.622 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/blog/1.jpg - -
+2022-08-20 21:41:05.622 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/blog/2.jpg - -
+2022-08-20 21:41:05.623 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/project1.jpg - -
+2022-08-20 21:41:05.624 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:41:05.662 +03:00 [INF] Sending file. Request path: '/images/portfolio/project1.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\project1.jpg'
+2022-08-20 21:41:05.655 +03:00 [INF] Sending file. Request path: '/images/blog/1.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\blog\1.jpg'
+2022-08-20 21:41:05.690 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/project1.jpg - - - 200 898 image/jpeg 67.4798ms
+2022-08-20 21:41:05.662 +03:00 [INF] Sending file. Request path: '/images/blog/2.jpg'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\blog\2.jpg'
+2022-08-20 21:41:05.702 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/blog/1.jpg - - - 200 17593 image/jpeg 79.8583ms
+2022-08-20 21:41:05.724 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/right.png - -
+2022-08-20 21:41:05.721 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/portfolio/left.png - -
+2022-08-20 21:41:05.726 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/blog/2.jpg - - - 200 17790 image/jpeg 103.7940ms
+2022-08-20 21:41:05.848 +03:00 [INF] Sending file. Request path: '/images/portfolio/right.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\right.png'
+2022-08-20 21:41:05.906 +03:00 [INF] Sending file. Request path: '/images/portfolio/left.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\portfolio\left.png'
+2022-08-20 21:41:05.689 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/images/home/tour-icon1.png - -
+2022-08-20 21:41:06.129 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/right.png - - - 200 1312 image/png 405.5431ms
+2022-08-20 21:41:06.144 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/portfolio/left.png - - - 200 1311 image/png 423.3085ms
+2022-08-20 21:41:06.154 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 530.8565ms
+2022-08-20 21:41:05.627 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 4.6380ms
+2022-08-20 21:41:06.150 +03:00 [INF] Sending file. Request path: '/images/home/tour-icon1.png'. Physical path: 'C:\Users\Дмитрий\source\repos\Triagle\src\Web\wwwroot\images\home\tour-icon1.png'
+2022-08-20 21:41:06.165 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/images/home/tour-icon1.png - - - 200 10612 image/png 476.1559ms
+2022-08-20 21:41:33.358 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/Blogs - -
+2022-08-20 21:41:33.365 +03:00 [INF] Executing endpoint '/Blogs'
+2022-08-20 21:41:33.381 +03:00 [INF] Route matched with {page = "/Blogs", area = "Administration"}. Executing page /Blogs
+2022-08-20 21:41:33.386 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogsModel.OnGet - ModelState is "Valid"
+2022-08-20 21:41:33.396 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:41:33.553 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits], [c].[Id], [c].[Information], [c].[Name]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:41:33.709 +03:00 [INF] Executed DbCommand (149ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id], [c].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:41:33.717 +03:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:41:33.743 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:41:33.900 +03:00 [INF] Executed DbCommand (149ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:41:33.919 +03:00 [INF] Executed page /Blogs in 534.0279ms
+2022-08-20 21:41:33.922 +03:00 [INF] Executed endpoint '/Blogs'
+2022-08-20 21:41:33.958 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/Blogs - - - 200 - text/html;+charset=utf-8 599.3603ms
+2022-08-20 21:41:33.999 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:41:33.999 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:41:34.016 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 17.6156ms
+2022-08-20 21:41:34.108 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - -
+2022-08-20 21:41:34.108 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:41:34.158 +03:00 [INF] The file /js/adminsite.js was not modified
+2022-08-20 21:41:34.191 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - - - 304 - application/javascript 83.2503ms
+2022-08-20 21:41:34.197 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 88.5585ms
+2022-08-20 21:41:34.277 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 278.0086ms
+2022-08-20 21:47:01.770 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/Blogs - -
+2022-08-20 21:47:01.785 +03:00 [INF] Executing endpoint '/Blogs'
+2022-08-20 21:47:01.798 +03:00 [INF] Route matched with {page = "/Blogs", area = "Administration"}. Executing page /Blogs
+2022-08-20 21:47:01.803 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogsModel.OnGet - ModelState is "Valid"
+2022-08-20 21:47:01.809 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:47:02.682 +03:00 [INF] Executed DbCommand (159ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits], [c].[Id], [c].[Information], [c].[Name]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:47:02.858 +03:00 [INF] Executed DbCommand (168ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id], [c].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:47:02.867 +03:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:47:02.898 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:47:03.067 +03:00 [INF] Executed DbCommand (162ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:47:03.103 +03:00 [INF] Executed page /Blogs in 1301.5532ms
+2022-08-20 21:47:03.107 +03:00 [INF] Executed endpoint '/Blogs'
+2022-08-20 21:47:03.179 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/Blogs - - - 200 - text/html;+charset=utf-8 1374.6638ms
+2022-08-20 21:47:03.220 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:47:03.230 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:47:03.231 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 10.0823ms
+2022-08-20 21:47:03.311 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:47:03.359 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 47.8881ms
+2022-08-20 21:47:03.360 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 130.3301ms
+2022-08-20 21:47:03.386 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - -
+2022-08-20 21:47:03.390 +03:00 [INF] The file /js/adminsite.js was not modified
+2022-08-20 21:47:03.393 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - - - 304 - application/javascript 7.4627ms
+2022-08-20 21:53:11.177 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-20 21:53:13.397 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:53:15.954 +03:00 [INF] Executed DbCommand (243ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-08-20 21:53:16.467 +03:00 [INF] Executed DbCommand (172ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Name] = N'User'
+2022-08-20 21:53:16.819 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:53:17.003 +03:00 [INF] Executed DbCommand (166ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-08-20 21:53:18.345 +03:00 [INF] Now listening on: https://localhost:7099
+2022-08-20 21:53:18.351 +03:00 [INF] Now listening on: http://localhost:5099
+2022-08-20 21:53:18.362 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-20 21:53:18.364 +03:00 [INF] Hosting environment: Development
+2022-08-20 21:53:18.367 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-08-20 21:53:19.585 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-08-20 21:53:19.858 +03:00 [INF] Executing endpoint '/Index'
+2022-08-20 21:53:19.926 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-08-20 21:53:19.961 +03:00 [INF] Executing handler method Triagle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-08-20 21:53:19.965 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-08-20 21:53:19.982 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-08-20 21:53:19.990 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:53:21.297 +03:00 [INF] Executed page /Index in 1335.0595ms
+2022-08-20 21:53:21.313 +03:00 [INF] Executed endpoint '/Index'
+2022-08-20 21:53:21.394 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 1821.3166ms
+2022-08-20 21:53:21.575 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:53:21.803 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:53:22.107 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 532.1757ms
+2022-08-20 21:53:22.197 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 393.3656ms
+2022-08-20 21:53:23.770 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:53:23.813 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:53:23.813 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - -
+2022-08-20 21:53:23.946 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 176.0686ms
+2022-08-20 21:53:23.885 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:53:23.995 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 182.3200ms
+2022-08-20 21:53:24.045 +03:00 [INF] The file /js/adminsite.js was not modified
+2022-08-20 21:53:24.815 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 929.0808ms
+2022-08-20 21:53:24.839 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - - - 304 - application/javascript 1025.5331ms
+2022-08-20 21:53:30.826 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/Blogs - -
+2022-08-20 21:53:30.880 +03:00 [INF] Executing endpoint '/Blogs'
+2022-08-20 21:53:30.924 +03:00 [INF] Route matched with {page = "/Blogs", area = "Administration"}. Executing page /Blogs
+2022-08-20 21:53:31.247 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogsModel.OnGet - ModelState is "Valid"
+2022-08-20 21:53:31.364 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:53:31.882 +03:00 [INF] Executed DbCommand (181ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits], [c].[Id], [c].[Information], [c].[Name]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:53:32.315 +03:00 [INF] Executed DbCommand (170ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id], [c].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:53:32.564 +03:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:53:32.629 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:53:32.892 +03:00 [INF] Executed DbCommand (216ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:53:33.251 +03:00 [INF] Executed page /Blogs in 2323.5251ms
+2022-08-20 21:53:33.254 +03:00 [INF] Executed endpoint '/Blogs'
+2022-08-20 21:53:33.270 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/Blogs - - - 200 - text/html;+charset=utf-8 2443.4886ms
+2022-08-20 21:53:33.331 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:53:33.331 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:53:33.329 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:53:33.338 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 7.4580ms
+2022-08-20 21:53:33.357 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 28.1416ms
+2022-08-20 21:53:33.449 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 118.3320ms
+2022-08-20 21:55:16.093 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/Blogs - -
+2022-08-20 21:55:16.100 +03:00 [INF] Executing endpoint '/Blogs'
+2022-08-20 21:55:16.116 +03:00 [INF] Route matched with {page = "/Blogs", area = "Administration"}. Executing page /Blogs
+2022-08-20 21:55:16.121 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogsModel.OnGet - ModelState is "Valid"
+2022-08-20 21:55:16.128 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:55:16.325 +03:00 [INF] Executed DbCommand (168ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits], [c].[Id], [c].[Information], [c].[Name]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:55:16.593 +03:00 [INF] Executed DbCommand (163ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id], [c].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:55:16.600 +03:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:55:16.644 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:55:16.816 +03:00 [INF] Executed DbCommand (163ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:55:16.859 +03:00 [INF] Executed page /Blogs in 739.1973ms
+2022-08-20 21:55:16.863 +03:00 [INF] Executed endpoint '/Blogs'
+2022-08-20 21:55:16.871 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/Blogs - - - 200 - text/html;+charset=utf-8 778.2365ms
+2022-08-20 21:55:16.911 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:55:16.931 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - -
+2022-08-20 21:55:16.931 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:55:16.932 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:55:16.946 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 35.7207ms
+2022-08-20 21:55:16.952 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 20.9453ms
+2022-08-20 21:55:16.950 +03:00 [INF] The file /js/adminsite.js was not modified
+2022-08-20 21:55:16.968 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - - - 304 - application/javascript 37.8531ms
+2022-08-20 21:55:17.000 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 67.3975ms
+2022-08-20 21:55:48.780 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/Blogs - -
+2022-08-20 21:55:48.787 +03:00 [INF] Executing endpoint '/Blogs'
+2022-08-20 21:55:48.801 +03:00 [INF] Route matched with {page = "/Blogs", area = "Administration"}. Executing page /Blogs
+2022-08-20 21:55:48.846 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogsModel.OnGet - ModelState is "Valid"
+2022-08-20 21:55:48.851 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:55:49.034 +03:00 [INF] Executed DbCommand (173ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits], [c].[Id], [c].[Information], [c].[Name]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:55:49.213 +03:00 [INF] Executed DbCommand (167ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id], [c].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:55:49.223 +03:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:55:49.265 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:55:49.453 +03:00 [INF] Executed DbCommand (174ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:55:49.494 +03:00 [INF] Executed page /Blogs in 654.8732ms
+2022-08-20 21:55:49.502 +03:00 [INF] Executed endpoint '/Blogs'
+2022-08-20 21:55:49.644 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/Blogs - - - 200 - text/html;+charset=utf-8 864.5165ms
+2022-08-20 21:55:49.734 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:55:49.645 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:55:49.735 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:55:49.974 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 241.0533ms
+2022-08-20 21:55:50.000 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 333.2708ms
+2022-08-20 21:55:50.092 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 357.2039ms
+2022-08-20 21:56:11.527 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/Blogs - -
+2022-08-20 21:56:11.539 +03:00 [INF] Executing endpoint '/Blogs'
+2022-08-20 21:56:11.578 +03:00 [INF] Route matched with {page = "/Blogs", area = "Administration"}. Executing page /Blogs
+2022-08-20 21:56:11.619 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogsModel.OnGet - ModelState is "Valid"
+2022-08-20 21:56:11.661 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 21:56:11.870 +03:00 [INF] Executed DbCommand (168ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits], [c].[Id], [c].[Information], [c].[Name]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:56:12.047 +03:00 [INF] Executed DbCommand (166ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id], [c].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 21:56:12.055 +03:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 21:56:12.109 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 21:56:12.288 +03:00 [INF] Executed DbCommand (172ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 21:56:12.328 +03:00 [INF] Executed page /Blogs in 711.0773ms
+2022-08-20 21:56:12.333 +03:00 [INF] Executed endpoint '/Blogs'
+2022-08-20 21:56:12.359 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/Blogs - - - 200 - text/html;+charset=utf-8 832.4260ms
+2022-08-20 21:56:12.415 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 21:56:12.431 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 21:56:12.431 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 21:56:12.443 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 12.2100ms
+2022-08-20 21:56:12.647 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 29.6514ms
+2022-08-20 21:56:12.756 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 325.2635ms
+2022-08-20 22:44:30.923 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/Blogs - -
+2022-08-20 22:44:30.941 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 22:44:31.910 +03:00 [INF] Executed DbCommand (157ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 22:44:32.157 +03:00 [INF] Executed DbCommand (158ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2022-08-20 22:44:32.351 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2022-08-20 22:44:32.533 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2022-08-20 22:44:32.721 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2022-08-20 22:44:32.755 +03:00 [INF] Executing endpoint '/Blogs'
+2022-08-20 22:44:32.794 +03:00 [INF] Route matched with {page = "/Blogs", area = "Administration"}. Executing page /Blogs
+2022-08-20 22:44:32.798 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogsModel.OnGet - ModelState is "Valid"
+2022-08-20 22:44:32.801 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 22:44:32.962 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits], [c].[Id], [c].[Information], [c].[Name]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 22:44:33.131 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id], [c].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 22:44:33.148 +03:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 22:44:33.220 +03:00 [INF] Executed page /Blogs in 422.3335ms
+2022-08-20 22:44:33.224 +03:00 [INF] Executed endpoint '/Blogs'
+2022-08-20 22:44:33.242 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/Blogs - - - 200 - text/html;+charset=utf-8 2318.9298ms
+2022-08-20 22:44:33.295 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 22:44:33.363 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 22:44:33.635 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - -
+2022-08-20 22:44:33.643 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 22:44:33.732 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 437.6025ms
+2022-08-20 22:44:33.735 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 371.8469ms
+2022-08-20 22:44:33.737 +03:00 [INF] The file /js/adminsite.js was not modified
+2022-08-20 22:44:33.770 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/adminsite.js?v=zBopEkdPoFtdRKJRi7wmOYuVdRFM2UneSa1MrvBMzks - - - 304 - application/javascript 135.1882ms
+2022-08-20 22:44:33.814 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 170.5094ms
+2022-08-20 22:44:50.741 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/Blogs - -
+2022-08-20 22:44:50.767 +03:00 [INF] Executing endpoint '/Blogs'
+2022-08-20 22:44:50.785 +03:00 [INF] Route matched with {page = "/Blogs", area = "Administration"}. Executing page /Blogs
+2022-08-20 22:44:50.790 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogsModel.OnGet - ModelState is "Valid"
+2022-08-20 22:44:50.792 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-20 22:44:50.976 +03:00 [INF] Executed DbCommand (179ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits], [c].[Id], [c].[Information], [c].[Name]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 22:44:51.159 +03:00 [INF] Executed DbCommand (157ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id], [c].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [Categories] AS [c] ON [b].[CategoryId] = [c].[Id]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id], [c].[Id]
+2022-08-20 22:44:51.180 +03:00 [INF] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-20 22:44:51.221 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-20 22:44:51.384 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-20 22:44:51.573 +03:00 [INF] Executed page /Blogs in 784.0057ms
+2022-08-20 22:44:51.644 +03:00 [INF] Executed endpoint '/Blogs'
+2022-08-20 22:44:51.697 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/Blogs - - - 200 - text/html;+charset=utf-8 956.1948ms
+2022-08-20 22:44:51.862 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - -
+2022-08-20 22:44:51.875 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/lib/bootstrap/css/bootstrap.min.css - - - 404 0 - 13.7900ms
+2022-08-20 22:44:51.936 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-20 22:44:51.943 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 6.6003ms
+2022-08-20 22:44:52.134 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-20 22:44:52.352 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 212.8787ms

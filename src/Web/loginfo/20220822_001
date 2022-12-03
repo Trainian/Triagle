@@ -1,0 +1,109 @@
+2022-08-22 23:15:14.519 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-22 23:15:19.589 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-22 23:15:23.294 +03:00 [INF] Executed DbCommand (294ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-08-22 23:15:23.781 +03:00 [INF] Executed DbCommand (158ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Name] = N'User'
+2022-08-22 23:15:24.610 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-22 23:15:24.819 +03:00 [INF] Executed DbCommand (154ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-08-22 23:18:27.691 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-22 23:18:32.261 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-22 23:18:35.018 +03:00 [INF] Executed DbCommand (236ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-08-22 23:18:35.355 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Name] = N'User'
+2022-08-22 23:18:35.663 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-22 23:18:35.835 +03:00 [INF] Executed DbCommand (150ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-08-22 23:18:36.594 +03:00 [INF] Now listening on: https://localhost:7099
+2022-08-22 23:18:36.597 +03:00 [INF] Now listening on: http://localhost:5099
+2022-08-22 23:18:36.606 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-22 23:18:36.609 +03:00 [INF] Hosting environment: Development
+2022-08-22 23:18:36.611 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-08-22 23:18:37.993 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Administration/BlogAddOrEdit - -
+2022-08-22 23:18:38.219 +03:00 [INF] Executing endpoint '/BlogAddOrEdit'
+2022-08-22 23:18:38.322 +03:00 [INF] Route matched with {page = "/BlogAddOrEdit", area = "Administration"}. Executing page /BlogAddOrEdit
+2022-08-22 23:18:38.703 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogAddOrEditModel.OnGetAsync - ModelState is "Valid"
+2022-08-22 23:18:38.750 +03:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-22 23:18:39.459 +03:00 [INF] Entity Framework Core 6.0.8 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-08-22 23:18:39.836 +03:00 [INF] Executed DbCommand (243ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-22 23:18:40.613 +03:00 [INF] Executed page /BlogAddOrEdit in 2272.8713ms
+2022-08-22 23:18:40.624 +03:00 [INF] Executed endpoint '/BlogAddOrEdit'
+2022-08-22 23:18:40.764 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Administration/BlogAddOrEdit - - - 200 - text/html;+charset=utf-8 2769.5327ms
+2022-08-22 23:18:40.922 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-22 23:18:41.445 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 523.5608ms
+2022-08-22 23:18:48.136 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7099/Administration/BlogAddOrEdit?handler=Upload application/x-www-form-urlencoded 258
+2022-08-22 23:18:48.154 +03:00 [INF] Executing endpoint '/BlogAddOrEdit'
+2022-08-22 23:18:48.157 +03:00 [INF] Route matched with {page = "/BlogAddOrEdit", area = "Administration"}. Executing page /BlogAddOrEdit
+2022-08-22 23:18:48.227 +03:00 [INF] Executing handler method Web.Areas.Administration.Pages.BlogAddOrEditModel.OnPostUpload - ModelState is "Invalid"
+2022-08-22 23:18:48.232 +03:00 [INF] Пост запрос выполнен: null
+2022-08-22 23:18:48.235 +03:00 [INF] Executed handler method OnPostUpload, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-22 23:18:48.256 +03:00 [INF] Executed page /BlogAddOrEdit in 93.7835ms
+2022-08-22 23:18:48.261 +03:00 [INF] Executed endpoint '/BlogAddOrEdit'
+2022-08-22 23:18:48.271 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'items')
+   at Microsoft.AspNetCore.Mvc.Rendering.MultiSelectList..ctor(IEnumerable items, String dataValueField, String dataTextField, IEnumerable selectedValues, String dataGroupField)
+   at Microsoft.AspNetCore.Mvc.Rendering.SelectList..ctor(IEnumerable items, String dataValueField, String dataTextField, Object selectedValue)
+   at Microsoft.AspNetCore.Mvc.Rendering.SelectList..ctor(IEnumerable items, Object selectedValue)
+   at Microsoft.AspNetCore.Mvc.Rendering.SelectList..ctor(IEnumerable items)
+   at AspNetCoreGeneratedDocument.Areas_Administration_Pages_BlogAddOrEdit.<ExecuteAsync>b__22_0() in C:\Users\Дмитрий\source\repos\Triagle\src\Web\Areas\Administration\Pages\BlogAddOrEdit.cshtml:line 32
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.GetChildContentAsync(Boolean useCachedResult, HtmlEncoder encoder)
+   at Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCoreGeneratedDocument.Areas_Administration_Pages_BlogAddOrEdit.ExecuteAsync() in C:\Users\Дмитрий\source\repos\Triagle\src\Web\Areas\Administration\Pages\BlogAddOrEdit.cshtml:line 6
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-08-22 23:18:48.598 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7099/Administration/BlogAddOrEdit?handler=Upload application/x-www-form-urlencoded 258 - 500 - text/html;+charset=utf-8 461.5300ms
+2022-08-22 23:18:48.726 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-22 23:18:48.755 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-22 23:18:48.936 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 214.3088ms
+2022-08-22 23:18:48.971 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 216.0638ms
+2022-08-22 23:19:00.045 +03:00 [INF] Application is shutting down...

@@ -1,0 +1,66 @@
+﻿@page
+@model Web.Areas.Administration.Pages.BlogMessageAddOrEditModel
+@{
+    ViewData["Title"] = "Редактирование Сообщения Блога";
+}
+
+<section class="BlogMessageAddOrEdit">
+    <div class="container-fluid">
+        <hr/>
+        <div class="row justify-content-start">
+            <div class="col-md-4 border border-3">
+                <form method="post">
+                    <input asp-for="BlogMessage.Id" hidden/>
+                    <input asp-for="BlogMessage.CreateDateTime" hidden />
+                    <input asp-for="BlogMessage.CreateWebUser" hidden />
+                    <input asp-for="BlogMessage.CreateWebUserAvatar" hidden />
+                    <input asp-for="BlogMessage.Blog" hidden />
+                    @if(Model.BlogMessage.ResponseToBlogMessage != null)
+                    {
+                        <input asp-for="BlogMessage.ResponseToBlogMessage.Id" hidden />
+                    }
+                    <div class="form-group">
+                        <label asp-for="BlogMessage.Text" class="control-label"></label>
+                        <textarea asp-for="BlogMessage.Text" class="form-control"></textarea>
+                        <span asp-validation-for="BlogMessage.Text" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BlogMessage.Blog" class="control-label"></label>
+                        @if(Model.BlogMessage.ResponseToBlogMessage != null)
+                        {
+                            <select asp-for="BlogMessage.Blog.Id" asp-items="@(new SelectList(Model.BlogsList, "Id", "Title", Model.BlogMessage.Blog))" class="form-select" class="form-control"></select>
+                        }
+                        else
+                        {
+                            <select asp-for="BlogMessage.Blog.Id" asp-items="@(new SelectList(Model.BlogsList, "Id", "Title", Model.BlogMessage.Blog))" class="form-select" class="form-control"></select>
+
+                        }
+                        <span asp-validation-for="BlogMessage.Blog" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BlogMessage.Visible" class="control-label"></label>
+                        <div class="form-check form-switch form-control"><input asp-for="BlogMessage.Visible"/></div>
+                        <span asp-validation-for="BlogMessage.Visible" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Загрузить" class="btn btn-outline-primary" />
+                    </div>
+                </form>
+            </div>
+            @if(@Model.BlogMessage.ResponseToBlogMessage != null)
+            {
+                <div class="col-md-4 border border-3">
+                    <div>Ответ на сообщение:</div>
+                    <hr/>
+                    <div>Пользователь: <br/> @Model.BlogMessage.ResponseToBlogMessage.CreateWebUser</div>
+                    <hr/>
+                    <div>Сообщение: <br/> @Model.BlogMessage.ResponseToBlogMessage.Text</div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+
+}

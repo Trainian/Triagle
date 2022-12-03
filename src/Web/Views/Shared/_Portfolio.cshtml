@@ -1,0 +1,42 @@
+﻿@model Web.Pages.PortfolioModel
+
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <ul class="portfolio-filter text-center">
+                    <li><a class="btn btn-default @(Model.Category == "Все" ? "acrive" : "")" asp-area="" asp-page="Portfolio" asp-route-category="Все">Все (@Model.CountProjects)</a></li>
+                @foreach (var category in Model.Categories)
+                {
+                    <li><a class="btn btn-default @(Model.Category == category.Name ? "acrive" : "")" asp-area="" asp-page="Portfolio" asp-route-category="@category.Name">@category.Name (@category.ProjectsCount)</a></li>
+                }
+                </ul><!--/#portfolio-filter-->
+                    
+                <div class="portfolio-items">
+                @foreach (var project in @Model.Projects)
+                {
+                    <div class="col-xs-6 col-sm-4 col-md-3 portfolio-item">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-single">
+                                <div class="portfolio-thumb">
+                                    <img src="~/images/portfolio/@project.Image" class="img-responsive" alt="">
+                                </div>
+                                <div class="portfolio-view">
+                                    <ul class="nav nav-pills">
+                                        <li><a asp-area="" asp-page="PortfolioDetails" asp-route-id="@project.Id" ><i class="fa fa-link"></i></a></li>
+                                        <li><a href="~/images/portfolio/@project.Image" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="portfolio-info ">
+                                <h2>@project.ProjectName</h2>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+    <div class="portfolio-pagination">
+        <pagination current-page="@Model.Page" elements-count="@Model.CountProjects" page-link="@Context.Request.PathBase" max-elements-onpage="@Model.MaxProjectsOnPage"></pagination>
+    </div>
+    <!--/#portfolio-->

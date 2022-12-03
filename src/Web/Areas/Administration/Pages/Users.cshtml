@@ -1,0 +1,69 @@
+﻿@page
+@using Microsoft.JSInterop
+@model Web.Areas.Administration.Pages.UsersModel
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@{
+    ViewData["Title"] = "Пользователи";
+}
+
+<form method="post" class="post-model" asp-area="Administration" asp-page="Users" >
+    <div asp-validation-summary="ModelOnly"/>
+    <input type="text" asp-for="@Model.Input.Id" hidden/>
+    <input type="text" asp-for="@Model.Input.ModifiedData" hidden/>
+    <input type="text" asp-for="@Model.Input.NewData" hidden/>
+    <input type="submit" hidden/>
+</form>
+
+<section class="user-manager preloader-manager">
+    <div class="container-fluid">
+        <table class="display" id="data-table" data-page-length="25">
+            <thead>
+                <tr>
+                    <th>Пользователь</th>
+                    <th>Почта</th>
+                    <th>Подтверждение почты</th>
+                    <th>Блокировка</th>
+                    <th>Аватар</th>
+                    <th>Роль</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.Users)
+                {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td class="form-check form-switch"><input data-id="@user.Id" type="checkbox" asp-for="@user.EmailConfirmed"/><span>@user.EmailConfirmed</span></td>
+                    <td><input type="date" data-id="@user.Id" asp-for="@user.LockoutEnd" /><span>@user.LockoutEnd</span></td>
+                    <td><img onclick="ShowImage(this)" src="~/images/avatars/@user.Avatar" class="img-fluid img-show" alt="@user.Avatar"></td>
+                    <td><select data-id="@user.Id" asp-items="new SelectList(@Model.Roles)" asp-for="@user.Role" ></select><span>@user.Role</span></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+
+<div class="show-image" onclick="HideImage()"><img id="showed-image" src="" class="rounded mx-auto d-block" alt=""></div>
+
+@section Scripts {
+<script>
+    $(function() {
+        $("input").change(function () {
+            $('#Input_Id').val($(this).attr('data-id'));
+            $('#Input_ModifiedData').val($(this).attr('name'));
+            $('#Input_NewData').val($(this).attr('value'));
+            $('form').submit();
+        });
+
+        $("select").change (function () {
+            $('#Input_Id').val($(this).attr('data-id'));
+            $('#Input_ModifiedData').val($(this).attr('name'));
+            $('#Input_NewData').val($(this).find('option:selected').text());
+            $('form').submit();
+        });
+    });
+</script>
+}

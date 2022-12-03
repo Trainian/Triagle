@@ -1,0 +1,8 @@
+﻿@model Dictionary<string,string>
+@{
+}
+
+@foreach(var element in Model)
+{
+<a href="@element.Key">@element.Value</a>
+}

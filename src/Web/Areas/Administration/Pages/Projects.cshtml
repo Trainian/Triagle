@@ -1,0 +1,58 @@
+﻿@page
+@model Web.Areas.Administration.Pages.ProjectsModel
+@{
+    ViewData["Title"] = "Проекты";
+}
+
+<section class="prohect-manager preloader-manager">
+    <div class="container-fluid">
+        <table id="data-table" class="display">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Проект</th>
+                    <th>Текст</th>
+                    <th>Скиллы</th>
+                    <th>Изображение</th>
+                    <th>Категория</th>
+                    <th>Создан</th>
+                    <th>Создал</th>
+                    <th>Ссылка</th>
+                    <th>Редактировать</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var project in Model.Projects)
+                {
+                <tr>
+                    <td>@project.Id</td>
+                    <td>@project.ProjectName</td>
+                    <td>@project.Text</td>
+                    <td>@foreach(var skill in @project.Skills)
+                        {
+                            <span class="badge bg-info">@skill.Name</span>
+                        }
+                    </td>
+                    <td><img onclick="ShowImage(this)" src="~/images/portfolio/@project.Image" class="img-fluid img-show" alt="@project.Image"></td>
+                    <td>@project.Category.Name</td>
+                    <td>@project.CreateDateTime<span>@project.CreateDateTime.Ticks</span></td>
+                    <td>@project.CreateWebUser</td>
+                    <td>@project.PreviewLink</td>
+                    <td>
+                        <a asp-area="Administration" asp-page="ProjectAddOrEdit" asp-route-id="@project.Id"><i data-feather="edit"></i></a>
+                        <a asp-area="Administration" asp-page="Projects" asp-page-handler="Remove" asp-route-id="@project.Id"><i data-feather="trash-2"></i></a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+
+<div class="show-image" onclick="HideImage()"><img id="showed-image" src="" class="rounded mx-auto d-block" alt=""></div>
+
+@section Scripts {
+
+}

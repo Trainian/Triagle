@@ -1,0 +1,23 @@
+﻿@page "{category?}"
+@model Web.Pages.PortfolioModel
+@{
+    ViewData["Title"] = "Портфолио";
+}
+
+<section id="page-breadcrumb">
+    <div class="vertical-center sun">
+            <div class="container">
+            <div class="row">
+                <div class="action">
+                    <div class="col-sm-12">
+                        <h1 class="title">Портфолио</h1>
+                        <p>Посмотрите наши проекты</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/#action-->
+
+@await Html.PartialAsync("_Portfolio", @Model)

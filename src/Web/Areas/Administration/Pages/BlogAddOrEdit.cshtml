@@ -1,0 +1,75 @@
+﻿@page
+@using Web.ViewModels
+@model Web.Areas.Administration.Pages.BlogAddOrEditModel
+
+@{
+    ViewData["Title"] = "Редактирование Блога";
+}
+
+<section class="BlodAddOrEdit">
+    <div class="container-fluid">
+        <hr />
+        <div class="row justify-content-start">
+            <div class="col-md-4 border border-3">
+                <form method="post" >
+                    <input type="hidden" asp-for="Blog.Id" />
+                    <input type="hidden" asp-for="Blog.CreateWebUser" />
+                    <input type="hidden" asp-for="Blog.CreateDateTime" />
+                    <div class="form-group">
+                        <label asp-for="Blog.Title" class="control-label"></label>
+                        <input asp-for="Blog.Title" class="form-control" />
+                        <span asp-validation-for="Blog.Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Blog.Text" class="control-label"></label>
+                        <textarea asp-for="Blog.Text" class="form-control"></textarea>
+                        <span asp-validation-for="Blog.Text" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Blog.Image" class="control-label"></label>
+                        <select asp-for="Blog.Image" asp-items="new SelectList(Model.Images)" class="form-select" onchange="ChangeImage()"></select>
+                        <span asp-validation-for="Blog.Image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Blog.Category" class="control-label"></label>
+                        <select asp-for="Blog.Category.Id" asp-items="@(new SelectList(Model.Categories, "Id", "Name", Model.Blog.Category))" class="form-select"></select>
+                        <span asp-validation-for="Blog.Category" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Сохранить" class="btn btn-default" />
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 border border-3 d-flex align-content-between flex-wrap">
+                <div class="col-image">
+                    <label>Текущее изображение:</label>
+                    <img id="blogImage" class="img-fluid" src=""/>
+                </div>
+                <div></div>
+                <form method="post"  asp-page-handler="Upload" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Input.Image" class="control-label col-form-label"></label>
+                        <input asp-for="Input.Image" type="file" multiple accept="image/png,image/jpeg"/>
+                        <span asp-validation-for="Input.Image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Загрузить" class="btn btn-default" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(ChangeImage());
+        function ChangeImage ()
+        {
+            var el = $("#Blog_Image").val();
+            $("#blogImage").attr("src", "/images/blog/" + el);
+        }
+    </script>
+
+}

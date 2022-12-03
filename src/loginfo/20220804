@@ -1,0 +1,131 @@
+2022-08-04 17:24:31.854 +03:00 [INF] User profile is available. Using 'C:\Users\Дмитрий\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-04 17:24:34.112 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-08-04 17:24:38.633 +03:00 [INF] Executed DbCommand (513ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-08-04 17:24:40.285 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-04 17:24:40.490 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2022-08-04 17:24:45.809 +03:00 [INF] Now listening on: https://localhost:7099
+2022-08-04 17:24:45.813 +03:00 [INF] Now listening on: http://localhost:5099
+2022-08-04 17:24:45.823 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-04 17:24:45.826 +03:00 [INF] Hosting environment: Development
+2022-08-04 17:24:45.828 +03:00 [INF] Content root path: C:\Users\Дмитрий\source\repos\Triagle\src\Web\
+2022-08-04 17:24:48.462 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/ - -
+2022-08-04 17:24:49.839 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-08-04 17:24:51.509 +03:00 [INF] Executed DbCommand (240ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-04 17:24:52.556 +03:00 [INF] Executed DbCommand (248ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2022-08-04 17:24:52.890 +03:00 [INF] Executed DbCommand (251ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2022-08-04 17:24:53.076 +03:00 [INF] Executing endpoint '/Index'
+2022-08-04 17:24:53.481 +03:00 [INF] Route matched with {page = "/Index", area = ""}. Executing page /Index
+2022-08-04 17:24:53.541 +03:00 [INF] Executing handler method Triagle.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-08-04 17:24:53.550 +03:00 [INF] Executed handler method OnGet, returned result .
+2022-08-04 17:24:53.593 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-08-04 17:24:53.647 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-04 17:24:54.820 +03:00 [INF] Executed page /Index in 1318.476ms
+2022-08-04 17:24:54.833 +03:00 [INF] Executed endpoint '/Index'
+2022-08-04 17:24:55.093 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/ - - - 200 - text/html;+charset=utf-8 6656.0335ms
+2022-08-04 17:24:55.106 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/site.css - -
+2022-08-04 17:24:55.106 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/css/main.css - -
+2022-08-04 17:24:55.146 +03:00 [INF] The file /css/site.css was not modified
+2022-08-04 17:24:55.147 +03:00 [INF] The file /css/main.css was not modified
+2022-08-04 17:24:55.158 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/site.css - - - 304 - text/css 52.4752ms
+2022-08-04 17:24:55.160 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/css/main.css - - - 304 - text/css 54.7431ms
+2022-08-04 17:24:57.213 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - -
+2022-08-04 17:24:57.214 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/main.js - -
+2022-08-04 17:24:57.214 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/js/site.js - -
+2022-08-04 17:24:57.214 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/_vs/browserLink - -
+2022-08-04 17:24:57.230 +03:00 [INF] The file /js/main.js was not modified
+2022-08-04 17:24:57.240 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/main.js - - - 304 - application/javascript 26.1447ms
+2022-08-04 17:24:57.232 +03:00 [INF] The file /js/site.js was not modified
+2022-08-04 17:24:57.236 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 23.1728ms
+2022-08-04 17:24:57.278 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/js/site.js - - - 304 - application/javascript 64.7876ms
+2022-08-04 17:24:57.628 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 414.4418ms
+2022-08-04 18:24:26.484 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7099/Blog - -
+2022-08-04 18:24:26.551 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'IdentityWebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-08-04 18:24:27.776 +03:00 [INF] Executed DbCommand (165ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2022-08-04 18:24:28.510 +03:00 [INF] Executed DbCommand (528ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2022-08-04 18:24:28.742 +03:00 [INF] Executed DbCommand (186ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2022-08-04 18:24:28.755 +03:00 [INF] Executing endpoint '/Blog'
+2022-08-04 18:24:28.801 +03:00 [INF] Route matched with {page = "/Blog", area = ""}. Executing page /Blog
+2022-08-04 18:24:29.295 +03:00 [INF] Executing handler method Web.Pages.BlogModel.OnGetAsync - ModelState is "Invalid"
+2022-08-04 18:24:29.311 +03:00 [INF] Entity Framework Core 6.0.7 initialized 'WebContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: QuerySplittingBehavior=SplitQuery 
+2022-08-04 18:24:29.518 +03:00 [INF] Executed DbCommand (152ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Blogs] AS [b]
+2022-08-04 18:24:29.958 +03:00 [INF] Executed DbCommand (228ms) [Parameters=[@__category_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Information], [c].[Name]
+FROM [Categories] AS [c]
+WHERE [c].[Name] = @__category_0
+ORDER BY [c].[Id]
+2022-08-04 18:24:30.032 +03:00 [WRN] Категория по Name не найдена null
+2022-08-04 18:24:30.263 +03:00 [INF] Executed DbCommand (182ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits]
+FROM [Blogs] AS [b]
+ORDER BY [b].[Id]
+2022-08-04 18:24:30.650 +03:00 [INF] Executed DbCommand (242ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [b].[Id]
+FROM [Blogs] AS [b]
+INNER JOIN [BlogMessages] AS [b0] ON [b].[Id] = [b0].[BlogId]
+ORDER BY [b].[Id]
+2022-08-04 18:24:30.963 +03:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-08-04 18:24:31.229 +03:00 [INF] Executed DbCommand (158ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Blogs] AS [b]
+2022-08-04 18:24:31.628 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Information], [c].[Name]
+FROM [Categories] AS [c]
+ORDER BY [c].[Id]
+2022-08-04 18:24:32.198 +03:00 [INF] Executed DbCommand (242ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CategoryId], [t].[CreateDateTime], [t].[CreateWebUser], [t].[Image], [t].[Likes], [t].[Text], [t].[Title], [t].[Twits], [c].[Id]
+FROM [Categories] AS [c]
+INNER JOIN (
+    SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[Image], [b].[Likes], [b].[Text], [b].[Title], [b].[Twits]
+    FROM [Blogs] AS [b]
+) AS [t] ON [c].[Id] = [t].[CategoryId]
+ORDER BY [c].[Id], [t].[CreateDateTime] DESC, [t].[Id]
+2022-08-04 18:24:32.728 +03:00 [INF] Executed DbCommand (268ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BlogId], [b0].[CreateDateTime], [b0].[CreateWebUser], [b0].[ResponseToBlogMessageId], [b0].[Text], [b0].[Visible], [c].[Id], [t].[Id]
+FROM [Categories] AS [c]
+INNER JOIN (
+    SELECT [b].[Id], [b].[CategoryId], [b].[CreateDateTime]
+    FROM [Blogs] AS [b]
+) AS [t] ON [c].[Id] = [t].[CategoryId]
+INNER JOIN [BlogMessages] AS [b0] ON [t].[Id] = [b0].[BlogId]
+ORDER BY [c].[Id], [t].[CreateDateTime] DESC, [t].[Id]
+2022-08-04 18:24:33.121 +03:00 [INF] Executed DbCommand (205ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [b].[Id], [b].[BlogId], [b].[CreateDateTime], [b].[CreateWebUser], [b].[ResponseToBlogMessageId], [b].[Text], [b].[Visible]
+FROM [BlogMessages] AS [b]
+ORDER BY [b].[CreateDateTime] DESC
+2022-08-04 18:24:34.333 +03:00 [INF] Executed page /Blog in 5528.3074ms
+2022-08-04 18:24:34.338 +03:00 [INF] Executed endpoint '/Blog'
+2022-08-04 18:24:34.350 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7099/Blog - - - 200 - text/html;+charset=utf-8 7866.1032ms

@@ -1,0 +1,47 @@
+﻿@page "{category?}"
+@model Web.Pages.BlogModel
+@{
+    ViewData["Title"] = "Блог";
+}
+
+<section id="page-breadcrumb">
+    <div class="vertical-center sun">
+            <div class="container">
+            <div class="row">
+                <div class="action">
+                    <div class="col-sm-12">
+                        <h1 class="title">Блог</h1>
+                        <p>Наши новости и обновления</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/#page-breadcrumb-->
+
+@await Html.PartialAsync("_Blog", @Model)
+
+@section Scripts {
+    <script>
+        function Like(param){
+            var auth = @User.Identity?.IsAuthenticated.ToString().ToLower();
+            if (auth === false) {
+                //alert("Необходима регистрация!");
+                $(".statusMessage").append('<div class="alert alert-danger fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4>Ошибка</h4><p>Необходима регистрация!</p></div>');
+                return;
+            }
+
+            var blog = $(param).offsetParent();
+            var blogId = $(blog).data('blog-id');
+
+            $.get( "/Blog?handler=Like", { blogId: blogId })
+                .done(function(message) { 
+                    var count = blog.find(".likesCount").text();
+                    console.log(count);
+                    blog.find(".likesCount").text(~~count + 1);
+                })
+                .fail(function(message) { alert(message); });
+        };
+    </script>
+}

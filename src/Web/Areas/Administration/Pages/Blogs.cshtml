@@ -1,0 +1,50 @@
+﻿@page
+@model Web.Areas.Administration.Pages.BlogsModel
+@{
+    ViewData["Title"] = "Блоги";
+}
+
+<section class="blog-manager preloader-manager">
+    <div class="container-fluid">
+        <table id="data-table" class="display">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Текст</th>
+                    <th>Категория</th>
+                    <th>Дата создания</th>
+                    <th>Создал</th>
+                    <th>Изображение</th>
+                    <th>Комментариев <br /> (Всего / Не видимые)</th>
+                    <th>Лайков</th>
+                    <th>Твитов</th>
+                    <th>Редактировать</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var blog in Model.Blogs)
+                {
+                    <tr>
+                        <td>@blog.Title</td>
+                        <td>@blog.Text</td>
+                        <td>@blog.Category.Name</td>
+                        <td>@blog.CreateDateTime</td>
+                        <td>@blog.CreateWebUser</td>
+                        <td><img onclick="ShowImage(this)" src="~/images/blog/@blog.Image" class="img-fluid img-show" alt="@blog.Image"></td>
+                        <td><a asp-area="Administration" asp-page="BlogMessages" asp-route-id="@blog.Id">@blog.Comments / @blog.CommentsNotVisible</a></td>
+                        <td>@blog.Likes</td>
+                        <td>@blog.Twits</td>
+                        <td>
+                            <a asp-area="Administration" asp-page="BlogAddOrEdit" asp-route-id="@blog.Id"><i data-feather="edit"></i></a>
+                            <a asp-area="Administration" asp-page="Blogs" asp-page-handler="Remove" asp-route-id="@blog.Id"><i data-feather="trash-2"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+
+<div class="show-image" onclick="HideImage()"><img id="showed-image" src="" class="rounded mx-auto d-block" alt=""></div>
